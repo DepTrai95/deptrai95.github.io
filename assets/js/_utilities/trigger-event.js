@@ -1,0 +1,1 @@
+"use strict";export function triggerEvent(t,e){let n;"function"==typeof window.CustomEvent?n=new CustomEvent(e):(n=document.createEvent("CustomEvent")).initCustomEvent(e,!1,!0,null),t.dispatchEvent(n)};
