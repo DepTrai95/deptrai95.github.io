@@ -17,8 +17,12 @@ import { triggerEvent } from './_utilities/trigger-event.js';
 import {HeaderPublic as Header} from './header/header.js';
 import {AccordionPublic as Accordion} from './accordion/accordion.js';
 import {DarkModePublic as DarkMode} from './darkmode/darkmode.js';
-import {LinkPublic as Link} from './link/link.js';
 
+// import {NavMainPublic as NavMain} from './navbar/nav-main.js';
+// import {StagePublic as Stage} from './stage/stage.js';
+// import {ProcessPublic as Process} from './process/process.js';
+// import {TeaserSliderPublic as TeaserSlider} from './teaser/teaser-slider.js';
+// import {CounterPublic as Counter} from './counter/counter.js';
 
 /**
  * Binds all events to DOM objects.
@@ -43,7 +47,11 @@ export function init() {
   Header.init();
   Accordion.init();
   DarkMode.init();
-  Link.init();
+  // NavMain.init();
+  // Stage.init();
+  // Process.init();
+  // TeaserSlider.init();
+  // Counter.init();
 }
 
 init();

@@ -1,1 +1,0 @@
-"use strict";export function throttle(t,e=250,n=this){let o,i;return function(){let l=+new Date;const r=arguments;o&&l<o+e?(clearTimeout(i),i=setTimeout(()=>{o=l,t.apply(n,r)},e)):(o=l,t.apply(n,r))}};

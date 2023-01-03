@@ -1,1 +1,0 @@
-"use strict";export function getMediaQuery(){const e=new RegExp("['\",]","g");let t;return window.getComputedStyle&&(t=window.getComputedStyle(document.documentElement,null).getPropertyValue("font-family")),t=t.replace(e,"")};
