@@ -10,9 +10,9 @@
 'use strict';
 
 // Self-written modules
-import { debounce } from './_utilities/debounce.js';
-import { throttle } from './_utilities/throttle.js';
-import { triggerEvent } from './_utilities/trigger-event.js';
+import { debounce } from './utilities/debounce.js';
+import { throttle } from './utilities/throttle.js';
+import { triggerEvent } from './utilities/trigger-event.js';
 
 import {HeaderPublic as Header} from './header/header.js';
 import {AccordionPublic as Accordion} from './accordion/accordion.js';
