@@ -1,1 +1,811 @@
-<!doctype html><html class=no-js lang=de><meta charset=utf-8><meta name=author content="Duc Anh Dennis Nguyen"><meta name=description content="Dies ist meine persönliche Portfolio Website. Hier stelle ich mich vor und präsentiere meine Fertigkeiten als Frontend-Entwickler."><meta name=keywords content="Portfolio, Frontend Developer"><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=format-detection content="telephone=no"><meta name=viewport content="width=device-width,initial-scale=1"><title>Duc Anh Nguyen's Personal Portfolio Website</title><link rel=stylesheet href=assets/css/portfolio.css><script>document.documentElement.classList.replace("no-js","js")</script><div style=height:0;position:absolute;visibility:hidden;width:0><svg><defs/><symbol id=ico-arrow-right-15-bold viewBox="0 0 15 15"><path d=m14.68781,6.75818L8.12622.30328c-.39825-.39093-1.08899-.39093-1.48633,0-.20099.19775-.31177.46143-.31177.742,0,.28064.11078.54431.31177.74207l4.74561,4.66779H1.05469c-.58136,0-1.05469.46875-1.05469,1.0451,0,.57629.47333,1.04504,1.05469,1.04504h10.33081l-4.74561,4.66827c-.20099.19775-.31177.46143-.31177.74158s.11078.54382.31177.74158c.20459.20142.47375.30212.74292.30212s.53833-.10071.74341-.30212l6.56158-6.45447c.19867-.19543.31219-.466.31219-.742,0-.27649-.11353-.54706-.31219-.74207Z /></symbol><symbol id=ico-arrow-right-15 viewBox="0 0 15 15"><path d=M14.81683,7.06512L7.81683,.17963c-.12207-.12007-.28168-.17963-.44183-.17963s-.31982,.05956-.44189,.17963c-.24414,.24015-.24414,.63015,0,.87029l5.93347,5.83557H.625c-.34479,0-.625,.27473-.625,.6143s.28021,.61478,.625,.61478H12.86609l-5.93304,5.83605c-.24414,.24015-.24414,.62918,0,.86933,.24414,.24009,.63965,.24009,.88379,0l7-6.88549c.11719-.11527,.18317-.27185,.18317-.43467,0-.1633-.06598-.3194-.18317-.43467Z /></symbol><symbol id=ico-arrow-right-28 viewBox="0 0 28 15"><path d=M27.81689,7.06555L20.81689,.18011c-.24414-.24015-.63965-.24015-.88379,0s-.24414,.62918,0,.86933l5.93311,5.836H.625c-.34473,0-.625,.27521-.625,.61477s.28027,.61429,.625,.61429H25.86658l-5.93347,5.83552c-.24414,.24015-.24414,.63014,0,.87029,.12207,.12007,.28174,.17969,.44189,.17969v-.00006c.16016,0,.31982-.05956,.44189-.17963l7-6.88544c.11719-.11527,.18311-.27136,.18311-.43466s-.06592-.31939-.18311-.43466Z /></symbol><symbol id=ico-arrow-right-58 viewBox="0 0 58 15"><path d=M57.81689,7.06557L50.81689,.18011c-.24414-.24015-.63965-.24015-.88379,0s-.24414,.62918,0,.86933l5.95782,5.86033H.59998c-.29999,0-.59998,.29508-.59998,.59016s.29999,.59022,.59998,.59022H55.89142l-5.95831,5.85992c-.24414,.24014-.24414,.63014,0,.87029,.12207,.12007,.28174,.17963,.44189,.17963s.31982-.05956,.44189-.17963l7-6.88546c.11719-.11527,.18311-.27137,.18311-.43466,0-.16282-.06592-.3194-.18311-.43466v-.00002Z /></symbol><symbol id=ico-chevron-down viewBox="0 0 32 32"><polyline points="23.5 12.7857 16 19.21427 8.5 12.7857" fill=none fill-rule=evenodd stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=1.25 /></symbol><symbol id=ico-chevron-right-bold viewBox="0 0 9 15"><path d=m8.44653,6.76325L2.03357.30125c-.39617-.39488-1.08797-.39214-1.47999.00183-.40447.40588-.40493,1.0683-.00046,1.47509l5.67966,5.7217L.55312,13.22341c-.40355.40588-.40355,1.06738-.00046,1.47326.19739.19882.46028.30876.74068.30968h.00046c.28041-.00092.54375-.10994.74115-.30968l6.41066-6.45925c.19647-.1979.30439-.45902.30439-.73755s-.10792-.53964-.30347-.73663ZM1.69874,14.36775h0Z /></symbol><symbol id=ico-close viewBox="0 0 32 32"><line stroke=currentColor stroke-width=2 stroke-linecap=round stroke-linejoin=round x1=8 y1=8 x2=24 y2=24 /><line stroke=currentColor stroke-width=2 stroke-linecap=round stroke-linejoin=round x1=8 y1=24 x2=24 y2=8 /></symbol><symbol id=ico-contact viewBox="0 0 32 32"><path d=M19.33907,21.35073c-.34984-.21881-.70045-.43652-1.05097-.65423-.74306-.46153-1.51128-.93869-2.25945-1.41947-.46427-.29838-.92439-.30503-1.40649-.01997-.3912,.23122-.79338,.45971-1.18236,.68075-.31832,.1807-.64743,.36765-.9696,.55561-.14161,.08258-.20379,.07351-.31677-.04628-1.38962-1.47332-2.66973-2.81989-3.91343-4.11685-.1406-.14662-.15325-.22971-.06163-.40456,.2373-.45263,.47119-.91605,.69737-1.36423,.16421-.32537,.33404-.66182,.50344-.99079,.22963-.4459,.22266-.87137-.02128-1.30066-.39471-.69452-.79157-1.40393-1.17547-2.08995-.28538-.51003-.5707-1.02001-.85785-1.5289-.35187-.62359-.87309-.8038-1.5073-.52071l-.365,.16275c-.64556,.28771-1.31305,.58518-1.96633,.88751-.20489,.09484-.41556,.20686-.56859,.38307-.50716,.58433-.80523,1.28917-.88588,2.09503-.09691,.96826,.04862,1.98634,.44494,3.11225,.57923,1.6456,1.46506,3.21008,2.78767,4.92349,2.17879,2.82241,4.53897,4.88502,7.21548,6.3058,1.17696,.62478,2.29194,.96057,3.31697,.99828,.04762,.00101,.09447,.00151,.14084,.00151,.66334,0,1.19383-.1085,1.7037-.34668,.69081-.32278,1.11825-.78037,1.34528-1.44025,.17796-.51739,.39418-1.03428,.60318-1.53402,.08956-.21407,.182-.43531,.27079-.65463,.29692-.73369,.1313-1.2656-.52124-1.67388ZM8.47157,13.13658c-.35856,.68499-.71168,1.38704-1.05317,2.06593l-.12154,.24155c-.32665,.64906-.26312,1.10343,.22666,1.62062,1.28886,1.36109,2.57788,2.72198,3.86757,4.08216,.52953,.55833,.93336,.61994,1.60065,.24402l.4151-.23354c.57368-.32247,1.16694-.65594,1.7466-.99273,.13583-.07885,.22336-.07633,.36015,.01079,.73766,.4699,1.49027,.94252,2.2181,1.39951,.37114,.23303,.74239,.46617,1.11324,.69991,.12445,.07845,.15906,.18574,.10402,.32177-.13419,.33125-.26973,.66189-.40527,.99243-.20341,.49632-.41366,1.00937-.61601,1.51658-.09447,.23676-.28448,.40163-.61611,.53444-.69564,.27858-1.31503,.37861-2.0576,.26517-.74536-.11386-1.45663-.38884-2.12689-.72751-1.88686-.95341-3.66466-2.3269-5.43498-4.19923-1.7944-1.89764-3.08947-3.76674-3.95915-5.71414-.38806-.86885-.82155-2.0301-.72897-3.30872,.04581-.63231,.23384-1.15502,.5748-1.598,.04235-.05502,.10647-.10597,.17156-.13633,.81853-.38135,1.64386-.75763,2.41906-1.11028,.07941-.03613,.12673-.05764,.16211-.05764,.05223,0,.0787,.04674,.14412,.16241,.22249,.39322,.4444,.78691,.66625,1.18053,.43197,.76642,.8787,1.55892,1.32326,2.3355,.08627,.1507,.08778,.24908,.00643,.40481Z /><path d=M25.01147,18.79999c.08184,.07571,.18371,.16989,.33099,.19136,.03403,.00493,.07609,.00822,.12213,.00822,.14645,0,.33433-.03355,.44393-.15529,.12275-.13672,.09749-.33156,.05188-.52166-.0286-.11913-.12547-.19252-.18966-.24106-.01274-.00967-.02547-.01914-.03664-.02872-.39686-.34171-.79402-.68304-1.19119-1.02446l-.82659-.71069c-.67701-.58238-1.35382-1.1649-2.05693-1.76999l-.64894-.55857c.00981-.00755,.01952-.01537,.02912-.02364,1.63951-1.40059,3.28006-2.80549,4.66843-3.99503,.01472-.01264,.03111-.025,.0476-.03759,.07724-.05898,.18298-.13969,.21659-.26779,.02182-.08345,.08006-.36858-.08643-.53444-.13663-.13619-.37588-.1421-.55238-.12317-.13768,.01477-.22745,.1032-.293,.16776-.01336,.01319-.02641,.02638-.03977,.03776-.9507,.81487-1.90109,1.62986-2.85158,2.4449-1.0054,.8621-2.01089,1.72425-3.0165,2.58618-.26377,.2261-.52879,.45105-.79611,.67797l-.21586,.18336c-.02641-.0215-.05188-.04241-.07672-.0638-1.44713-1.23988-2.89417-2.47987-4.34109-3.71985l-1.63586-1.40179c-.15876-.13604-.36982-.28941-.59956-.27102-.08998,.00739-.22097,.04525-.33496,.18402-.3217,.3919,.02547,.68327,.17369,.80771l.0382,.03217c1.48169,1.26899,2.68614,2.29744,3.79069,3.23669,.03288,.02796,.06722,.05248,.10219,.07497l-.05845,.05105c-.17766,.15529-.32953,.28793-.48224,.41964l-.17588,.15168c-.47608,.41066-.96834,.83533-1.45465,1.25028-.25876,.22085-.28726,.49362-.0763,.72974,.09133,.1022,.34728,.31271,.75175,.05956,.06085-.0381,.11033-.082,.15396-.12067l.6648-.576c.40114-.34761,.80237-.6951,1.20445-1.0418,.08778-.07567,.17797-.1485,.27316-.22505l.37901,.32667c.39947,.34413,.7911,.68153,1.1818,1.01986,.41178,.35651,.63672,.35767,1.04663,.00532,.39863-.34287,.79757-.68537,1.20101-1.03185l.37661-.32339c.02349,.01866,.04572,.03677,.06712,.05521l1.73168,1.49051c.98191,.8452,1.96372,1.69049,2.94615,2.5352,.0144,.01238,.02891,.02582,.04363,.03955h.0001Z /><path d=M26.54199,7H10.99707c-.34473,0-.625,.28027-.625,.625s.28027,.625,.625,.625h15.54492c.73535,0,1.33301,.59814,1.33301,1.33301v9.83398c0,.73535-.59766,1.33301-1.33301,1.33301h-2.53711c-.34473,0-.625,.28027-.625,.625s.28027,.625,.625,.625h2.53711c1.42383,0,2.58301-1.15918,2.58301-2.58301V9.58301c0-1.42432-1.15918-2.58301-2.58301-2.58301Z /></symbol><symbol id=ico-cross viewBox="0 0 32 32"><line x1=8 y1=8 x2=24 y2=24 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=1.25 /><line x1=8 y1=24 x2=24 y2=8 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=1.25 /></symbol><symbol id=ico-facebook viewBox="0 0 50 50"><path d="M37.5 25C37.5 18.125 31.875 12.5 25 12.5C18.125 12.5 12.5 18.125 12.5 25C12.5 31.25 17.0312 36.4062 22.9688 37.3438V28.5937H19.8437V25H22.9688V22.1875C22.9688 19.0625 24.8438 17.3438 27.6563 17.3438C29.0625 17.3438 30.4688 17.6563 30.4688 17.6563V20.7812H28.9062C27.3438 20.7812 26.875 21.7188 26.875 22.6562V25H30.3125L29.6875 28.5937H26.7188V37.5C32.9688 36.5625 37.5 31.25 37.5 25Z"/></symbol><symbol id=ico-github viewBox="0 0 72 72"><path d="M36,12c13.255,0,24,10.745,24,24c0,10.656-6.948,19.685-16.559,22.818c0.003-0.009,0.007-0.022,0.007-0.022	s-1.62-0.759-1.586-2.114c0.038-1.491,0-4.971,0-6.248c0-2.193-1.388-3.747-1.388-3.747s10.884,0.122,10.884-11.491	c0-4.481-2.342-6.812-2.342-6.812s1.23-4.784-0.426-6.812c-1.856-0.2-5.18,1.774-6.6,2.697c0,0-2.25-0.922-5.991-0.922	c-3.742,0-5.991,0.922-5.991,0.922c-1.419-0.922-4.744-2.897-6.6-2.697c-1.656,2.029-0.426,6.812-0.426,6.812	s-2.342,2.332-2.342,6.812c0,11.613,10.884,11.491,10.884,11.491s-1.097,1.239-1.336,3.061c-0.76,0.258-1.877,0.576-2.78,0.576	c-2.362,0-4.159-2.296-4.817-3.358c-0.649-1.048-1.98-1.927-3.221-1.927c-0.817,0-1.216,0.409-1.216,0.876s1.146,0.793,1.902,1.659	c1.594,1.826,1.565,5.933,7.245,5.933c0.617,0,1.876-0.152,2.823-0.279c-0.006,1.293-0.007,2.657,0.013,3.454	c0.034,1.355-1.586,2.114-1.586,2.114s0.004,0.013,0.007,0.022C18.948,55.685,12,46.656,12,36C12,22.745,22.745,12,36,12z"/></symbol><symbol id=ico-instagram viewBox="0 0 50 50"><path d="M25 15.1687C28.1807 15.1687 28.6145 15.1687 29.9157 15.1687C31.0723 15.1687 31.6506 15.4578 32.0843 15.6024C32.6627 15.8916 33.0964 16.0361 33.5301 16.4699C33.9639 16.9036 34.253 17.3374 34.3976 17.9157C34.5422 18.3494 34.6867 18.9277 34.8313 20.0843C34.8313 21.3855 34.8313 21.6747 34.8313 25C34.8313 28.3253 34.8313 28.6145 34.8313 29.9157C34.8313 31.0723 34.5422 31.6506 34.3976 32.0843C34.1084 32.6627 33.9639 33.0964 33.5301 33.5301C33.0964 33.9639 32.6627 34.253 32.0843 34.3976C31.6506 34.5422 31.0723 34.6867 29.9157 34.8313C28.6145 34.8313 28.3253 34.8313 25 34.8313C21.6747 34.8313 21.3855 34.8313 20.0843 34.8313C18.9277 34.8313 18.3494 34.5422 17.9157 34.3976C17.3374 34.1084 16.9036 33.9639 16.4699 33.5301C16.0361 33.0964 15.747 32.6627 15.6024 32.0843C15.4578 31.6506 15.3133 31.0723 15.1687 29.9157C15.1687 28.6145 15.1687 28.3253 15.1687 25C15.1687 21.6747 15.1687 21.3855 15.1687 20.0843C15.1687 18.9277 15.4578 18.3494 15.6024 17.9157C15.8916 17.3374 16.0361 16.9036 16.4699 16.4699C16.9036 16.0361 17.3374 15.747 17.9157 15.6024C18.3494 15.4578 18.9277 15.3133 20.0843 15.1687C21.3855 15.1687 21.8193 15.1687 25 15.1687ZM25 13C21.6747 13 21.3855 13 20.0843 13C18.7831 13 17.9157 13.2892 17.1928 13.5783C16.4699 13.8675 15.747 14.3012 15.0241 15.0241C14.3012 15.747 14.012 16.3253 13.5783 17.1928C13.2892 17.9157 13.1446 18.7831 13 20.0843C13 21.3855 13 21.8193 13 25C13 28.3253 13 28.6145 13 29.9157C13 31.2169 13.2892 32.0843 13.5783 32.8072C13.8675 33.5301 14.3012 34.253 15.0241 34.9759C15.747 35.6988 16.3253 35.988 17.1928 36.4217C17.9157 36.7108 18.7831 36.8554 20.0843 37C21.3855 37 21.8193 37 25 37C28.1807 37 28.6145 37 29.9157 37C31.2169 37 32.0843 36.7108 32.8072 36.4217C33.5301 36.1325 34.253 35.6988 34.9759 34.9759C35.6988 34.253 35.988 33.6747 36.4217 32.8072C36.7108 32.0843 36.8554 31.2169 37 29.9157C37 28.6145 37 28.1807 37 25C37 21.8193 37 21.3855 37 20.0843C37 18.7831 36.7108 17.9157 36.4217 17.1928C36.1325 16.4699 35.6988 15.747 34.9759 15.0241C34.253 14.3012 33.6747 14.012 32.8072 13.5783C32.0843 13.2892 31.2169 13.1446 29.9157 13C28.6145 13 28.3253 13 25 13Z"/><path d="M25 18.7831C21.5301 18.7831 18.7831 21.5301 18.7831 25C18.7831 28.4699 21.5301 31.2169 25 31.2169C28.4699 31.2169 31.2169 28.4699 31.2169 25C31.2169 21.5301 28.4699 18.7831 25 18.7831ZM25 29.0482C22.8313 29.0482 20.9518 27.3133 20.9518 25C20.9518 22.8313 22.6867 20.9518 25 20.9518C27.1687 20.9518 29.0482 22.6867 29.0482 25C29.0482 27.1687 27.1687 29.0482 25 29.0482Z"/><path d="M31.3614 20.0843C32.1599 20.0843 32.8072 19.437 32.8072 18.6386C32.8072 17.8401 32.1599 17.1928 31.3614 17.1928C30.563 17.1928 29.9157 17.8401 29.9157 18.6386C29.9157 19.437 30.563 20.0843 31.3614 20.0843Z"/></symbol><symbol id=ico-language viewBox="0 0 32 32"><path d=M21.55186,9.84027c-1.64124-1.74438-2.85691-1.99097-5.24137-2.07215l-.16815,.00084c-.04773-.00189-.09454,0-.14233,0h-.31146c-2.36438,.08173-3.56382,.31117-5.22129,2.05458v-.00049l-.04871,.04871c-1.55908,1.67322-2.63013,4.06012-2.63013,6.34089,0,2.18951,1.01185,4.08752,2.46485,5.73352l.0401,.04675c1.62976,1.82178,2.96012,2.15278,5.39518,2.23683h.31146l.31146,.05542c2.47229-.086,3.74437-.44563,5.37223-2.27309l.07257-.05542,.00671-.0296c1.4425-1.64313,2.50846-3.74573,2.50846-5.92664,0-2.29224-1.13951-4.47839-2.71958-6.16016Zm2.43166,6.6593c-.10126,1.6579-.70306,3.20929-1.74817,4.50659-.68213-.44519-1.41101-.81775-2.17145-1.10815,.39551-1.09094,.62-2.23248,.67065-3.39844h3.24896Zm-2.43121,5.25458c-1.08429,1.04504-2.44946,1.76727-3.91296,2.07581,.84161-.8913,1.52655-1.90009,2.0434-3.01007,.6496,.24548,1.27631,.55884,1.86957,.93427Zm-5.05365-2.59174v-2.66284h3.23566c-.04968,1.05988-.25696,2.09448-.6181,3.0813-.84833-.24078-1.72717-.38116-2.61755-.41846Zm3.06464-8.2403c-.49963-1.00543-1.14539-1.92822-1.92493-2.7522,1.38519,.28802,2.65674,.93524,3.71906,1.89532-.57129,.34296-1.17316,.63-1.79413,.85687Zm.172,4.57867h-3.23663l.00098-2.96564c.85693-.03729,1.70142-.16815,2.5144-.39026,.42511,1.06799,.66681,2.19525,.72125,3.3559Zm-3.23566-3.96539v-3.0946c.85596,.81104,1.55811,1.74384,2.09308,2.78174-.6792,.17389-1.38135,.27899-2.09308,.31287Zm2.22681,8.974c-.55121,1.14636-1.29822,2.17041-2.22778,3.05023v-3.39795c.75568,.03534,1.50275,.15186,2.22778,.34772Zm5.25806-5.00861h-3.24994c-.0545-1.271-.31244-2.50189-.76715-3.66443,.73657-.27325,1.4425-.62146,2.10553-1.03796,1.12915,1.31641,1.80267,2.97333,1.91156,4.70239Zm-15.96802,0c.10791-1.7276,.78143-3.38458,1.91058-4.70239,.66394,.41748,1.37091,.76569,2.10553,1.03796-.45471,1.16254-.71265,2.39343-.76715,3.66443h-3.24896Zm4.24823,.99878h3.23566v2.66284c-.89319,.03821-1.77209,.17865-2.61755,.41846-.36108-.98877-.56842-2.02332-.6181-3.0813Zm.05353,4.32031c.51489,1.10907,1.20081,2.11786,2.04242,3.01007-1.4635-.30853-2.82867-1.03076-3.91199-2.07581,.59229-.37451,1.21997-.68781,1.86957-.93427Zm-.38214-.92188c-.76135,.29041-1.4903,.66296-2.17145,1.10815-1.04511-1.2973-1.64691-2.84772-1.74817-4.50659h3.24896c.05066,1.16595,.27515,2.3075,.67065,3.39844Zm3.56427,.26367v3.39795c-.9295-.88171-1.67755-1.90485-2.22681-3.04932,.72028-.1958,1.46832-.31238,2.22681-.34863Zm.00098-7.62653v2.96564h-3.23566c.05444-1.16064,.29614-2.28741,.72125-3.3559,.8139,.22211,1.65747,.35297,2.5144,.39026Zm-3.06464-1.61304c-.62286-.22736-1.22473-.5144-1.79413-.85687,1.06042-.96008,2.33289-1.6073,3.71808-1.89532-.77856,.82349-1.42432,1.74677-1.92395,2.7522Zm3.06464-2.4809v3.09467c-.70789-.03345-1.41101-.13849-2.09406-.31287,.53687-1.03931,1.23901-1.97266,2.09406-2.7818Z /><path d=M16,8.25c4.27323,0,7.74976,3.47653,7.74976,7.74976,0,4.2735-3.47653,7.75024-7.74976,7.75024s-7.74976-3.47674-7.74976-7.75024c0-4.27323,3.47653-7.74976,7.74976-7.74976m0-1.25c-4.9626,0-8.99976,4.03716-8.99976,8.99976,0,4.96308,4.03716,9.00024,8.99976,9.00024s8.99976-4.03716,8.99976-9.00024c0-4.9626-4.03716-8.99976-8.99976-8.99976h0Z /></symbol><symbol id=ico-linkedin viewBox="0 0 50 50"><path d="M18.725 36H14.2625V21.9563H18.725V36ZM16.4938 19.9875C15.05 19.9875 14 18.9375 14 17.4937C14 16.05 15.1813 15 16.4938 15C17.9375 15 18.9875 16.05 18.9875 17.4937C18.9875 18.9375 17.9375 19.9875 16.4938 19.9875ZM35 36H30.5375V28.3875C30.5375 26.1563 29.6187 25.5 28.3062 25.5C26.9937 25.5 25.6812 26.55 25.6812 28.5187V36H21.2188V21.9563H25.4187V23.925C25.8125 23.0063 27.3875 21.5625 29.6187 21.5625C32.1125 21.5625 34.7375 23.0063 34.7375 27.3375V36H35Z"/></symbol><symbol id=ico-pause viewBox="0 0 32 32"><line x1=12.99969 y1=11 x2=12.99969 y2=21 stroke=#fff stroke-linecap=round stroke-linejoin=round stroke-width=1.25 /><line x1=19.00031 y1=11 x2=19.00031 y2=21 stroke=#fff stroke-linecap=round stroke-linejoin=round stroke-width=1.25 /></symbol><symbol id=ico-play viewBox="0 0 32 32"><polygon points="13.00878 22 21 16.00329 13 10 13.00878 22" stroke-linecap=round stroke-linejoin=round stroke-width=1.25 /></symbol><symbol id=ico-search viewBox="0 0 32 32"><path d=M15.00961,8.25c1.7968,0,3.49187,.70553,4.77296,1.98661,1.28109,1.2811,1.98662,2.97618,1.98662,4.77298s-.70553,3.49188-1.98662,4.77298c-1.2811,1.28109-2.97617,1.98662-4.77298,1.98662s-3.49188-.70553-4.77298-1.98662c-2.63181-2.63182-2.63181-6.91411,0-9.54594,1.2811-1.2811,2.97618-1.98663,4.77299-1.98663m0-1.25c-2.04443,0-4.08818,.78406-5.65687,2.35274-3.13698,3.13699-3.137,8.17672-.00001,11.31371,1.5685,1.56849,3.61268,2.35274,5.65686,2.35274s4.08837-.78425,5.65686-2.35274c3.13699-3.13698,3.13699-8.17673,0-11.31372-1.5683-1.5683-3.61291-2.35273-5.65684-2.35273h0Z /><line x1=20.66646 y1=20.66646 x2=24.3732 y2=24.3732 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=1.25 /></symbol><symbol id=ico-twitter viewBox="0 0 50 50"><path d="M36 18.1562C35.1375 18.5875 34.275 18.7313 33.2688 18.875C34.275 18.3 34.9937 17.4375 35.2812 16.2875C34.4188 16.8625 33.4125 17.15 32.2625 17.4375C31.4 16.575 30.1063 16 28.8125 16C25.7937 16 23.4938 18.875 24.2125 21.75C20.3313 21.6062 16.8813 19.7375 14.4375 16.8625C13.1438 19.0188 13.8625 21.75 15.875 23.1875C15.1562 23.1875 14.4375 22.9 13.7188 22.6125C13.7188 24.7688 15.3 26.7812 17.4563 27.3562C16.7375 27.5 16.0188 27.6438 15.3 27.5C15.875 29.3687 17.6 30.8062 19.7562 30.8062C18.0312 32.1 15.4438 32.8188 13 32.5312C15.1562 33.825 17.6 34.6875 20.1875 34.6875C28.9563 34.6875 33.8437 27.3562 33.5562 20.6C34.5625 20.025 35.425 19.1625 36 18.1562Z"/></symbol><symbol id=ico-xing viewBox="0 0 50 50"><path d="M29.4687 15.5493C29.6303 15.2714 29.8254 15 30.2753 15H33.3188C33.5002 15 33.6426 15.0655 33.7194 15.1842C33.7988 15.3074 33.7968 15.47 33.7132 15.6293L27.0428 26.9215C27.0387 26.9274 27.0387 26.9346 27.0428 26.9405L31.2901 34.37C31.3743 34.5299 31.3764 34.6925 31.2962 34.8158C31.2196 34.9345 31.0778 35 30.8964 35H27.887C27.4255 35 27.1948 34.7063 27.0455 34.4507C27.0455 34.4507 22.7756 26.9509 22.7646 26.9313C22.9783 26.5694 29.4687 15.5493 29.4687 15.5493ZM17.208 19.1305C17.2847 19.0112 17.4374 18.9502 17.6188 18.9502H20.6317C21.0938 18.9502 21.3204 19.2354 21.4704 19.491C21.4704 19.491 23.5293 22.9301 23.5417 22.9491C23.4198 23.155 20.2893 28.4559 20.2893 28.4559C20.1352 28.722 19.9182 29.0131 19.4676 29.0131H16.4548C16.2734 29.0131 16.1379 28.9352 16.0611 28.8165C15.9817 28.6932 15.9776 28.5333 16.0611 28.374L19.2621 22.9655C19.2655 22.9597 19.2655 22.9557 19.2621 22.9491L17.2251 19.573C17.1409 19.4124 17.1285 19.2538 17.208 19.1305Z"/></symbol><symbol id=ico-youtube viewBox="0 0 50 50"><path d="M37.375 18.6563C37.0625 17.5625 36.2813 16.7813 35.1875 16.4688C33.3125 16 25.3437 16 25.3437 16C25.3437 16 17.5313 16 15.5 16.4688C14.4063 16.7813 13.625 17.5625 13.3125 18.6563C13 20.6875 13 24.75 13 24.75C13 24.75 13 28.8125 13.4688 30.8437C13.7813 31.9375 14.5625 32.7187 15.6562 33.0312C17.5312 33.5 25.5 33.5 25.5 33.5C25.5 33.5 33.3125 33.5 35.3437 33.0312C36.4375 32.7187 37.2188 31.9375 37.5313 30.8437C38 28.8125 38 24.75 38 24.75C38 24.75 38 20.6875 37.375 18.6563ZM23 28.5V21L29.5625 24.75L23 28.5Z"/></symbol><symbol id=icon-arrow-right viewBox="0 0 32 15.99994"><path d=M31.70709,7.29288L24.70709,.29288c-.3905-.3905-1.02368-.3905-1.41418,0-.39056,.3905-.39056,1.02368,0,1.41425l5.40308,5.40302H1c-.55231,0-1,.44769-1,1s.44769,1,1,1H28.47565l-5.18274,5.18274c-.39056,.3905-.39056,1.02368,0,1.41418,.3905,.3905,1.02368,.3905,1.41418,0l7-6.99994c.39056-.39056,.39056-1.02374,0-1.41425Z /></symbol></svg></div><header class=header><div class="inner inner--wide"><div class=logo__container><div class=logo><a href=/ ><img src=/assets/img/logo.png class=logo alt="zur Startseite" height=59 width=300></a></div></div><div class=mobile-navigation><button id=mobile-navigation-button type=button class="navigation__button--mobile menu-toggle" aria-expanded=false aria-haspopup=true aria-controls=mobile-navigation><span class=sr-only>Hauptnavigation</span><span class=hamburger><span></span><span></span><span></span></span></button><div class=mobile-navigation__layer id=mobile-navigation aria-labelledby=mobile-navigation-button><div class=nav-main__wrapper><nav class=nav-main aria-label=Hauptnavigation><div class="nav-layer nav-layer__1"><ul><li><a href=#aboutme><span class=nav-layer-toggle__text>Über mich</span><span class=nav-layer-toggle__icon><span class=icon-container><svg class="icon icon--chevron-right" aria-hidden=true focusable=false><use xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=#ico-chevron-down></use></svg></span></span></a><li><a href=#experience><span class=nav-layer-toggle__text>Erfahrung</span><span class=nav-layer-toggle__icon><span class=icon-container><svg class="icon icon--chevron-right" aria-hidden=true focusable=false><use xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=#ico-chevron-down></use></svg></span></span></a><li><a href=#portfolio><span class=nav-layer-toggle__text>Portfolio</span><span class=nav-layer-toggle__icon><span class=icon-container><svg class="icon icon--chevron-right" aria-hidden=true focusable=false><use xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=#ico-chevron-down></use></svg></span></span></a><li><a href=#contact><span class=nav-layer-toggle__text>Kontakt</span><span class=nav-layer-toggle__icon><span class=icon-container><svg class="icon icon--chevron-right" aria-hidden=true focusable=false><use xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=#ico-chevron-down></use></svg></span></span></a></ul></div></nav><div class=nav-language-area-footer><div class=language-container><button type=button class="nav-language__select form-control" aria-haspopup=true aria-expanded=false><span class=icon-container><svg class="icon icon--language" aria-hidden=true focusable=false><use xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=#ico-language></use></svg></span><span class=sr-only>Aktuelle Sprache</span><span class=current-language>Deutsch</span><span class=icon-container><svg class="icon icon--chevron-down" aria-hidden=true focusable=false><use xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=#ico-chevron-down></use></svg></span></button><div class=nav-language__layer aria-hidden=true><ul class=list--unstyled><li><a href=# hreflang=de rel=alternate lang=de aria-current=true>Deutsch</a><li><a href=# hreflang=en rel=alternate lang=en>Englisch</a></ul></div></div></div></div><div class=nav-meta><ul class=list--unstyled><li class=nav-meta__contact><a href=mailto:dennidnguyen@gmail.com class=nav-meta__button><span class=sr-only>E-Mail senden</span><span class="header-icon icon-container"><svg class="icon icon--phone" aria-hidden=true focusable=false><use xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=#ico-contact></use></svg></span></a><li class=nav-meta__language><div class=nav-language-area><button type=button class=nav-meta__button aria-expanded=false><span class=sr-only>Sprache auswählen</span><span class="header-icon icon-container"><svg class="icon icon--navbar" aria-hidden=true focusable=false><use xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=#ico-language></use></svg></span></button><div class=language-container><button type=button class="nav-language__select form-control" aria-haspopup=true aria-expanded=false><span class=sr-only>Aktuelle Sprache</span><span class=current-language>Deutsch</span><span class=icon-container><svg class="icon icon--chevron-down" aria-hidden=true focusable=false><use xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=#ico-chevron-down></use></svg></span></button><div class=nav-language__layer aria-hidden=true><ul class=list--unstyled><li><a href=# hreflang=de rel=alternate lang=de aria-current=true>Deutsch</a><li><a href=# hreflang=en rel=alternate lang=en>Englisch</a></ul></div></div></div><li><button class=theme-toggle id=theme-toggle title="Toggles light & dark" aria-label=auto aria-live=polite><svg class=sun-and-moon aria-hidden=true width=24 height=24 viewBox="0 0 24 24"><mask class=moon id=moon-mask><rect x=0 y=0 width=100% height=100% fill=white /><circle cx=24 cy=10 r=6 fill=black /></mask><circle class=sun cx=12 cy=12 r=6 mask=url(#moon-mask) fill=currentColor /><g class=sun-beams stroke=currentColor><line x1=12 y1=1 x2=12 y2=3 /><line x1=12 y1=21 x2=12 y2=23 /><line x1=4.22 y1=4.22 x2=5.64 y2=5.64 /><line x1=18.36 y1=18.36 x2=19.78 y2=19.78 /><line x1=1 y1=12 x2=3 y2=12 /><line x1=21 y1=12 x2=23 y2=12 /><line x1=4.22 y1=19.78 x2=5.64 y2=18.36 /><line x1=18.36 y1=5.64 x2=19.78 y2=4.22 /></g></svg></button></ul></div></div></div></div></header><main><div class="content-area content-area--default"><div class=inner><div class=stage><div class=stage-wrapper><div class=stage-background-part></div><div class=stage-header-part><div class=fadein><h1>Hi, ich bin</h1></div><div class=fadein><h2>Duc Anh Dennis Nguyen</h2></div><div class=fadein><h3>Willkommen bei meiner Website</h3></div></div><div class=stage-image-part><img src=./assets/img/portfolio-portrait.webp alt="Portrait Bild von Duc Anh" width=600 height=600></div><div class="stage-content-part fadein"><p>Ich bin ein Frontend-Entwickler aus Dresden. Das ist meine Website, welche als eine Art Portfolio dienen soll.<br>Ich werde bald nach Düsseldorf ziehen und würde mich von daher über allerlei Jobangebote mit Standort NRW oder Remote freuen.<br><br>Aktuell entwickle ich bei der<a href=https://www.webit.de/ >webit! Gesellschaft für neue Medien GmbH</a>!</div><a class="btn--primary reference-btn" href=#aboutme>Erfahre mehr über mich</a></div></div></div></div><div class="content-area content-area--default"><div class=inner><div class=section-header id=aboutme>Über mich</div><div class=fadein>Hallo! Ich bin Duc Anh Dennis Nguyen, ein junger Wirtschaftsinformatiker aus Dresden! Mein Interesse an der Informatik entstand damals 2015 als ich meinem Mitbewohner und engen Freund dabei zugesehen habe, wie er quasi aus dem Nichts am Rechner ein Tik-Tac-Toe-Spiel entwickelt hat. Die Möglichkeit mithilfe von etwas Code und Text ein funktionsfähiges Programm zu schreiben hat mich fasziniert und dazu motiviert Wirtschaftsinformatik zu studieren!<br><br><div class="text-media-grid text-media-grid--image-first"><div class=text-media-grid__headline><h2>Interesse an der Webentwicklung</h2></div><div class=text-media-grid__media><img src=assets/img/macbook-code.jpg alt="" width=600 height=600 loading=lazy></div><div class=text-media-grid__body><p><strong>Während des Studiums</strong>hat sich mein Interesse an der Webentwicklung herauskristallisiert.<br><strong>Insbesondere das Frontend wusste zu gefallen,</strong>da es so greifbar war und Erfolge und Misserfolge visuell direkt erkennbar waren.<br>Ich freue mich über neue Herausforderungen und über die Möglichkeit neue(ste) Technologien zu verwenden und meinen Wissenshorizont zu erweitern.</div></div><h3 class=h2>Privates über mich</h3><div class=handorgel><h3 class=handorgel__header><button class=handorgel__header__button>Sportliche Interessen<span class=handorgel__icon></span></button></h3><div class=handorgel__content><div class=handorgel__content__inner>Privat bin sportlich sehr aktiv und gehe 3x die Woche ins Fitness-Studio.<br>Zusätzlich dazu gehe einer Leidenschaft aus Schulzeiten nach: Mit Freunden und Bekannten regelmäßig Volleyball spielen.<br>Meine Mutter pflegte zu sagen: Nur ein gesunder Geist und Körper kann Leistung bringen.<br><br>Ohne dies selber aktiv zu spielen bin ich ein absolut passionierter Fußball- und Tennis-Fan.<br>Ich bin ein großer Fan vom Fußball-Verein Real Madrid CF. Die<a href="https://www.realmadrid.com/en/about-real-madrid/club/values#:~:text=Club%27s%20values%3A%20sporting%20excellence%2C%20commitment,winning%20spirit%20%7C%20Real%20Madrid%20C.F." class=link>Werte wofür Real Madrid steht</a>versuche ich in alleb Lebenslagen einzubinden.<br><br>Stets mit höchster Qualität, Entschlossenheit, Anstrengung, Engagement, Selbstverbesserung zu arbeiten.</div></div><h3 class=handorgel__header><button class=handorgel__header__button>Kulinarik und Foodie<span class=handorgel__icon></span></button></h3><div class=handorgel__content><div class=handorgel__content__inner>Ich bin ein unglaublicher Foodie. Ich liebe - leckeres, versteht sich - Essen über alles.<br>Wenn ich auf Reisen bin, besonders international, freue ich mich immer am liebsten auf die Speisen am jeweiligen Ort.<br>Auch privat spiegelt sich dies wider. Denn da koche ich gerne alle möglichen Gerichte, aus allen Küchen dieser Welt.</div></div><h3 class=handorgel__header><button class=handorgel__header__button>Tierliebhaber<span class=handorgel__icon></span></button></h3><div class=handorgel__content><div class=handorgel__content__inner>Ich bin ein großer Tierliebhaber, insbesondere für Hunde habe ich eine große Schwäche.<br>Ihr braucht jemanden der auf euren Hund aufpasst? Sozusagen einen Hundesitter?<br><a href=#contact class=link>Kontaktiert mich!</a></div></div></div></div></div></div><div class="content-area content-area--default"><div class=inner><div class=section-header id=experience>Erfahrung</div><div class=fadein>Ich bin ein Entwickler der am Anfang seiner noch jungen Karriere steht. Bisher konnte ich eine Erfahrungen bei folgenden Unternehmen sammeln<div class=workplace><div class=workplace__info><h3 class=workplace__name><a href=https://www.webit.de rel=noopener target=_blank>webit! Gesellschaft für neue Medien</a></h3><div class=workplace__description>Als Frontend-Entwickler habe ich hier schnelle, responsive, interaktive und performante Websites von großen und bekannten Unternehmen erstellt. Meine HTML, SCSS und VanillaJS Fertigkeiten konnte ich hier stark weiterentwickeln.</div><ul class=workplace__techstack><li>HTML<li>SCSS<li>JavaScript<li>JQuery<li>Vue.js</ul></div><div class=workplace__image-wrapper><a href=https://www.webit.de rel=noopener target=_blank><div class=workplace__image><img src=/img/webit-landing.webp alt="" width=850 height=500 loading=lazy></div></a></div></div><div class=workplace><div class=workplace__info><h3 class=workplace__name><a href=https://www.portrino.de rel=noopener target=_blank>portrino GmbH</a></h3><div class=workplace__description>Als Werkstudenten bei<a href=https://www.portrino.de class=link>portrino</a>konnte ich mir eine Menge Wissen im Online-Marketing aneignen.<br>Mitentwicklung, Anpassung und Wartung von WordPress Systemen waren meine Haupttätigkeiten.</div><ul class=workplace__techstack><li>SEO<li>SEA<li>Google Ads<li>Google Analytics<li>WordPress</ul></div><div class=workplace__image-wrapper><a href=https://www.portrino.de rel=noopener target=_blank><div class=workplace__image><img src=/img/portrino-landing.webp alt="" width=850 height=500 loading=lazy></div></a></div></div><div class=workplace><div class=workplace__info><h3 class=workplace__name><a href=https://www.joynext.com/de/ rel=noopener target=_blank>JOYNEXT Technology</a></h3><div class=workplace__description>Während meines Jahres als Praktikant und Werkstudent habe ich Testsysteme entwickelt und neue unternehmensintere Software evaluiert. Weitere Tätigkeiten waren die Wartung und Pflege von Atlassian Systemen wie Jira und Confluence.</div><ul class=workplace__techstack><li>Atlassian<li>Jira<li>Confluence<li>Java</ul></div><div class=workplace__image-wrapper><a href=https://www.joynext.com/de/ rel=noopener target=_blank><div class=workplace__image><img src=/img/joynext-landing.webp alt="" width=850 height=500 loading=lazy></div></a></div></div>In der heutigen Zeit, in der sich die Webentwicklung rapide verändert und stetig neue Technologien hinzukommen, bedarf es Weiterbildungen um nicht den Anschluss zu verlieren.<br>Um dies zu gewährleisten lese und schaue ich regelmäßig (Blog-)Artikel und Videos an um auf dem neuesten Stand zu bleiben.</div></div></div><div class="content-area content-area--default"><div class=inner><div class=section-header id=portfolio>Portfolio</div><div class=fadein>Hier folgt ein kleiner Auszug an Projekten an denen ich mitgewirkt habe. Einige Seiten sind alleine entwickelt, andere gemeinsam mit großartigen Kollegen und Mentoren von webit!<br>Ich freue mich bereits darauf die Liste in naher Zukunft deutlich vergrößern zu können und dürfen!<div class=content-area><div class="grid--condensed grid-2--tablet-portrait-up grid-3--tablet-landscape-up teaser-list"><div class=grid-item><div class="teaser-card teaser-card--with-logo"><div class=teaser-card__image><img src=/img/communardo-landing.webp alt="" width=570 height=320 loading=lazy><div class=teaser-card__logo><img src=/img/logo-communardo.svg alt="" width=50 height=50 loading=lazy></div></div><div class=teaser-card__content><div class=teaser-card__header><h3><a href=https://www.communardo.de>Communardo Software GmbH</a></h3></div><div class=teaser-card__body><p>Umsetzung des kompletten Frontends der neuen Website von Communardo - aktuell noch im Backend.</div><div class=teaser-card__footer><div class=link><span class=icon-container><svg class="icon icon--arrow-right-15" aria-hidden=true focusable=false><use xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=#ico-arrow-right-15-bold></use></svg></span><div class=link__text>Zur Communardo Website</div></div></div></div></div></div><div class=grid-item><div class="teaser-card teaser-card--with-logo"><div class=teaser-card__image><img src=/img/readyforgreen-landing.webp alt="" width=570 height=320 loading=lazy><div class=teaser-card__logo><img src=/img/logo-readyforgreen.svg alt="" width=50 height=50 loading=lazy></div></div><div class=teaser-card__content><div class=teaser-card__header><h3><a href=https://www.readyforgreen.schwarz/ >Lidl ready-for-green</a></h3></div><div class=teaser-card__body><p>Komplettes Rebrush der Website in einem modernem Design. Eine Website für Mobilität im ländlichen Raum.</div><div class=teaser-card__footer><div class=link><span class=icon-container><svg class="icon icon--arrow-right-15" aria-hidden=true focusable=false><use xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=#ico-arrow-right-15-bold></use></svg></span><div class=link__text>Zur readyforgreen Website</div></div></div></div></div></div><div class=grid-item><div class="teaser-card teaser-card--with-logo"><div class=teaser-card__image><img src=/img/anamit-landing.webp alt="" width=570 height=320 loading=lazy><div class=teaser-card__logo><img src=/img/logo-anamit.jpg alt="" width=50 height=50 loading=lazy></div></div><div class=teaser-card__content><div class=teaser-card__header><h3><a href=https://www.anamit.de/ >Anamit - Vietnamese Authentic</a></h3></div><div class=teaser-card__body><p>Eine simple WordPress-Website für ein populäres vietnamesisches Restaurant in der Dresdner Neustadt.</div><div class=teaser-card__footer><div class=link><span class=icon-container><svg class="icon icon--arrow-right-15" aria-hidden=true focusable=false><use xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=#ico-arrow-right-15-bold></use></svg></span><div class=link__text>Zur Anamit Website</div></div></div></div></div></div><div class=grid-item><div class="teaser-card teaser-card--with-logo"><div class=teaser-card__image><img src=/img/drbeckmann-landing.webp alt="" width=570 height=320 loading=lazy><div class=teaser-card__logo><img src=/img/logo-drbeckmann.svg alt="" width=50 height=50 loading=lazy></div></div><div class=teaser-card__content><div class=teaser-card__header><h3><a href=https://www.dr-beckmann.de/ >Dr. Beckmann</a></h3></div><div class=teaser-card__body><p>Mitentwicklung am Frontend und Anpassung von rtl-Seiten</div><div class=teaser-card__footer><div class=link><span class=icon-container><svg class="icon icon--arrow-right-15" aria-hidden=true focusable=false><use xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=#ico-arrow-right-15-bold></use></svg></span><div class=link__text>Zur Dr. Beckmann Website</div></div></div></div></div></div><div class=grid-item><div class="teaser-card teaser-card--with-logo"><div class=teaser-card__image><img src=/img/twogo-landing.webp alt="" width=570 height=320 loading=lazy><div class=teaser-card__logo><img src=/img/logo-twogo.svg alt="" width=50 height=50 loading=lazy></div></div><div class=teaser-card__content><div class=teaser-card__header><h3><a href=https://www.twogo.schwarz/ >twogo - Mitfahr-App</a></h3></div><div class=teaser-card__body><p>Anpassung von Frontend, sowie Erstellung der PrintPage.</div><div class=teaser-card__footer><div class=link><span class=icon-container><svg class="icon icon--arrow-right-15" aria-hidden=true focusable=false><use xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=#ico-arrow-right-15-bold></use></svg></span><div class=link__text>Zur twogo Website</div></div></div></div></div></div><div class=grid-item><div class="teaser-card teaser-card--with-logo"><div class=teaser-card__image><img src=/img/lili-restaurant-landing.webp alt="" width=570 height=320 loading=lazy><div class=teaser-card__logo><img src=/img/logo-lili.png alt="" width=50 height=50 loading=lazy></div></div><div class=teaser-card__content><div class=teaser-card__header><h3><a href=https://serene-rugelach-a50e43.netlify.app/ >Lili - Sushi und Ramen</a></h3></div><div class=teaser-card__body><p>Auf Basis von der Anamit-WordPress-Seite mit HTML, SCSS und nativem JS optisch ähnliche Seite entwicklelt.</div><div class=teaser-card__footer><div class=link><span class=icon-container><svg class="icon icon--arrow-right-15" aria-hidden=true focusable=false><use xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=#ico-arrow-right-15-bold></use></svg></span><div class=link__text>Zur Lili-Restaurant Website</div></div></div></div></div></div></div></div></div></div></div><div class="content-area content-area--default"><div class=inner><div class=section-header id=contact>Kontaktieren</div><div class=fadein>Ich würde mich sehr über eine Nachricht freuen und so die Möglichkeit haben mich beruflich weiterzuentwickeln. Seien es Fragen an mich, Jobangebote, schreibt mir!<br><br><a href=mailto:dennidnguyen@gmail.com class=btn--primary>E-Mail schreiben</a></div></div></div></main><footer class="footer content-area"><div class="inner inner--wide"><div class=footer__content><ul class="list--unstyled social-media-list"><li><a href=https://github.com/DepTrai95 class=icon-github target=_blank rel=noopener><span class=icon-container><svg class="icon icon--social-media" aria-hidden=true focusable=false><use xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=#ico-github></use></svg></span></a><li><a href=https://www.facebook.com/nguyenducanh95/ class=icon-facebook target=_blank rel=noopener><span class=icon-container><svg class="icon icon--social-media" aria-hidden=true focusable=false><use xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=#ico-facebook></use></svg></span></a><li><a href=https://www.instagram.com/ducvnh_nguyen/ class=icon-instagram target=_blank rel=noopener><span class=icon-container><svg class="icon icon--social-media" aria-hidden=true focusable=false><use xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=#ico-instagram></use></svg></span></a><li><a href=https://www.linkedin.com/in/duc-anh-dennis-nguyen-a489a3218/ class=icon-linkedin target=_blank rel=noopener><span class=icon-container><svg class="icon icon--social-media" aria-hidden=true focusable=false><use xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=#ico-linkedin></use></svg></span></a></ul><div class=footer-email><a href=mailto:dennidnguyen@gmail.com>dennidnguyen@gmail.com</a></div><div class="text-center footer-copyright">Built and designed by Duc Anh Dennis Nguyen ©</div></div></div></footer><div class=backdrop></div><script async type=module src=assets/js/main.js></script>
+<!DOCTYPE html>
+<html class="no-js" lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Duc Anh Dennis Nguyen">
+  <meta name="description" content="Dies ist meine persönliche Portfolio Website. Hier stelle ich mich vor und präsentiere meine Fertigkeiten als Frontend-Entwickler.">
+  <meta name="keywords" content="Portfolio, Frontend Developer">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Duc Anh Nguyen's Personal Portfolio Website</title>
+
+  <link rel="stylesheet" href="assets/css/portfolio.css">
+
+  <script type="text/javascript">
+    document.documentElement.classList.replace('no-js', 'js');
+  </script>
+</head>
+
+<body>
+  <div style="height: 0; position: absolute; visibility: hidden; width: 0;">
+    <!-- START components/app/_svg/icon-sprite/icon-sprite.svg -->
+<svg><defs/><symbol id="ico-arrow-right-15-bold" viewBox="0 0 15 15">
+  <path d="m14.68781,6.75818L8.12622.30328c-.39825-.39093-1.08899-.39093-1.48633,0-.20099.19775-.31177.46143-.31177.742,0,.28064.11078.54431.31177.74207l4.74561,4.66779H1.05469c-.58136,0-1.05469.46875-1.05469,1.0451,0,.57629.47333,1.04504,1.05469,1.04504h10.33081l-4.74561,4.66827c-.20099.19775-.31177.46143-.31177.74158s.11078.54382.31177.74158c.20459.20142.47375.30212.74292.30212s.53833-.10071.74341-.30212l6.56158-6.45447c.19867-.19543.31219-.466.31219-.742,0-.27649-.11353-.54706-.31219-.74207Z"/>
+</symbol><symbol id="ico-arrow-right-15" viewBox="0 0 15 15">
+  <path d="M14.81683,7.06512L7.81683,.17963c-.12207-.12007-.28168-.17963-.44183-.17963s-.31982,.05956-.44189,.17963c-.24414,.24015-.24414,.63015,0,.87029l5.93347,5.83557H.625c-.34479,0-.625,.27473-.625,.6143s.28021,.61478,.625,.61478H12.86609l-5.93304,5.83605c-.24414,.24015-.24414,.62918,0,.86933,.24414,.24009,.63965,.24009,.88379,0l7-6.88549c.11719-.11527,.18317-.27185,.18317-.43467,0-.1633-.06598-.3194-.18317-.43467Z"/>
+</symbol><symbol id="ico-arrow-right-28" viewBox="0 0 28 15">
+  <path d="M27.81689,7.06555L20.81689,.18011c-.24414-.24015-.63965-.24015-.88379,0s-.24414,.62918,0,.86933l5.93311,5.836H.625c-.34473,0-.625,.27521-.625,.61477s.28027,.61429,.625,.61429H25.86658l-5.93347,5.83552c-.24414,.24015-.24414,.63014,0,.87029,.12207,.12007,.28174,.17969,.44189,.17969v-.00006c.16016,0,.31982-.05956,.44189-.17963l7-6.88544c.11719-.11527,.18311-.27136,.18311-.43466s-.06592-.31939-.18311-.43466Z"/>
+</symbol><symbol id="ico-arrow-right-58" viewBox="0 0 58 15">
+  <path d="M57.81689,7.06557L50.81689,.18011c-.24414-.24015-.63965-.24015-.88379,0s-.24414,.62918,0,.86933l5.95782,5.86033H.59998c-.29999,0-.59998,.29508-.59998,.59016s.29999,.59022,.59998,.59022H55.89142l-5.95831,5.85992c-.24414,.24014-.24414,.63014,0,.87029,.12207,.12007,.28174,.17963,.44189,.17963s.31982-.05956,.44189-.17963l7-6.88546c.11719-.11527,.18311-.27137,.18311-.43466,0-.16282-.06592-.3194-.18311-.43466v-.00002Z"/>
+</symbol><symbol id="ico-chevron-down" viewBox="0 0 32 32">
+  <polyline points="23.5 12.7857 16 19.21427 8.5 12.7857" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
+</symbol><symbol id="ico-chevron-right-bold" viewBox="0 0 9 15">
+  <path d="m8.44653,6.76325L2.03357.30125c-.39617-.39488-1.08797-.39214-1.47999.00183-.40447.40588-.40493,1.0683-.00046,1.47509l5.67966,5.7217L.55312,13.22341c-.40355.40588-.40355,1.06738-.00046,1.47326.19739.19882.46028.30876.74068.30968h.00046c.28041-.00092.54375-.10994.74115-.30968l6.41066-6.45925c.19647-.1979.30439-.45902.30439-.73755s-.10792-.53964-.30347-.73663ZM1.69874,14.36775h0Z"/>
+</symbol><symbol id="ico-close" viewBox="0 0 32 32">
+<line stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="8" y1="8" x2="24" y2="24"/>
+<line stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="8" y1="24" x2="24" y2="8"/>
+</symbol><symbol id="ico-contact" viewBox="0 0 32 32">
+  <path d="M19.33907,21.35073c-.34984-.21881-.70045-.43652-1.05097-.65423-.74306-.46153-1.51128-.93869-2.25945-1.41947-.46427-.29838-.92439-.30503-1.40649-.01997-.3912,.23122-.79338,.45971-1.18236,.68075-.31832,.1807-.64743,.36765-.9696,.55561-.14161,.08258-.20379,.07351-.31677-.04628-1.38962-1.47332-2.66973-2.81989-3.91343-4.11685-.1406-.14662-.15325-.22971-.06163-.40456,.2373-.45263,.47119-.91605,.69737-1.36423,.16421-.32537,.33404-.66182,.50344-.99079,.22963-.4459,.22266-.87137-.02128-1.30066-.39471-.69452-.79157-1.40393-1.17547-2.08995-.28538-.51003-.5707-1.02001-.85785-1.5289-.35187-.62359-.87309-.8038-1.5073-.52071l-.365,.16275c-.64556,.28771-1.31305,.58518-1.96633,.88751-.20489,.09484-.41556,.20686-.56859,.38307-.50716,.58433-.80523,1.28917-.88588,2.09503-.09691,.96826,.04862,1.98634,.44494,3.11225,.57923,1.6456,1.46506,3.21008,2.78767,4.92349,2.17879,2.82241,4.53897,4.88502,7.21548,6.3058,1.17696,.62478,2.29194,.96057,3.31697,.99828,.04762,.00101,.09447,.00151,.14084,.00151,.66334,0,1.19383-.1085,1.7037-.34668,.69081-.32278,1.11825-.78037,1.34528-1.44025,.17796-.51739,.39418-1.03428,.60318-1.53402,.08956-.21407,.182-.43531,.27079-.65463,.29692-.73369,.1313-1.2656-.52124-1.67388ZM8.47157,13.13658c-.35856,.68499-.71168,1.38704-1.05317,2.06593l-.12154,.24155c-.32665,.64906-.26312,1.10343,.22666,1.62062,1.28886,1.36109,2.57788,2.72198,3.86757,4.08216,.52953,.55833,.93336,.61994,1.60065,.24402l.4151-.23354c.57368-.32247,1.16694-.65594,1.7466-.99273,.13583-.07885,.22336-.07633,.36015,.01079,.73766,.4699,1.49027,.94252,2.2181,1.39951,.37114,.23303,.74239,.46617,1.11324,.69991,.12445,.07845,.15906,.18574,.10402,.32177-.13419,.33125-.26973,.66189-.40527,.99243-.20341,.49632-.41366,1.00937-.61601,1.51658-.09447,.23676-.28448,.40163-.61611,.53444-.69564,.27858-1.31503,.37861-2.0576,.26517-.74536-.11386-1.45663-.38884-2.12689-.72751-1.88686-.95341-3.66466-2.3269-5.43498-4.19923-1.7944-1.89764-3.08947-3.76674-3.95915-5.71414-.38806-.86885-.82155-2.0301-.72897-3.30872,.04581-.63231,.23384-1.15502,.5748-1.598,.04235-.05502,.10647-.10597,.17156-.13633,.81853-.38135,1.64386-.75763,2.41906-1.11028,.07941-.03613,.12673-.05764,.16211-.05764,.05223,0,.0787,.04674,.14412,.16241,.22249,.39322,.4444,.78691,.66625,1.18053,.43197,.76642,.8787,1.55892,1.32326,2.3355,.08627,.1507,.08778,.24908,.00643,.40481Z"/>
+  <path d="M25.01147,18.79999c.08184,.07571,.18371,.16989,.33099,.19136,.03403,.00493,.07609,.00822,.12213,.00822,.14645,0,.33433-.03355,.44393-.15529,.12275-.13672,.09749-.33156,.05188-.52166-.0286-.11913-.12547-.19252-.18966-.24106-.01274-.00967-.02547-.01914-.03664-.02872-.39686-.34171-.79402-.68304-1.19119-1.02446l-.82659-.71069c-.67701-.58238-1.35382-1.1649-2.05693-1.76999l-.64894-.55857c.00981-.00755,.01952-.01537,.02912-.02364,1.63951-1.40059,3.28006-2.80549,4.66843-3.99503,.01472-.01264,.03111-.025,.0476-.03759,.07724-.05898,.18298-.13969,.21659-.26779,.02182-.08345,.08006-.36858-.08643-.53444-.13663-.13619-.37588-.1421-.55238-.12317-.13768,.01477-.22745,.1032-.293,.16776-.01336,.01319-.02641,.02638-.03977,.03776-.9507,.81487-1.90109,1.62986-2.85158,2.4449-1.0054,.8621-2.01089,1.72425-3.0165,2.58618-.26377,.2261-.52879,.45105-.79611,.67797l-.21586,.18336c-.02641-.0215-.05188-.04241-.07672-.0638-1.44713-1.23988-2.89417-2.47987-4.34109-3.71985l-1.63586-1.40179c-.15876-.13604-.36982-.28941-.59956-.27102-.08998,.00739-.22097,.04525-.33496,.18402-.3217,.3919,.02547,.68327,.17369,.80771l.0382,.03217c1.48169,1.26899,2.68614,2.29744,3.79069,3.23669,.03288,.02796,.06722,.05248,.10219,.07497l-.05845,.05105c-.17766,.15529-.32953,.28793-.48224,.41964l-.17588,.15168c-.47608,.41066-.96834,.83533-1.45465,1.25028-.25876,.22085-.28726,.49362-.0763,.72974,.09133,.1022,.34728,.31271,.75175,.05956,.06085-.0381,.11033-.082,.15396-.12067l.6648-.576c.40114-.34761,.80237-.6951,1.20445-1.0418,.08778-.07567,.17797-.1485,.27316-.22505l.37901,.32667c.39947,.34413,.7911,.68153,1.1818,1.01986,.41178,.35651,.63672,.35767,1.04663,.00532,.39863-.34287,.79757-.68537,1.20101-1.03185l.37661-.32339c.02349,.01866,.04572,.03677,.06712,.05521l1.73168,1.49051c.98191,.8452,1.96372,1.69049,2.94615,2.5352,.0144,.01238,.02891,.02582,.04363,.03955h.0001Z"/>
+  <path d="M26.54199,7H10.99707c-.34473,0-.625,.28027-.625,.625s.28027,.625,.625,.625h15.54492c.73535,0,1.33301,.59814,1.33301,1.33301v9.83398c0,.73535-.59766,1.33301-1.33301,1.33301h-2.53711c-.34473,0-.625,.28027-.625,.625s.28027,.625,.625,.625h2.53711c1.42383,0,2.58301-1.15918,2.58301-2.58301V9.58301c0-1.42432-1.15918-2.58301-2.58301-2.58301Z"/>
+</symbol><symbol id="ico-cross" viewBox="0 0 32 32">
+  <line x1="8" y1="8" x2="24" y2="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
+  <line x1="8" y1="24" x2="24" y2="8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
+</symbol><symbol id="ico-facebook" viewBox="0 0 50 50">
+<path d="M37.5 25C37.5 18.125 31.875 12.5 25 12.5C18.125 12.5 12.5 18.125 12.5 25C12.5 31.25 17.0312 36.4062 22.9688 37.3438V28.5937H19.8437V25H22.9688V22.1875C22.9688 19.0625 24.8438 17.3438 27.6563 17.3438C29.0625 17.3438 30.4688 17.6563 30.4688 17.6563V20.7812H28.9062C27.3438 20.7812 26.875 21.7188 26.875 22.6562V25H30.3125L29.6875 28.5937H26.7188V37.5C32.9688 36.5625 37.5 31.25 37.5 25Z"/>
+</symbol><symbol id="ico-github" viewBox="0 0 72 72"><path d="M36,12c13.255,0,24,10.745,24,24c0,10.656-6.948,19.685-16.559,22.818c0.003-0.009,0.007-0.022,0.007-0.022	s-1.62-0.759-1.586-2.114c0.038-1.491,0-4.971,0-6.248c0-2.193-1.388-3.747-1.388-3.747s10.884,0.122,10.884-11.491	c0-4.481-2.342-6.812-2.342-6.812s1.23-4.784-0.426-6.812c-1.856-0.2-5.18,1.774-6.6,2.697c0,0-2.25-0.922-5.991-0.922	c-3.742,0-5.991,0.922-5.991,0.922c-1.419-0.922-4.744-2.897-6.6-2.697c-1.656,2.029-0.426,6.812-0.426,6.812	s-2.342,2.332-2.342,6.812c0,11.613,10.884,11.491,10.884,11.491s-1.097,1.239-1.336,3.061c-0.76,0.258-1.877,0.576-2.78,0.576	c-2.362,0-4.159-2.296-4.817-3.358c-0.649-1.048-1.98-1.927-3.221-1.927c-0.817,0-1.216,0.409-1.216,0.876s1.146,0.793,1.902,1.659	c1.594,1.826,1.565,5.933,7.245,5.933c0.617,0,1.876-0.152,2.823-0.279c-0.006,1.293-0.007,2.657,0.013,3.454	c0.034,1.355-1.586,2.114-1.586,2.114s0.004,0.013,0.007,0.022C18.948,55.685,12,46.656,12,36C12,22.745,22.745,12,36,12z"/></symbol><symbol id="ico-instagram" viewBox="0 0 50 50">
+<path d="M25 15.1687C28.1807 15.1687 28.6145 15.1687 29.9157 15.1687C31.0723 15.1687 31.6506 15.4578 32.0843 15.6024C32.6627 15.8916 33.0964 16.0361 33.5301 16.4699C33.9639 16.9036 34.253 17.3374 34.3976 17.9157C34.5422 18.3494 34.6867 18.9277 34.8313 20.0843C34.8313 21.3855 34.8313 21.6747 34.8313 25C34.8313 28.3253 34.8313 28.6145 34.8313 29.9157C34.8313 31.0723 34.5422 31.6506 34.3976 32.0843C34.1084 32.6627 33.9639 33.0964 33.5301 33.5301C33.0964 33.9639 32.6627 34.253 32.0843 34.3976C31.6506 34.5422 31.0723 34.6867 29.9157 34.8313C28.6145 34.8313 28.3253 34.8313 25 34.8313C21.6747 34.8313 21.3855 34.8313 20.0843 34.8313C18.9277 34.8313 18.3494 34.5422 17.9157 34.3976C17.3374 34.1084 16.9036 33.9639 16.4699 33.5301C16.0361 33.0964 15.747 32.6627 15.6024 32.0843C15.4578 31.6506 15.3133 31.0723 15.1687 29.9157C15.1687 28.6145 15.1687 28.3253 15.1687 25C15.1687 21.6747 15.1687 21.3855 15.1687 20.0843C15.1687 18.9277 15.4578 18.3494 15.6024 17.9157C15.8916 17.3374 16.0361 16.9036 16.4699 16.4699C16.9036 16.0361 17.3374 15.747 17.9157 15.6024C18.3494 15.4578 18.9277 15.3133 20.0843 15.1687C21.3855 15.1687 21.8193 15.1687 25 15.1687ZM25 13C21.6747 13 21.3855 13 20.0843 13C18.7831 13 17.9157 13.2892 17.1928 13.5783C16.4699 13.8675 15.747 14.3012 15.0241 15.0241C14.3012 15.747 14.012 16.3253 13.5783 17.1928C13.2892 17.9157 13.1446 18.7831 13 20.0843C13 21.3855 13 21.8193 13 25C13 28.3253 13 28.6145 13 29.9157C13 31.2169 13.2892 32.0843 13.5783 32.8072C13.8675 33.5301 14.3012 34.253 15.0241 34.9759C15.747 35.6988 16.3253 35.988 17.1928 36.4217C17.9157 36.7108 18.7831 36.8554 20.0843 37C21.3855 37 21.8193 37 25 37C28.1807 37 28.6145 37 29.9157 37C31.2169 37 32.0843 36.7108 32.8072 36.4217C33.5301 36.1325 34.253 35.6988 34.9759 34.9759C35.6988 34.253 35.988 33.6747 36.4217 32.8072C36.7108 32.0843 36.8554 31.2169 37 29.9157C37 28.6145 37 28.1807 37 25C37 21.8193 37 21.3855 37 20.0843C37 18.7831 36.7108 17.9157 36.4217 17.1928C36.1325 16.4699 35.6988 15.747 34.9759 15.0241C34.253 14.3012 33.6747 14.012 32.8072 13.5783C32.0843 13.2892 31.2169 13.1446 29.9157 13C28.6145 13 28.3253 13 25 13Z"/>
+<path d="M25 18.7831C21.5301 18.7831 18.7831 21.5301 18.7831 25C18.7831 28.4699 21.5301 31.2169 25 31.2169C28.4699 31.2169 31.2169 28.4699 31.2169 25C31.2169 21.5301 28.4699 18.7831 25 18.7831ZM25 29.0482C22.8313 29.0482 20.9518 27.3133 20.9518 25C20.9518 22.8313 22.6867 20.9518 25 20.9518C27.1687 20.9518 29.0482 22.6867 29.0482 25C29.0482 27.1687 27.1687 29.0482 25 29.0482Z"/>
+<path d="M31.3614 20.0843C32.1599 20.0843 32.8072 19.437 32.8072 18.6386C32.8072 17.8401 32.1599 17.1928 31.3614 17.1928C30.563 17.1928 29.9157 17.8401 29.9157 18.6386C29.9157 19.437 30.563 20.0843 31.3614 20.0843Z"/>
+</symbol><symbol id="ico-language" viewBox="0 0 32 32">
+  <path d="M21.55186,9.84027c-1.64124-1.74438-2.85691-1.99097-5.24137-2.07215l-.16815,.00084c-.04773-.00189-.09454,0-.14233,0h-.31146c-2.36438,.08173-3.56382,.31117-5.22129,2.05458v-.00049l-.04871,.04871c-1.55908,1.67322-2.63013,4.06012-2.63013,6.34089,0,2.18951,1.01185,4.08752,2.46485,5.73352l.0401,.04675c1.62976,1.82178,2.96012,2.15278,5.39518,2.23683h.31146l.31146,.05542c2.47229-.086,3.74437-.44563,5.37223-2.27309l.07257-.05542,.00671-.0296c1.4425-1.64313,2.50846-3.74573,2.50846-5.92664,0-2.29224-1.13951-4.47839-2.71958-6.16016Zm2.43166,6.6593c-.10126,1.6579-.70306,3.20929-1.74817,4.50659-.68213-.44519-1.41101-.81775-2.17145-1.10815,.39551-1.09094,.62-2.23248,.67065-3.39844h3.24896Zm-2.43121,5.25458c-1.08429,1.04504-2.44946,1.76727-3.91296,2.07581,.84161-.8913,1.52655-1.90009,2.0434-3.01007,.6496,.24548,1.27631,.55884,1.86957,.93427Zm-5.05365-2.59174v-2.66284h3.23566c-.04968,1.05988-.25696,2.09448-.6181,3.0813-.84833-.24078-1.72717-.38116-2.61755-.41846Zm3.06464-8.2403c-.49963-1.00543-1.14539-1.92822-1.92493-2.7522,1.38519,.28802,2.65674,.93524,3.71906,1.89532-.57129,.34296-1.17316,.63-1.79413,.85687Zm.172,4.57867h-3.23663l.00098-2.96564c.85693-.03729,1.70142-.16815,2.5144-.39026,.42511,1.06799,.66681,2.19525,.72125,3.3559Zm-3.23566-3.96539v-3.0946c.85596,.81104,1.55811,1.74384,2.09308,2.78174-.6792,.17389-1.38135,.27899-2.09308,.31287Zm2.22681,8.974c-.55121,1.14636-1.29822,2.17041-2.22778,3.05023v-3.39795c.75568,.03534,1.50275,.15186,2.22778,.34772Zm5.25806-5.00861h-3.24994c-.0545-1.271-.31244-2.50189-.76715-3.66443,.73657-.27325,1.4425-.62146,2.10553-1.03796,1.12915,1.31641,1.80267,2.97333,1.91156,4.70239Zm-15.96802,0c.10791-1.7276,.78143-3.38458,1.91058-4.70239,.66394,.41748,1.37091,.76569,2.10553,1.03796-.45471,1.16254-.71265,2.39343-.76715,3.66443h-3.24896Zm4.24823,.99878h3.23566v2.66284c-.89319,.03821-1.77209,.17865-2.61755,.41846-.36108-.98877-.56842-2.02332-.6181-3.0813Zm.05353,4.32031c.51489,1.10907,1.20081,2.11786,2.04242,3.01007-1.4635-.30853-2.82867-1.03076-3.91199-2.07581,.59229-.37451,1.21997-.68781,1.86957-.93427Zm-.38214-.92188c-.76135,.29041-1.4903,.66296-2.17145,1.10815-1.04511-1.2973-1.64691-2.84772-1.74817-4.50659h3.24896c.05066,1.16595,.27515,2.3075,.67065,3.39844Zm3.56427,.26367v3.39795c-.9295-.88171-1.67755-1.90485-2.22681-3.04932,.72028-.1958,1.46832-.31238,2.22681-.34863Zm.00098-7.62653v2.96564h-3.23566c.05444-1.16064,.29614-2.28741,.72125-3.3559,.8139,.22211,1.65747,.35297,2.5144,.39026Zm-3.06464-1.61304c-.62286-.22736-1.22473-.5144-1.79413-.85687,1.06042-.96008,2.33289-1.6073,3.71808-1.89532-.77856,.82349-1.42432,1.74677-1.92395,2.7522Zm3.06464-2.4809v3.09467c-.70789-.03345-1.41101-.13849-2.09406-.31287,.53687-1.03931,1.23901-1.97266,2.09406-2.7818Z"/>
+  <path d="M16,8.25c4.27323,0,7.74976,3.47653,7.74976,7.74976,0,4.2735-3.47653,7.75024-7.74976,7.75024s-7.74976-3.47674-7.74976-7.75024c0-4.27323,3.47653-7.74976,7.74976-7.74976m0-1.25c-4.9626,0-8.99976,4.03716-8.99976,8.99976,0,4.96308,4.03716,9.00024,8.99976,9.00024s8.99976-4.03716,8.99976-9.00024c0-4.9626-4.03716-8.99976-8.99976-8.99976h0Z"/>
+</symbol><symbol id="ico-linkedin" viewBox="0 0 50 50">
+<path d="M18.725 36H14.2625V21.9563H18.725V36ZM16.4938 19.9875C15.05 19.9875 14 18.9375 14 17.4937C14 16.05 15.1813 15 16.4938 15C17.9375 15 18.9875 16.05 18.9875 17.4937C18.9875 18.9375 17.9375 19.9875 16.4938 19.9875ZM35 36H30.5375V28.3875C30.5375 26.1563 29.6187 25.5 28.3062 25.5C26.9937 25.5 25.6812 26.55 25.6812 28.5187V36H21.2188V21.9563H25.4187V23.925C25.8125 23.0063 27.3875 21.5625 29.6187 21.5625C32.1125 21.5625 34.7375 23.0063 34.7375 27.3375V36H35Z"/>
+</symbol><symbol id="ico-pause" viewBox="0 0 32 32">
+  <line x1="12.99969" y1="11" x2="12.99969" y2="21" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
+  <line x1="19.00031" y1="11" x2="19.00031" y2="21" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
+</symbol><symbol id="ico-play" viewBox="0 0 32 32">
+  <polygon points="13.00878 22 21 16.00329 13 10 13.00878 22" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
+</symbol><symbol id="ico-search" viewBox="0 0 32 32">
+  <path d="M15.00961,8.25c1.7968,0,3.49187,.70553,4.77296,1.98661,1.28109,1.2811,1.98662,2.97618,1.98662,4.77298s-.70553,3.49188-1.98662,4.77298c-1.2811,1.28109-2.97617,1.98662-4.77298,1.98662s-3.49188-.70553-4.77298-1.98662c-2.63181-2.63182-2.63181-6.91411,0-9.54594,1.2811-1.2811,2.97618-1.98663,4.77299-1.98663m0-1.25c-2.04443,0-4.08818,.78406-5.65687,2.35274-3.13698,3.13699-3.137,8.17672-.00001,11.31371,1.5685,1.56849,3.61268,2.35274,5.65686,2.35274s4.08837-.78425,5.65686-2.35274c3.13699-3.13698,3.13699-8.17673,0-11.31372-1.5683-1.5683-3.61291-2.35273-5.65684-2.35273h0Z"/>
+  <line x1="20.66646" y1="20.66646" x2="24.3732" y2="24.3732" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
+</symbol><symbol id="ico-twitter" viewBox="0 0 50 50">
+<path d="M36 18.1562C35.1375 18.5875 34.275 18.7313 33.2688 18.875C34.275 18.3 34.9937 17.4375 35.2812 16.2875C34.4188 16.8625 33.4125 17.15 32.2625 17.4375C31.4 16.575 30.1063 16 28.8125 16C25.7937 16 23.4938 18.875 24.2125 21.75C20.3313 21.6062 16.8813 19.7375 14.4375 16.8625C13.1438 19.0188 13.8625 21.75 15.875 23.1875C15.1562 23.1875 14.4375 22.9 13.7188 22.6125C13.7188 24.7688 15.3 26.7812 17.4563 27.3562C16.7375 27.5 16.0188 27.6438 15.3 27.5C15.875 29.3687 17.6 30.8062 19.7562 30.8062C18.0312 32.1 15.4438 32.8188 13 32.5312C15.1562 33.825 17.6 34.6875 20.1875 34.6875C28.9563 34.6875 33.8437 27.3562 33.5562 20.6C34.5625 20.025 35.425 19.1625 36 18.1562Z"/>
+</symbol><symbol id="ico-xing" viewBox="0 0 50 50">
+<path d="M29.4687 15.5493C29.6303 15.2714 29.8254 15 30.2753 15H33.3188C33.5002 15 33.6426 15.0655 33.7194 15.1842C33.7988 15.3074 33.7968 15.47 33.7132 15.6293L27.0428 26.9215C27.0387 26.9274 27.0387 26.9346 27.0428 26.9405L31.2901 34.37C31.3743 34.5299 31.3764 34.6925 31.2962 34.8158C31.2196 34.9345 31.0778 35 30.8964 35H27.887C27.4255 35 27.1948 34.7063 27.0455 34.4507C27.0455 34.4507 22.7756 26.9509 22.7646 26.9313C22.9783 26.5694 29.4687 15.5493 29.4687 15.5493ZM17.208 19.1305C17.2847 19.0112 17.4374 18.9502 17.6188 18.9502H20.6317C21.0938 18.9502 21.3204 19.2354 21.4704 19.491C21.4704 19.491 23.5293 22.9301 23.5417 22.9491C23.4198 23.155 20.2893 28.4559 20.2893 28.4559C20.1352 28.722 19.9182 29.0131 19.4676 29.0131H16.4548C16.2734 29.0131 16.1379 28.9352 16.0611 28.8165C15.9817 28.6932 15.9776 28.5333 16.0611 28.374L19.2621 22.9655C19.2655 22.9597 19.2655 22.9557 19.2621 22.9491L17.2251 19.573C17.1409 19.4124 17.1285 19.2538 17.208 19.1305Z"/>
+</symbol><symbol id="ico-youtube" viewBox="0 0 50 50">
+<path d="M37.375 18.6563C37.0625 17.5625 36.2813 16.7813 35.1875 16.4688C33.3125 16 25.3437 16 25.3437 16C25.3437 16 17.5313 16 15.5 16.4688C14.4063 16.7813 13.625 17.5625 13.3125 18.6563C13 20.6875 13 24.75 13 24.75C13 24.75 13 28.8125 13.4688 30.8437C13.7813 31.9375 14.5625 32.7187 15.6562 33.0312C17.5312 33.5 25.5 33.5 25.5 33.5C25.5 33.5 33.3125 33.5 35.3437 33.0312C36.4375 32.7187 37.2188 31.9375 37.5313 30.8437C38 28.8125 38 24.75 38 24.75C38 24.75 38 20.6875 37.375 18.6563ZM23 28.5V21L29.5625 24.75L23 28.5Z"/>
+</symbol><symbol id="icon-arrow-right" viewBox="0 0 32 15.99994">
+  <path d="M31.70709,7.29288L24.70709,.29288c-.3905-.3905-1.02368-.3905-1.41418,0-.39056,.3905-.39056,1.02368,0,1.41425l5.40308,5.40302H1c-.55231,0-1,.44769-1,1s.44769,1,1,1H28.47565l-5.18274,5.18274c-.39056,.3905-.39056,1.02368,0,1.41418,.3905,.3905,1.02368,.3905,1.41418,0l7-6.99994c.39056-.39056,.39056-1.02374,0-1.41425Z"/>
+</symbol></svg><!-- END components/app/_svg/icon-sprite/icon-sprite.svg -->
+
+  </div>
+
+  <header class="header">
+  <div class="inner inner--wide">
+    <div class="logo__container">
+      <div class="logo">
+        <a href="/">
+          <img src="/assets/img/logo.png" class="logo" alt="zur Startseite" height="59" width="300">
+          
+        </a>
+      </div>
+    </div>
+
+    <div class="mobile-navigation">
+      <button
+        id="mobile-navigation-button"
+        type="button"
+        class="navigation__button--mobile menu-toggle"
+        aria-expanded="false"
+        aria-haspopup="true"
+        aria-controls="mobile-navigation"
+      >
+        <span class="sr-only">Hauptnavigation</span>
+        <span class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
+      <div
+        class="mobile-navigation__layer"
+        id="mobile-navigation"
+        aria-labelledby="mobile-navigation-button"
+      >
+        <div class="nav-main__wrapper">
+  <nav class="nav-main" aria-label="Hauptnavigation">
+    <div class="nav-layer nav-layer__1">
+      <ul>
+        <li>
+          <a href="#aboutme">
+            <span class="nav-layer-toggle__text">
+              Über mich
+            </span>
+            <span class="nav-layer-toggle__icon">
+              <span class="icon-container">
+                <svg class="icon icon--chevron-right" aria-hidden="true" focusable="false">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-chevron-down"></use>
+                </svg>
+              </span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#experience">
+            <span class="nav-layer-toggle__text">
+              Erfahrung
+            </span>
+            <span class="nav-layer-toggle__icon">
+              <span class="icon-container">
+                <svg class="icon icon--chevron-right" aria-hidden="true" focusable="false">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-chevron-down"></use>
+                </svg>
+              </span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#portfolio">
+            <span class="nav-layer-toggle__text">
+              Portfolio
+            </span>
+            <span class="nav-layer-toggle__icon">
+              <span class="icon-container">
+                <svg class="icon icon--chevron-right" aria-hidden="true" focusable="false">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-chevron-down"></use>
+                </svg>
+              </span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#contact">
+            <span class="nav-layer-toggle__text">
+              Kontakt
+            </span>
+            <span class="nav-layer-toggle__icon">
+              <span class="icon-container">
+                <svg class="icon icon--chevron-right" aria-hidden="true" focusable="false">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-chevron-down"></use>
+                </svg>
+              </span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="nav-language-area-footer">
+    <div class="language-container">
+      <button type="button" class="nav-language__select form-control" aria-haspopup="true" aria-expanded="false">
+        <span class="icon-container">
+          <svg class="icon icon--language" aria-hidden="true" focusable="false">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-language"></use>
+          </svg>
+        </span>
+  
+        <span class="sr-only">Aktuelle Sprache</span>
+        <span class="current-language">Deutsch</span>
+  
+        <span class="icon-container">
+          <svg class="icon icon--chevron-down" aria-hidden="true" focusable="false">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-chevron-down"></use>
+          </svg>
+        </span>
+      </button>
+  
+      <div class="nav-language__layer" aria-hidden="true">
+        <ul class="list--unstyled">
+          <li>
+            <a href="#" hreflang="de" rel="alternate" lang="de" aria-current="true">Deutsch</a>
+          </li>
+          <li>
+            <a href="#" hreflang="en" rel="alternate" lang="en">Englisch</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  
+  </div>
+</div>
+
+        <div class="nav-meta">
+  <ul class="list--unstyled">
+    <li class="nav-meta__contact">
+      <a href='mailto:dennidnguyen@gmail.com' class="nav-meta__button">
+        <span class="sr-only">E-Mail senden</span>
+        <span class="header-icon icon-container">
+          <svg class="icon icon--phone" aria-hidden="true" focusable="false">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-contact"></use>
+          </svg>
+        </span>
+      </a>
+    </li>
+
+    <!-- Language Select BEGIN -->
+    <li class="nav-meta__language">
+      <div class="nav-language-area">
+        <button type="button" class="nav-meta__button" aria-expanded="false">
+          <span class="sr-only">Sprache auswählen</span>
+          <span class="header-icon icon-container">
+            <svg class="icon icon--navbar" aria-hidden="true" focusable="false">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-language"></use>
+            </svg>
+          </span>
+        </button>
+
+        <div class="language-container">
+          <button type="button" class="nav-language__select form-control" aria-haspopup="true" aria-expanded="false">
+            <span class="sr-only">Aktuelle Sprache</span>
+            <span class="current-language">Deutsch</span>
+
+            <span class="icon-container">
+              <svg class="icon icon--chevron-down" aria-hidden="true" focusable="false">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-chevron-down"></use>
+              </svg>
+            </span>
+          </button>
+
+          <div class="nav-language__layer" aria-hidden="true">
+            <ul class="list--unstyled">
+              <li>
+                <a href="#" hreflang="de" rel="alternate" lang="de" aria-current="true">Deutsch</a>
+              </li>
+              <li>
+                <a href="#" hreflang="en" rel="alternate" lang="en">Englisch</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </li>
+    <!-- Language Select END -->
+    <li>
+      <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite">
+    <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+        <mask class="moon" id="moon-mask">
+            <rect x="0" y="0" width="100%" height="100%" fill="white" />
+            <circle cx="24" cy="10" r="6" fill="black" />
+        </mask>
+        <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+        <g class="sun-beams" stroke="currentColor">
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </g>
+    </svg>
+</button>
+    </li>
+  </ul>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+</header>
+
+
+  <main>
+
+    <div class="content-area content-area--default">
+      <div class="inner">
+        <div class="stage">
+    <div class="stage-wrapper">
+        <div class="stage-background-part"></div>
+        <div class="stage-header-part">
+            <h1>
+                Hi, ich bin
+            </h1>
+            <h2>
+                Duc Anh Dennis Nguyen
+            </h2>
+            <h3>
+                Willkommen bei meiner Website
+            </h3>
+        </div>
+        <div class="stage-image-part">
+            <img src="./assets/img/portfolio-portrait.webp" alt="Portrait Bild von Duc Anh" width="600" height="600">
+        </div>
+        <div class="stage-content-part">
+            <p>
+                Ich bin ein Frontend-Entwickler aus Dresden. Das ist meine Website, welche als eine Art Portfolio dienen soll.<br>
+                Ich werde bald nach Düsseldorf ziehen und würde mich von daher über allerlei Jobangebote mit Standort NRW oder Remote freuen. <br><br>
+                Aktuell entwickle ich bei der <a href="https://www.webit.de/">webit! Gesellschaft für neue Medien GmbH</a>!
+            </p>
+        </div>
+        <a class="btn--primary reference-btn" href="#aboutme">
+            Erfahre mehr über mich
+        </a>
+    </div>
+</div>
+      </div>
+    </div>
+
+    <div class="content-area content-area--default">
+      <div class="inner">
+        <div class="section-header" id="aboutme">Über mich</div>
+<div class="fadein">
+    Hallo! Ich bin Duc Anh Dennis Nguyen, ein junger Wirtschaftsinformatiker aus Dresden!
+    Mein Interesse an der Informatik entstand damals 2015 als ich meinem Mitbewohner und engen Freund dabei zugesehen habe,
+    wie er quasi aus dem Nichts am Rechner ein Tik-Tac-Toe-Spiel entwickelt hat. Die Möglichkeit mithilfe von etwas Code und Text 
+    ein funktionsfähiges Programm zu schreiben hat mich fasziniert und dazu motiviert Wirtschaftsinformatik zu studieren!
+    <br><br>
+    <div class="text-media-grid text-media-grid--image-first">
+  <div class="text-media-grid__headline">
+    <h2>
+      Interesse an der Webentwicklung
+    </h2>
+  </div>
+  <div class="text-media-grid__media">
+      <img src="assets/img/macbook-code.jpg" alt="" width="600" height="600" loading="lazy">
+  </div>
+  <div class="text-media-grid__body">
+    <p>
+      <strong>Während des Studiums</strong> hat sich mein Interesse an der Webentwicklung herauskristallisiert.<br>
+      <strong>
+        Insbesondere das Frontend wusste zu gefallen,
+      </strong> 
+      da es so greifbar war und Erfolge und Misserfolge visuell direkt erkennbar waren. <br>
+      Ich freue mich über neue Herausforderungen und über die Möglichkeit neue(ste) Technologien zu verwenden und meinen
+      Wissenshorizont zu erweitern.
+    </p>
+
+  </div>
+</div>
+
+
+    <h3 class="h2">Privates über mich</h3>
+    <div class="handorgel">
+  <h3 class="handorgel__header">
+    <button class="handorgel__header__button">
+      Sportliche Interessen
+      <span class="handorgel__icon"></span>
+    </button>
+  </h3>
+  <div class="handorgel__content">
+    <div class="handorgel__content__inner">
+      Privat bin sportlich sehr aktiv und gehe 3x die Woche ins Fitness-Studio. <br>
+      Zusätzlich dazu gehe einer Leidenschaft aus Schulzeiten nach: Mit Freunden und Bekannten regelmäßig Volleyball spielen.<br>
+      Meine Mutter pflegte zu sagen: Nur ein gesunder Geist und Körper kann Leistung bringen.
+      <br><br>
+      Ohne dies selber aktiv zu spielen bin ich ein absolut passionierter Fußball- und Tennis-Fan. <br>
+      Ich bin ein großer Fan vom Fußball-Verein Real Madrid CF. 
+      Die <a href="https://www.realmadrid.com/en/about-real-madrid/club/values#:~:text=Club%27s%20values%3A%20sporting%20excellence%2C%20commitment,winning%20spirit%20%7C%20Real%20Madrid%20C.F." class="link">Werte wofür Real Madrid steht</a> versuche ich in all meinen Lebenslagen einzubinden.<br>
+      Nämlich stets mit höchster Qualität, Entschlossenheit, Anstrengung, Engagement und Selbstverbesserung zu arbeiten.
+    </div>
+  </div>
+  <h3 class="handorgel__header">
+    <button class="handorgel__header__button">
+      Kulinarik und Foodie
+      <span class="handorgel__icon"></span>
+    </button>
+  </h3>
+  <div class="handorgel__content">
+    <div class="handorgel__content__inner">
+      Ich bin ein unglaublicher Foodie. Ich liebe gutes Essen über alles.<br>
+      Wenn ich auf Reisen bin, besonders international, freue ich mich immer am liebsten auf die Speisen und Nationalgerichte am jeweiligen Ort. <br>
+      Auch privat spiegelt sich dies wider. Denn da koche ich gerne alle möglichen Gerichte, aus allen Küchen dieser Welt.
+    </div>
+  </div>
+  <h3 class="handorgel__header">
+    <button class="handorgel__header__button">
+      Tierliebhaber
+      <span class="handorgel__icon"></span>
+    </button>
+  </h3>
+  <div class="handorgel__content">
+    <div class="handorgel__content__inner">
+      Ich bin ein großer Tierliebhaber, insbesondere für Hunde habe ich eine große Schwäche. <br>
+      Ihr braucht jemanden der auf euren Hund aufpasst? Sozusagen einen Hundesitter?<br>
+      <a href="#contact" class="link">Kontaktiert mich!</a>
+    </div>
+  </div>
+</div>
+
+</div>
+      </div>
+    </div>
+
+    <div class="content-area content-area--default">
+      <div class="inner">
+        <div class="section-header" id="experience">Erfahrung</div>
+<div class="fadein">
+    Ich bin ein Entwickler der am Anfang seiner noch jungen Karriere steht. Bisher konnte ich eine Erfahrungen
+    bei folgenden Unternehmen sammeln
+    <div class="workplace">
+    <div class="workplace__info">
+        <h3 class="workplace__name">
+            <a href="https://www.webit.de" rel="noopener" target="_blank">webit! Gesellschaft für neue Medien</a>
+        </h3>
+        <div class="workplace__description">
+            Als Frontend-Entwickler habe ich hier schnelle, responsive, interaktive und performante Websites
+            von großen und bekannten Unternehmen erstellt.
+            Meine HTML, SCSS und VanillaJS Fertigkeiten konnte ich hier stark weiterentwickeln.
+        </div>
+        <ul class="workplace__techstack">
+            <li>HTML</li>
+            <li>SCSS</li>
+            <li>JavaScript</li>
+            <li>JQuery</li>
+            <li>Vue.js</li>
+        </ul>
+    </div>
+
+    <div class="workplace__image-wrapper"> 
+        <a href="https://www.webit.de" rel="noopener" target="_blank">
+            <div class="workplace__image">
+                <img src=" /img/webit-landing.webp" alt="" width="850" height="500" loading="lazy">
+            </div>
+        </a>
+    </div>
+</div>
+    <div class="workplace">
+    <div class="workplace__info">
+        <h3 class="workplace__name">
+            <a href="https://www.portrino.de" rel="noopener" target="_blank">portrino GmbH</a>
+        </h3>
+        <div class="workplace__description">
+            Als Werkstudenten bei <a href="https://www.portrino.de" class="link">portrino</a> konnte ich mir eine Menge
+            Wissen im Online-Marketing aneignen.<br>
+            Mitentwicklung, Anpassung und Wartung von WordPress Systemen waren meine Haupttätigkeiten.
+        </div>
+        <ul class="workplace__techstack">
+            <li>SEO</li>
+            <li>SEA</li>
+            <li>Google Ads</li>
+            <li>Google Analytics</li>
+            <li>WordPress</li>
+        </ul>
+    </div>
+
+    <div class="workplace__image-wrapper"> 
+        <a href="https://www.portrino.de" rel="noopener" target="_blank">
+            <div class="workplace__image">
+                <img src=" /img/portrino-landing.webp" alt="" width="850" height="500" loading="lazy">
+            </div>
+        </a>
+    </div>
+</div>
+    <div class="workplace">
+    <div class="workplace__info">
+        <h3 class="workplace__name">
+            <a href="https://www.joynext.com/de/" rel="noopener" target="_blank">JOYNEXT Technology</a>
+        </h3>
+        <div class="workplace__description">
+            Während meines Jahres als Praktikant und Werkstudent habe ich Testsysteme entwickelt und 
+            neue unternehmensintere Software evaluiert.
+            Weitere Tätigkeiten waren die Wartung und Pflege von Atlassian Systemen wie Jira und Confluence.
+        </div>
+        <ul class="workplace__techstack">
+            <li>Atlassian</li>
+            <li>Jira</li>
+            <li>Confluence</li>
+            <li>Java</li>
+        </ul>
+    </div>
+
+    <div class="workplace__image-wrapper"> 
+        <a href="https://www.joynext.com/de/" rel="noopener" target="_blank">
+            <div class="workplace__image">
+                <img src=" /img/joynext-landing.webp" alt="" width="850" height="500" loading="lazy">
+            </div>
+        </a>
+    </div>
+</div>
+    In der heutigen Zeit, in der sich die Webentwicklung rapide verändert und stetig neue Technologien hinzukommen,
+    bedarf es Weiterbildungen um nicht den Anschluss zu verlieren. <br>
+    Um dies zu gewährleisten lese und schaue ich regelmäßig (Blog-)Artikel und Videos an um auf dem neuesten Stand zu bleiben.
+</div>
+      </div>
+    </div>
+
+    <div class="content-area content-area--default">
+      <div class="inner">
+        <div class="section-header" id="portfolio">Portfolio</div>
+<div class="fadein">
+    Hier folgt ein kleiner Auszug an Projekten an denen ich mitgewirkt habe.
+    Einige Seiten sind alleine entwickelt, andere gemeinsam mit großartigen Kollegen und Mentoren von webit!<br>
+    Ich freue mich bereits darauf die Liste in naher Zukunft deutlich vergrößern zu können und dürfen!
+    <div class="content-area">
+        <div class="grid--condensed grid-2--tablet-portrait-up grid-3--tablet-landscape-up teaser-list">
+            <div class="grid-item">
+    <div class="teaser-card teaser-card--with-logo">
+        <div class="teaser-card__image">
+            <img src="/img/communardo-landing.webp" alt="" width="570" height="320" loading="lazy">
+            <div class="teaser-card__logo">
+                <img src="/img/logo-communardo.svg" alt="" width="50" height="50" loading="lazy">
+            </div>
+        </div>
+    
+        <div class="teaser-card__content">
+            <div class="teaser-card__header">
+                <h3>
+                    <a href="https://www.communardo.de">
+                        Communardo Software GmbH
+                    </a>
+                </h3>
+            </div>
+            <div class="teaser-card__body">
+                <p>Umsetzung des kompletten Frontends der neuen Website von Communardo - aktuell noch im Backend.</p>
+            </div>
+            <div class="teaser-card__footer">
+                <div class="link">
+                    <span class="icon-container">
+                        <svg class="icon icon--arrow-right-15" aria-hidden="true" focusable="false">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-arrow-right-15-bold"></use>
+                        </svg>
+                    </span>
+                    <div class="link__text">
+                        Zur Communardo Website
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="grid-item">
+    <div class="teaser-card teaser-card--with-logo">
+        <div class="teaser-card__image">
+            <img src="/img/readyforgreen-landing.webp" alt="" width="570" height="320" loading="lazy">
+    
+            <div class="teaser-card__logo">
+                <img src="/img/logo-readyforgreen.svg" alt="" width="50" height="50" loading="lazy">
+            </div>
+        </div>
+    
+        <div class="teaser-card__content">
+            <div class="teaser-card__header">
+                <h3>
+                    <a href="https://www.readyforgreen.schwarz/">
+                        Lidl ready-for-green
+                    </a>
+                </h3>
+            </div>
+            <div class="teaser-card__body">
+                <p>Komplettes Rebrush der Website in einem modernem Design. Eine Website für Mobilität im ländlichen Raum.</p>
+            </div>
+            <div class="teaser-card__footer">
+                <div class="link">
+                    <span class="icon-container">
+                        <svg class="icon icon--arrow-right-15" aria-hidden="true" focusable="false">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-arrow-right-15-bold"></use>
+                        </svg>
+                    </span>
+                    <div class="link__text">
+                        Zur readyforgreen Website
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="grid-item">
+    <div class="teaser-card teaser-card--with-logo">
+        <div class="teaser-card__image">
+            <img src="/img/anamit-landing.webp" alt="" width="570" height="320" loading="lazy">
+    
+            <div class="teaser-card__logo">
+                <img src="/img/logo-anamit.jpg" alt="" width="50" height="50" loading="lazy">
+            </div>
+        </div>
+    
+        <div class="teaser-card__content">
+            <div class="teaser-card__header">
+                <h3>
+                    <a href="https://www.anamit.de/">
+                        Anamit - Vietnamese Authentic
+                    </a>
+                </h3>
+            </div>
+            <div class="teaser-card__body">
+                <p>Eine simple WordPress-Website für ein populäres vietnamesisches Restaurant in der Dresdner Neustadt.</p>
+            </div>
+            <div class="teaser-card__footer">
+                <div class="link">
+                    <span class="icon-container">
+                        <svg class="icon icon--arrow-right-15" aria-hidden="true" focusable="false">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-arrow-right-15-bold"></use>
+                        </svg>
+                    </span>
+                    <div class="link__text">
+                        Zur Anamit Website
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="grid-item">
+    <div class="teaser-card teaser-card--with-logo">
+        <div class="teaser-card__image">
+            <img src="/img/drbeckmann-landing.webp" alt="" width="570" height="320" loading="lazy">
+    
+            <div class="teaser-card__logo">
+                <img src="/img/logo-drbeckmann.svg" alt="" width="50" height="50" loading="lazy">
+            </div>
+        </div>
+    
+        <div class="teaser-card__content">
+            <div class="teaser-card__header">
+                <h3>
+                    <a href="https://www.dr-beckmann.de/">
+                        Dr. Beckmann
+                    </a>
+                </h3>
+            </div>
+            <div class="teaser-card__body">
+                <p>Mitentwicklung am Frontend und Anpassung von rtl-Seiten</p>
+            </div>
+            <div class="teaser-card__footer">
+                <div class="link">
+                    <span class="icon-container">
+                        <svg class="icon icon--arrow-right-15" aria-hidden="true" focusable="false">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-arrow-right-15-bold"></use>
+                        </svg>
+                    </span>
+                    <div class="link__text">
+                        Zur Dr. Beckmann Website
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="grid-item">
+    <div class="teaser-card teaser-card--with-logo">
+        <div class="teaser-card__image">
+            <img src="/img/twogo-landing.webp" alt="" width="570" height="320" loading="lazy">
+    
+            <div class="teaser-card__logo">
+                <img src="/img/logo-twogo.svg" alt="" width="50" height="50" loading="lazy">
+            </div>
+        </div>
+    
+        <div class="teaser-card__content">
+            <div class="teaser-card__header">
+                <h3>
+                    <a href="https://www.twogo.schwarz/">
+                        twogo - Mitfahr-App
+                    </a>
+                </h3>
+            </div>
+            <div class="teaser-card__body">
+                <p>Anpassung von Frontend, sowie Erstellung der PrintPage.</p>
+            </div>
+            <div class="teaser-card__footer">
+                <div class="link">
+                    <span class="icon-container">
+                        <svg class="icon icon--arrow-right-15" aria-hidden="true" focusable="false">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-arrow-right-15-bold"></use>
+                        </svg>
+                    </span>
+                    <div class="link__text">
+                        Zur twogo Website
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="grid-item">
+    <div class="teaser-card teaser-card--with-logo">
+        <div class="teaser-card__image">
+            <img src="/img/lili-restaurant-landing.webp" alt="" width="570" height="320" loading="lazy">
+    
+            <div class="teaser-card__logo">
+                <img src="/img/logo-lili.png" alt="" width="50" height="50" loading="lazy">
+            </div>
+        </div>
+    
+        <div class="teaser-card__content">
+            <div class="teaser-card__header">
+                <h3>
+                    <a href="https://serene-rugelach-a50e43.netlify.app/">
+                        Lili - Sushi und Ramen
+                    </a>
+                </h3>
+            </div>
+            <div class="teaser-card__body">
+                <p>Auf Basis von der Anamit-WordPress-Seite mit HTML, SCSS und nativem JS optisch ähnliche Seite entwicklelt.</p>
+            </div>
+            <div class="teaser-card__footer">
+                <div class="link">
+                    <span class="icon-container">
+                        <svg class="icon icon--arrow-right-15" aria-hidden="true" focusable="false">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-arrow-right-15-bold"></use>
+                        </svg>
+                    </span>
+                    <div class="link__text">
+                        Zur Lili-Restaurant Website
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+    <div class="content-area content-area--default">
+      <div class="inner">
+        <div class="section-header" id="contact">Kontaktieren</div>
+<div class="fadein">
+    Ich würde mich sehr über eine Nachricht freuen und so die Möglichkeit haben mich beruflich weiterzuentwickeln.
+    Seien es Fragen an mich, Jobangebote, schreibt mir!
+    <br><br>
+    <a href="mailto:dennidnguyen@gmail.com" class="btn--primary">
+        E-Mail schreiben
+    </a>
+</div>
+      </div>
+    </div>
+
+
+  </main>
+
+  <footer class="footer content-area">
+  <div class="inner inner--wide">
+    <div class="footer__content">
+        <ul class="list--unstyled social-media-list">
+  <li>
+    <a href="https://github.com/DepTrai95" class="icon-github" target="_blank" rel="noopener">
+      <span class="icon-container">
+        <svg class="icon icon--social-media" aria-hidden="true" focusable="false">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-github"></use>
+        </svg>
+      </span>
+    </a>
+  </li>
+  <li>
+    <a href="https://www.facebook.com/nguyenducanh95/" class="icon-facebook" target="_blank" rel="noopener">
+      <span class="icon-container">
+        <svg class="icon icon--social-media" aria-hidden="true" focusable="false">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-facebook"></use>
+        </svg>
+      </span>
+    </a>
+  </li>
+  <li>
+    <a href="https://www.instagram.com/ducvnh_nguyen/" class="icon-instagram" target="_blank" rel="noopener">
+      <span class="icon-container">
+        <svg class="icon icon--social-media" aria-hidden="true" focusable="false">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-instagram"></use>
+        </svg>
+      </span>
+    </a>
+  </li>
+  <li>
+    <a href="https://www.linkedin.com/in/duc-anh-dennis-nguyen-a489a3218/" class="icon-linkedin" target="_blank" rel="noopener">
+      <span class="icon-container">
+        <svg class="icon icon--social-media" aria-hidden="true" focusable="false">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-linkedin"></use>
+        </svg>
+      </span>
+    </a>
+  </li>
+</ul>
+
+        <div class="footer-email">
+    <a href="mailto:dennidnguyen@gmail.com">dennidnguyen@gmail.com</a>
+</div>
+        <div class="text-center footer-copyright">
+          Built and designed by Duc Anh Dennis Nguyen ©
+        </div>
+    </div>
+  </div>
+</footer>
+
+<div class="backdrop"></div>
+
+
+  <script async type="module" src="assets/js/main.js"></script>
+</body>
+
+</html>
