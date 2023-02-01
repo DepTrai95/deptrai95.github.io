@@ -1,0 +1,22 @@
+RewriteEngine on
+
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R]
+
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^ %{REQUEST_URI}.html [NC,L]
+
+DirectoryIndex index.php index.html index.htm
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresDefault "access 60 seconds"
+ExpiresByType image/jpg "access plus 1 month"
+ExpiresByType image/webp "access plus 1 month"
+ExpiresByType image/ico "access plus 1 month"
+ExpiresByType text/css "access 1 month"
+ExpiresByType text/javascript "access 1 month"
+ExpiresByType application/x-font-ttf "access plus 1 year"
+</IfModule>
+
+ErrorDocument 404 /404.html
