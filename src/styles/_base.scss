@@ -8,7 +8,7 @@ $breakpoint-tablet-portrait: 600px;
 $breakpoint-phone: 320px;
 
 $content-max-width: 1230px;
-$content-padding: 24px;
+$content-padding: 20px;
 
 // black and white
 $color-white: #fff;
@@ -27,6 +27,12 @@ $color-primary-gradient: linear-gradient(45deg, $color-primary, $color-primary 3
 // $color-secondary: #faf6e2;
 $color-secondary: #eae7de;
 $color-error: #d50042;
+
+//social media
+$color-github: #6e5494;
+$color-facebook: #3b5998;
+$color-instagram: #C13584;
+$color-linkedin: #0e76a8;
 
 // transition
 $transition-timing: ease-in-out .3s;

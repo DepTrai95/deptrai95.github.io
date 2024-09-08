@@ -1,0 +1,77 @@
+---
+interface Props {
+  variant?: 'primary' | 'ghost';
+  type?: 'button' | 'submit' | 'reset';
+  onClick?: string;
+}
+
+const { variant = 'primary', type = 'button', onClick } = Astro.props;
+---
+
+<button type={type} class={`btn--${variant}`} onclick={onClick}>
+  <slot />
+</button>
+
+<style lang="scss">
+@import '../styles/_base.scss';
+
+button,
+a {
+   align-items: center;
+   display: inline-flex;
+   text-decoration: none;
+}
+
+.btn--primary,
+.btn--ghost {
+   background-color: transparent;
+   border: 1px solid transparent;
+   border-radius: 5px;
+   box-shadow: 0px 5px 20px 5px rgba(80, 80, 80, 0.2);
+   color: inherit;
+   cursor: pointer;
+   font-family:
+   'IBMPlexSans',
+   system-ui,
+   -apple-system,
+   sans-serif;
+   font-size: inherit;
+   justify-content: center;
+   line-height: 1.5;
+   margin-block: 0;
+   outline: 1px solid transparent;
+   padding: 8px 12px;
+   text-decoration: none;
+   transition:
+   background-color 0.2s ease-in,
+   border-color 0.2s ease-in,
+   box-shadow 0.3s ease-in,
+   color 0.3s ease-in-out,
+   outline 0.3s ease-in-out;
+
+   + .btn--primary {
+   margin-inline: 2rem;
+   }
+}
+
+.btn--primary {
+   background-color: $color-primary;
+   color: $color-white;
+
+   &:hover {
+   background-color: $color-primary-dark;
+   box-shadow: 0px 5px 15px 3px rgba(80, 80, 80, 0.3);
+   }
+}
+
+.btn--ghost {
+   border-color: $color-white;
+   color: $color-white;
+
+   &:hover {
+   background-color: $color-primary;
+   border-color: $color-primary;
+   box-shadow: 0px 5px 15px 3px rgba(80, 80, 80, 0.3);
+   }
+}
+</style>

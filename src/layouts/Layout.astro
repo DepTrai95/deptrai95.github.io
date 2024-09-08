@@ -1,6 +1,8 @@
 ---
 import '../styles/styles.scss';
-import Header from '../components/Header.astro';
+import IconList from '../components/icon/IconList.astro';
+import Header from '../components/header/Header.astro';
+import Footer from '../components/footer/Footer.astro';
 
 interface Props {
   title: string;
@@ -20,8 +22,10 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-	<Header />
+    <IconList />
+    <Header />
     <slot />
+    <Footer />
   </body>
 </html>
 <style is:global>
@@ -35,20 +39,5 @@ const { title } = Astro.props;
       rgb(var(--accent-light)) 30%,
       white 60%
     );
-  }
-  html {
-    font-family: system-ui, sans-serif;
-    background: #13151a;
-  }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
   }
 </style>

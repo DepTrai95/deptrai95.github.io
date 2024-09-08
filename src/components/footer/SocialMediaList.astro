@@ -1,0 +1,175 @@
+---
+import Icon from '../icon/Icon.astro';
+---
+
+<ul class="list--unstyled social-media-list">
+  <li>
+    <a
+      href="https://github.com/DepTrai95"
+      class="icon-github"
+      target="_blank"
+      rel="noopener"
+      aria-label="Visit my GitHub page"
+    >
+      <span class="sr-only">Visit my GitHub page</span>
+      <Icon name="github" class="icon--social-media" />
+    </a>
+  </li>
+  <li>
+    <a
+      href="https://maps.app.goo.gl/k7jD9B9h53DHETmaA"
+      class="icon-google"
+      target="_blank"
+      rel="noopener"
+      aria-label="Visit my Google page"
+    >
+      <span class="sr-only">Visit my Google profile</span>
+      <span class="icon-container">
+        <svg class="icon icon-google-white">
+          <use href="#icon-google"></use>
+        </svg>
+        <svg class="icon icon-google-color">
+          <use href="#icon-google-color"></use>
+        </svg>
+      </span>
+    </a>
+  </li>
+  <li>
+    <a
+      href="https://www.facebook.com/nguyenducanh95/"
+      class="icon-facebook"
+      target="_blank"
+      rel="noopener"
+      aria-label="Visit my Facebook page"
+    >
+      <span class="sr-only">Visit my Facebook page</span>
+      <Icon name="facebook" class="icon--social-media" />
+    </a>
+  </li>
+  <li>
+    <a
+      href="https://www.instagram.com/ducvnh_nguyen/"
+      class="icon-instagram"
+      target="_blank"
+      rel="noopener"
+      aria-label="Visit my Instagram page"
+    >
+      <span class="sr-only">Visit my Instagram page</span>
+      <Icon name="instagram" class="icon--social-media" />
+    </a>
+  </li>
+  <li>
+    <a
+      href="https://www.linkedin.com/in/duc-anh-dennis-nguyen-a489a3218/"
+      class="icon-linkedin"
+      target="_blank"
+      rel="noopener"
+      aria-label="Visit my LinkedIn page"
+    >
+      <span class="sr-only">Visit my LinkedIn page</span>
+      <Icon name="linkedin" class="icon--social-media" />
+    </a>
+  </li>
+</ul>
+
+<style lang="scss">
+  @import '../../styles/styles.scss';
+  .social-media-list {
+    align-items: center;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin: -0.5em 0 0 -0.5em;
+
+    @include for-tablet-landscape-up {
+      position: fixed;
+      bottom: 0;
+      left: 40px;
+      flex-direction: column;
+
+      &::after {
+        background-color: $color-white;
+        content: '';
+        display: block;
+        height: 60px;
+        margin: 20px auto 0;
+        width: 1px;
+      }
+    }
+
+    a {
+      display: block;
+      transition: color 0.3s, transform 0.3s;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+
+    .icon-github,
+    .icon-google,
+    .icon-facebook,
+    .icon-instagram,
+    .icon-linkedin {
+      fill: $color-white;
+      transition: fill 0.3s, transform 0.3s;
+    }
+
+    .icon-github:hover,
+    .icon-github:focus,
+    .icon-github:active {
+      fill: $color-github;
+    }
+
+    .icon-google {
+      .icon {
+        height: 3rem;
+        width: 3rem;
+      }
+
+      .icon-google-white {
+        display: block;
+      }
+
+      .icon-google-color {
+        display: none;
+        margin: 0 auto;
+        opacity: 0;
+        width: 2.6rem;
+      }
+    }
+
+    .icon-google:hover,
+    .icon-google:focus,
+    .icon-google:active {
+      .icon-google-white {
+        display: none;
+        opacity: 0;
+      }
+
+      .icon-google-color {
+        display: block;
+        opacity: 1;
+      }
+    }
+
+    .icon-facebook:hover,
+    .icon-facebook:focus,
+    .icon-facebook:active {
+      fill: $color-facebook;
+    }
+
+    .icon-instagram:hover,
+    .icon-instagram:focus,
+    .icon-instagram:active {
+      fill: $color-instagram;
+    }
+
+    .icon-linkedin:hover,
+    .icon-linkedin:focus,
+    .icon-linkedin:active {
+      fill: $color-linkedin;
+    }
+  }
+</style>

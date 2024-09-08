@@ -1,0 +1,235 @@
+---
+import { Image } from 'astro:assets';
+import careerData from '../../data/career.json';
+---
+
+{
+  careerData.map((workplace, index) => (
+    <div class="workplace" id={`workplace-${index + 1}`}>
+      <div class="workplace__info">
+        <h3 class="workplace__name">
+          <a
+            href={workplace.url}
+            rel="noopener"
+            target="_blank"
+            aria-label={`Visit the ${workplace.name} website`}
+          >
+            {workplace.name}
+          </a>
+        </h3>
+        <div class="workplace__time">{workplace.time}</div>
+        <div class="workplace__description">{workplace.description}</div>
+        <ul class="workplace__techstack">
+          {workplace.techStack.map((tech) => (
+            <li>{tech}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="workplace__image-wrapper">
+        <a
+          href={workplace.url}
+          rel="noopener"
+          target="_blank"
+          aria-label={`Visit the ${workplace.name} website`}
+        >
+          <div class="workplace__image">
+            <Image
+              src={workplace.image}
+              alt={`Screenshot of ${workplace.name} website`}
+              width={850}
+              height={500}
+              loading="lazy"
+            />
+          </div>
+        </a>
+      </div>
+    </div>
+  ))
+}
+
+<style lang="scss">
+  @import '../../styles/styles.scss';
+  .workplace {
+    border-radius: 5px;
+    margin-block: 3em;
+    position: relative;
+
+    @include for-tablet-portrait-down {
+      border: 1px solid $color-primary;
+      box-shadow: 0 20px 30px rgb(150 150 150 / 5%);
+      transition: box-shadow 0.3s;
+
+      &:hover,
+      &:focus {
+        box-shadow: 0 15px 30px rgb(82 82 82 / 20%);
+      }
+    }
+
+    @include for-tablet-landscape-up {
+      align-items: center;
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    &:nth-child(even) {
+      .workplace__info {
+        grid-area: 1 / 6 / -1 / -1;
+      }
+
+      .workplace__image-wrapper {
+        grid-area: 1 / -6 / 1 / 1;
+      }
+    }
+  }
+
+  .workplace__info {
+    grid-area: 1 / 1 / -1 / 8;
+    position: relative;
+    z-index: 1;
+
+    @include for-tablet-portrait-down {
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      left: 0;
+      padding: 0 2em;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 2;
+    }
+  }
+
+  .workplace__name {
+    @include responsive-font-size(2.4rem, 3rem);
+    color: $color-primary;
+    margin: 0;
+
+    > a {
+      color: $color-primary;
+      text-decoration: none;
+
+      @include for-tablet-portrait-down {
+        &::before {
+          content: '';
+          display: block;
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          z-index: 0;
+        }
+      }
+    }
+  }
+
+  .workplace__time {
+    @include responsive-font-size(1.4rem, 1.6rem);
+    color: $color-primary;
+    margin-block: 0.5em;
+  }
+
+  .workplace__description {
+    @include responsive-font-size(1.5rem, 1.8rem);
+    line-height: 1.5;
+    margin-block-end: 1em;
+    transition: box-shadow 0.3s;
+
+    @include for-tablet-landscape-up {
+      background-color: #292929;
+      border: 1px solid $color-primary;
+      // border: 1px solid rgba(239, 73, 49, 0.3);
+      border-radius: 5px;
+      padding: 20px;
+
+      &:hover,
+      &:focus {
+        box-shadow: 0 15px 30px rgb(82 82 82 / 10%);
+      }
+    }
+
+    @include for-desktop-up {
+      line-height: 1.8;
+    }
+  }
+
+  .workplace__techstack {
+    @include responsive-font-size(1.4rem, 1.6rem);
+    color: $color-primary;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-block: 0;
+      margin-inline-end: 0.75em;
+
+      &::before,
+      &::marker {
+        content: none;
+      }
+    }
+  }
+
+  .workplace__image-wrapper {
+    grid-area: 1 / 6 / -1 / -1;
+    position: relative;
+    z-index: 0;
+
+    > a {
+      border-radius: 5px;
+      display: block;
+      height: 100%;
+      position: relative;
+      width: 100%;
+      z-index: 1;
+
+      &::before {
+        //   background-color: $color-primary-light;
+        border-radius: 5px;
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0;
+        mix-blend-mode: screen;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 3;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      opacity: 1;
+
+      img {
+        filter: blur(0);
+      }
+    }
+
+    @include for-tablet-landscape-up {
+    }
+
+    .workplace__image {
+      //mix-blend-mode: multiply;
+    }
+
+    img {
+      filter: blur(1px);
+
+      @include for-tablet-portrait-down {
+        object-fit: cover;
+        min-height: 420px;
+      }
+    }
+  }
+</style>

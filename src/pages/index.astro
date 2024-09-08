@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import profileImage from '../assets/img/portfolio-portrait.webp';
+import ButtonLink from '../components/button/ButtonLink.astro';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -14,8 +15,8 @@ import profileImage from '../assets/img/portfolio-portrait.webp';
               Hi, I'm <span class="text-gradient">Duc Anh Dennis Nguyen</span>
               and I'm a Frontend-Developer based in Dusseldorf
             </h1>
-            <button class="btn--primary">Download CV</button>
-            <button class="btn--primary">See my projects</button>
+            <ButtonLink link="/cv.pdf" variant="ghost">Download CV</ButtonLink>
+            <ButtonLink link="/projects" variant="ghost">See my projects</ButtonLink>
           </div>
           <div class="grid-item portfolio-photo">
             <Image
@@ -40,15 +41,15 @@ import profileImage from '../assets/img/portfolio-portrait.webp';
           </p>
           <p>
             I am currently working at <a
+              class="link"
               href="https://www.dgn.de/"
               target="_blank">Deutsches Gesundheitsnetz</a
             > in Kaarst, but live in Dusseldorf.
           </p>
           <p>
             I am always looking for new challenges and opportunities to learn
-            and grow. So if you have any job offers be it <strong
-              >fulltime or freelance</strong
-            >, please feel free to contact me.
+            and grow. So if you have any job offers be it <strong>fulltime or freelance</strong>, 
+            please feel free to contact me.
           </p>
         </article>
       </section>

@@ -1,0 +1,70 @@
+<nav class="nav-main">
+  <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="/career">Career</a>
+    </li>
+    <li>
+      <a href="/projects">Projects</a>
+    </li>
+    <li>
+      <a href="/contact">Contact</a>
+    </li>
+  </ul>
+</nav>
+
+<style lang="scss">
+  @import '../../styles/_base.scss';
+
+  .nav-main {
+    ul {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      gap: 1.5rem;
+      justify-content: flex-end;
+    }
+  }
+
+  li {
+    display: inline-flex;
+
+    a {
+      color: inherit;
+      line-height: 1.5;
+      overflow: hidden;
+      padding-block: 0.75rem;
+      position: relative;
+      text-decoration-line: none;
+      transition: color 0.2s ease-in;
+      width: auto;
+
+      &:hover,
+      &:focus {
+        color: $color-primary;
+      }
+
+      &::before {
+        border: 1px solid currentColor;
+        bottom: 0;
+        content: '';
+        left: 0;
+        position: absolute;
+        transform-origin: center left;
+        transform: scale3d(0, 1, 1);
+        transition-delay: 3s;
+        transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+        width: 0;
+      }
+
+      &:hover::before,
+      &:focus::before {
+        transition-delay: 0s;
+        transform: scale3d(1, 1, 1);
+        width: 100%;
+      }
+    }
+  }
+</style>

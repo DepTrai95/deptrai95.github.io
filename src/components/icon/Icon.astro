@@ -1,0 +1,24 @@
+---
+const { name, class: className, ...rest } = Astro.props;
+---
+<span class="icon-container">
+   <svg class={`icon ${className}`} {...rest}>
+     <use href={`#icon-${name}`}></use>
+   </svg>
+</span>
+
+<style lang="scss">
+@import '../../styles/_base.scss';
+@import '../../styles/_mixins.scss';
+
+.icon-container {
+  display: inline-block;
+  line-height: 1;
+  vertical-align: top;
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+}
+</style>
