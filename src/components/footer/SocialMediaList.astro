@@ -76,11 +76,14 @@ import Icon from '../icon/Icon.astro';
   @import '../../styles/styles.scss';
   .social-media-list {
     align-items: center;
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
     justify-content: center;
-    margin: -0.5em 0 0 -0.5em;
+
+    @include for-tablet-landscape-down {
+      margin-block-end: 1.5rem;
+    }
 
     @include for-tablet-landscape-up {
       position: fixed;
@@ -100,7 +103,9 @@ import Icon from '../icon/Icon.astro';
 
     a {
       display: block;
-      transition: color 0.3s, transform 0.3s;
+      transition:
+        color 0.3s,
+        transform 0.3s;
 
       &:hover {
         transform: translateY(-5px);
@@ -113,7 +118,9 @@ import Icon from '../icon/Icon.astro';
     .icon-instagram,
     .icon-linkedin {
       fill: $color-white;
-      transition: fill 0.3s, transform 0.3s;
+      transition:
+        fill 0.3s,
+        transform 0.3s;
     }
 
     .icon-github:hover,
@@ -134,9 +141,14 @@ import Icon from '../icon/Icon.astro';
 
       .icon-google-color {
         display: none;
+        height: 2.6rem;
         margin: 0 auto;
         opacity: 0;
-        width: 2.6rem;
+
+        @include for-tablet-landscape-up {
+          height: 3rem;
+          width: 2.6rem;
+        }
       }
     }
 

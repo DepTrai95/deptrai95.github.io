@@ -45,6 +45,14 @@ hgroup {
    @include for-tablet-landscape-up {
       padding: 0 calc($content-padding * 5);
    }
+
+   @include for-desktop-up {
+      padding: 0 calc($content-padding * 4);
+   }
+
+   @include for-big-desktop-up {
+      padding: 0 $content-padding;
+   }
 }
 
 .content-area {
