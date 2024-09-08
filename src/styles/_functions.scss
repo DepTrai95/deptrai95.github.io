@@ -1,0 +1,17 @@
+// ==========================================================================
+// = FUNCTIONS
+// ==========================================================================
+
+@use "sass:math";
+
+@function strip-unit($number) {
+   @if type-of($number)=='number' and not unitless($number) {
+      @return math.div($number, ($number * 0 + 1));
+   }
+
+   @return $number;
+}
+
+@function rem-to-vw($font-size, $viewport) {
+   @return 100 * math.div(strip-unit($font-size * 10), strip-unit($viewport));
+}

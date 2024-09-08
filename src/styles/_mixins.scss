@@ -1,0 +1,138 @@
+@use "sass:math";
+
+// ==========================================================================
+// = Mixins Viewports
+// ==========================================================================
+
+@mixin for-phone-only {
+   @media (max-width: ($breakpoint-tablet-portrait - 1)) {
+      @content;
+   }
+}
+
+@mixin for-tablet-portrait-up {
+   @media (min-width: $breakpoint-tablet-portrait) {
+      @content;
+   }
+}
+
+@mixin for-tablet-portrait-only {
+   @media (min-width: $breakpoint-tablet-portrait) and (max-width: ($breakpoint-tablet-landscape - 1)) {
+      @content;
+   }
+}
+
+@mixin for-tablet-portrait-down {
+   @media (max-width: ($breakpoint-tablet-landscape - 1)) {
+      @content;
+   }
+}
+
+@mixin for-tablet-landscape-up {
+   @media (min-width: $breakpoint-tablet-landscape) {
+      @content;
+   }
+}
+
+@mixin for-tablet-landscape-only {
+   @media (min-width: $breakpoint-tablet-landscape) and (max-width: ($breakpoint-desktop - 1)) {
+      @content;
+   }
+}
+
+@mixin for-tablet-landscape-down {
+   @media (max-width: ($breakpoint-desktop - 1)) {
+      @content;
+   }
+}
+
+@mixin for-tablet-only {
+   @media (min-width: $breakpoint-tablet-portrait) and (max-width: ($breakpoint-desktop - 1)) {
+      @content;
+   }
+}
+
+@mixin for-desktop-up {
+   @media (min-width: $breakpoint-desktop) {
+      @content;
+   }
+}
+
+@mixin for-desktop-only {
+   @media (min-width: $breakpoint-desktop) and (max-width: $breakpoint-desktop-hd) {
+      @content;
+   }
+}
+
+@mixin for-big-desktop-up {
+   @media (min-width: ($breakpoint-desktop-hd + 1)) {
+      @content;
+   }
+}
+
+@mixin for-desktop-navigation-up {
+   @media (min-width: $breakpoint-mobile-navigation) {
+      @content;
+   }
+}
+
+@mixin for-mobile-navigation-down {
+   @media (max-width: ($breakpoint-mobile-navigation - 1)) {
+      @content;
+   }
+}
+
+// ==========================================================================
+// = Mixins helpers
+// ==========================================================================
+
+@mixin sr-only {
+   border: 0;
+   clip: rect(0, 0, 0, 0);
+   height: 1px;
+   overflow: hidden;
+   padding: 0;
+   position: absolute;
+   white-space: nowrap;
+   width: 1px;
+}
+
+@mixin list--unstyled {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+
+   li {
+      margin-block-start: 0;
+
+      &::before {
+         content: none;
+      }
+   }
+}
+
+// ==========================================================================
+// = Mixins Font-Size and Flexboxing
+// ==========================================================================
+
+@mixin responsive-font-size($min, $max, $viewport: $content-max-width) {
+   font-size: clamp(#{$min}, #{rem-to-vw($max, $viewport)}vw, #{$max});
+}
+
+@mixin grid($items-per-line, $wrap: wrap, $spacing: var(--content-padding), $justify: center, $grid-item: '.grid-item') {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: $wrap;
+   justify-content: $justify;
+   margin: calc(#{$spacing} * -.5);
+
+   >#{$grid-item} {
+      min-height: 1px; // Bugfix IE10 height
+      padding: calc(#{$spacing} * .5);
+      width: math.div(100%, $items-per-line);
+
+      &_x2 {
+         width: math.div(100%, $items-per-line) * 2;
+      }
+   }
+}

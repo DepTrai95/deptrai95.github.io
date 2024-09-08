@@ -1,0 +1,32 @@
+// ==========================================================================
+// = Variables
+// ==========================================================================
+$breakpoint-desktop-hd: 1920px;
+$breakpoint-desktop: 1200px;
+$breakpoint-tablet-landscape: 900px;
+$breakpoint-tablet-portrait: 600px;
+$breakpoint-phone: 320px;
+
+$content-max-width: 1230px;
+$content-padding: 24px;
+
+// black and white
+$color-white: #fff;
+$color-black: #000;
+
+// custom colors
+$color-background: #121212;
+$color-background-copyright: #252525;
+$color-header: #252525;
+// $color-body: #414141;
+$color-body: $color-white;
+$color-primary: #883aea;
+$color-primary-light: #e0ccfa;
+$color-primary-dark: #310a65;
+$color-primary-gradient: linear-gradient(45deg, $color-primary, $color-primary 30%, $color-white 60%);
+// $color-secondary: #faf6e2;
+$color-secondary: #eae7de;
+$color-error: #d50042;
+
+// transition
+$transition-timing: ease-in-out .3s;

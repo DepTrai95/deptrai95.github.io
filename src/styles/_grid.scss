@@ -1,0 +1,96 @@
+
+// ==========================================================================
+// = Variables
+// ==========================================================================
+
+.grid--default {
+   --content-padding: 10px;
+
+   @include for-tablet-portrait-up {
+      --content-padding: 20px;
+   }
+
+   @include for-desktop-up {
+      --content-padding: 30px;
+   }
+}
+
+.grid-2 {
+   @include grid(2);
+}
+
+.grid-2--tablet-portrait-up {
+   @include for-tablet-portrait-up {
+      @include grid(2);
+   }
+}
+
+.grid-2--tablet-portrait-down {
+   @include for-tablet-portrait-down {
+      @include grid(2);
+   }
+}
+
+.grid-2--tablet-landscape-up {
+   @include for-tablet-landscape-up {
+      @include grid(2);
+   }
+}
+
+.grid-3--tablet-portrait-up {
+   @include for-tablet-portrait-up {
+      @include grid(3);
+   }
+}
+
+.grid-3--tablet-landscape-up {
+   @include for-tablet-landscape-up {
+      @include grid(3);
+   }
+}
+
+.grid-4--tablet-portrait-up {
+   @include for-tablet-portrait-up {
+      @include grid(4);
+   }
+}
+
+.grid-5--tablet-portrait-up {
+   @include for-tablet-portrait-up {
+      @include grid(5);
+   }
+}
+
+.grid-4--tablet-landscape-up {
+   @include for-tablet-landscape-up {
+      @include grid(4);
+   }
+}
+
+.grid-5--tablet-landscape-up {
+   @include for-tablet-landscape-up {
+      @include grid(5);
+   }
+}
+
+.grid-2--desktop-up {
+   @include for-desktop-up {
+      @include grid(2);
+   }
+}
+
+.grid-3--desktop-up {
+   @include for-desktop-up {
+      @include grid(3);
+   }
+}
+
+.grid-4--desktop-up {
+   @include for-desktop-up {
+      @include grid(4);
+   }
+}
+
+.grid-item__body {
+   flex-grow: 1;
+}
