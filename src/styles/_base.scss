@@ -15,14 +15,16 @@ $color-white: #fff;
 $color-black: #000;
 
 // custom colors
-$color-background: #121212;
-$color-background-copyright: #252525;
+$color-background: #13151a;
+$color-background-dark: #20191b;
 $color-header: #252525;
-// $color-body: #414141;
 $color-body: $color-white;
 $color-primary: #c83860;
-$color-primary-light: #efa4b9;
-$color-primary-dark: #821b38;
+$color-primary-tinted: #c8386033;
+$color-primary-light: #e06c8c;
+$color-primary-lighter: #f8a0b8;
+$color-primary-dark: #9c2c4a;
+$color-primary-darker: #701f35;
 $color-primary-gradient: linear-gradient(45deg, $color-primary, $color-primary 30%, $color-white 60%);
 // $color-secondary: #faf6e2;
 $color-secondary: #eae7de;

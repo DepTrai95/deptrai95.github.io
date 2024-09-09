@@ -2,7 +2,7 @@
 import SocialMediaList from './SocialMediaList.astro';
 ---
 
-<footer class="footer content-area">
+<footer class="footer">
   <div class="inner inner--wide">
     <div class="footer__content">
       <SocialMediaList />
@@ -10,7 +10,9 @@ import SocialMediaList from './SocialMediaList.astro';
         <a href="mailto:dennidnguyen@gmail.com">dennidnguyen@gmail.com</a>
       </div>
       <div class="text-center footer-copyright">
-        Built and designed by Duc Anh Dennis Nguyen ©
+        <a href="https://github.com/DepTrai95/deptrai95.github.io">
+          Designed and built by Duc Anh Dennis Nguyen ©
+        </a>
       </div>
     </div>
   </div>
@@ -22,7 +24,6 @@ import SocialMediaList from './SocialMediaList.astro';
   @import '../../styles/styles.scss';
   .footer {
     color: $color-white;
-    padding: 20px;
   }
 
   .footer-email {
@@ -41,7 +42,9 @@ import SocialMediaList from './SocialMediaList.astro';
         font-weight: 500;
         letter-spacing: 0.1em;
         text-decoration: none;
-        transition: transform 0.2s, color 0.2s;
+        transition:
+          transform 0.2s,
+          color 0.2s;
         writing-mode: vertical-rl;
 
         &:hover {
@@ -67,6 +70,11 @@ import SocialMediaList from './SocialMediaList.astro';
     @include for-tablet-landscape-up {
       font-weight: 500;
       margin-block: 3em 0;
+    }
+
+    a {
+      color: $color-primary;
+      text-decoration: none;
     }
   }
 </style>

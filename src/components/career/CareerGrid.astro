@@ -114,7 +114,7 @@ import careerData from '../../data/career.json';
       }
 
       @include for-tablet-landscape-up {
-        .workplace__techstack {
+        .workplace__info {
           justify-content: flex-end;
         }
       }
@@ -141,8 +141,10 @@ import careerData from '../../data/career.json';
   }
 
   .workplace__name {
-    @include responsive-font-size(2.4rem, 3rem);
+    @include responsive-font-size(2rem, 2.4rem);
     color: $color-primary;
+    font-weight: 500;
+    letter-spacing: 1px;
     margin: 0;
 
     > a {
@@ -177,15 +179,14 @@ import careerData from '../../data/career.json';
     transition: box-shadow 0.3s;
 
     @include for-tablet-landscape-up {
-      background-color: #292929;
-      border: 1px solid $color-primary;
-      // border: 1px solid rgba(239, 73, 49, 0.3);
+      background-color: $color-background-dark;
+      border: 1px solid $color-primary-tinted;
       border-radius: 5px;
       padding: 20px;
 
       &:hover,
       &:focus {
-        box-shadow: 0 15px 30px rgb(82 82 82 / 10%);
+        box-shadow: 0 15px 30px rgba(140, 140, 140, 0.1);
       }
     }
 
@@ -234,7 +235,7 @@ import careerData from '../../data/career.json';
       }
 
       &::before {
-        background-color: #1e1c21;
+        background-color: $color-background-dark;
         border-radius: 5px;
         content: '';
         display: block;

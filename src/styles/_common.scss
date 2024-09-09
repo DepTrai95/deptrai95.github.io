@@ -27,7 +27,7 @@ flex-grow: 1;
 }
 
 body {
-   background-color: #13151a;
+   background-color: $color-background;
    display: flex;
    flex-direction: column;
    margin: 0;

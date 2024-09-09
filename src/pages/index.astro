@@ -5,6 +5,39 @@ import profileImage from '../assets/img/portfolio-portrait.webp';
 import ButtonLink from '../components/button/ButtonLink.astro';
 ---
 
+<script>
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1,
+  };
+
+  const fadeInObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const elements = [
+      'h1',
+      '.subheading',
+      '.info',
+      '.underline',
+      '.portfolio-photo',
+      '.introduction',
+    ];
+
+    elements.forEach((selector) => {
+      const element = document.querySelector(selector);
+      if (element) fadeInObserver.observe(element);
+    });
+  });
+</script>
+
 <Layout title="Portfolio | About me | Duc Anh Dennis Nguyen">
   <main>
     <div class="inner">
@@ -13,12 +46,22 @@ import ButtonLink from '../components/button/ButtonLink.astro';
           <div class="grid-item">
             <h1>
               Hi, I'm <span class="text-gradient">Duc Anh Dennis Nguyen</span>
-              and I'm a Frontend-Developer based in Dusseldorf
             </h1>
-            <ButtonLink link="/fileadmin/cv.pdf" variant="ghost">Download CV</ButtonLink>
-            <ButtonLink link="/projects" variant="ghost"
-              >See my projects</ButtonLink
-            >
+            <p class="subheading">
+              I'm a <span class="underline">Frontend Developer</span>
+            </p>
+            <div class="info">
+              <p>
+                I am building things for the web and I'm specialized in building
+                SEO-friendly, accessible and performant static websites.
+              </p>
+              <ButtonLink link="/fileadmin/cv.pdf" variant="ghost"
+                >Download CV</ButtonLink
+              >
+              <ButtonLink link="/projects" variant="ghost"
+                >See my projects</ButtonLink
+              >
+            </div>
           </div>
           <div class="grid-item portfolio-photo">
             <Image
@@ -61,6 +104,7 @@ import ButtonLink from '../components/button/ButtonLink.astro';
 </Layout>
 
 <style lang="scss">
+  @import '../styles/_base.scss';
   .portfolio-photo {
     max-width: 300px;
 
@@ -70,7 +114,6 @@ import ButtonLink from '../components/button/ButtonLink.astro';
   }
   .text-gradient {
     background-image: var(--accent-gradient);
-    //  background-image: $color-primary-gradient;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 400%;
@@ -96,5 +139,63 @@ import ButtonLink from '../components/button/ButtonLink.astro';
   }
   .introduction strong {
     color: rgb(var(--accent-light));
+  }
+
+  .underline {
+    display: inline-block;
+    position: relative;
+
+    &::after {
+      background-color: $color-primary-light;
+      bottom: -3px;
+      content: '';
+      height: 2px;
+      left: 0;
+      position: absolute;
+      transform: scaleX(0);
+      transition: transform 0.3s ease-out;
+      width: 100%;
+    }
+  }
+
+  h1,
+  .subheading,
+  .info,
+  .portfolio-photo,
+  .introduction {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.5s ease-out,
+      transform 0.5s ease-out;
+  }
+
+  .fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Add staggered delays */
+  h1.fade-in {
+    transition-delay: 0s;
+  }
+  .subheading.fade-in {
+    transition-delay: 0.25s;
+  }
+  .underline.fade-in {
+    transition-delay: 0.5s;
+    &::after {
+      transform: scaleX(1);
+      transition: transform 0.3s ease-out 0.4s;
+    }
+  }
+  .info.fade-in {
+    transition-delay: 0.5s;
+  }
+  .portfolio-photo.fade-in {
+    transition-delay: 0.5s;
+  }
+  .introduction.fade-in {
+    transition-delay: 0.5s;
   }
 </style>

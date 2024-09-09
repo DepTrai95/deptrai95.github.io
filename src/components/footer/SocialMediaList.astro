@@ -79,13 +79,15 @@ import Icon from '../icon/Icon.astro';
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    margin-bottom: 1rem;
     justify-content: center;
 
     @include for-tablet-landscape-up {
-      position: fixed;
       bottom: 0;
-      left: 40px;
       flex-direction: column;
+      left: 40px;
+      margin-bottom: 0;
+      position: fixed;
 
       &::after {
         background-color: $color-white;
