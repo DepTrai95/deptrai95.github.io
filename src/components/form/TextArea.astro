@@ -1,0 +1,36 @@
+---
+interface Props {
+  id?: string;
+  name?: string;
+  labelText?: string;
+  required?: boolean;
+  rows?: number;
+}
+
+const { id = '', name = '', labelText = '', required = false, rows = 5 } = Astro.props;
+---
+
+<div class="form-group">
+  <div class="form-label">
+    <label for={id}>
+      {labelText}
+      {
+        required && (
+          <abbr title="required" class="form-require">
+            *
+          </abbr>
+        )
+      }
+    </label>
+  </div>
+  <textarea
+    class="form-control"
+    name={name}
+    id={id}
+    rows={rows}
+    required={required}></textarea>
+</div>
+
+<style lang="scss">
+@import '../../styles/_form.scss';
+</style>

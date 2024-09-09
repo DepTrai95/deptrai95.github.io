@@ -1,0 +1,28 @@
+---
+import Button from '../button/Button.astro';
+import InputText from './InputText.astro';
+import InputEmail from './InputEmail.astro';
+import TextArea from './TextArea.astro';
+---
+
+<form class="form" id="contact-form">
+  <div class="grid--default grid-2--tablet-portrait-up">
+    <div class="grid-item">
+      <InputText id="name" name="name" labelText="Name" required />
+    </div>
+    <div class="grid-item">
+      <InputEmail id="email" name="email" labelText="E-Mail" required />
+    </div>
+  </div>
+  <InputText id="subject" name="subject" labelText="Subject" required />
+  <TextArea id="message" name="message" labelText="Your Message" required />
+  <Button type="submit" form="contact-form" variant="primary">Send Message</Button>
+</form>
+
+<style lang="scss">
+  .form {
+    button {
+      margin-top: 1.5rem;
+    }
+  }
+</style>

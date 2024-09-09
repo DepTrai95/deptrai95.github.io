@@ -36,22 +36,25 @@ import SocialMediaList from './SocialMediaList.astro';
       position: fixed;
 
       a {
-        @include responsive-font-size(1.6rem, 1.8rem);
-        color: $color-primary;
+        @include responsive-font-size(1.5rem, 1.6rem);
+        color: $color-white;
         font-weight: 500;
         letter-spacing: 0.1em;
         text-decoration: none;
-        transition:
-          transform 0.2s,
-          color 0.2s;
+        transition: transform 0.2s, color 0.2s;
         writing-mode: vertical-rl;
+
+        &:hover {
+          color: $color-primary;
+          transform: translateY(-10px);
+        }
       }
 
       &::after {
         background-color: $color-white;
         content: '';
         display: block;
-        height: 60px;
+        height: 50px;
         margin: 20px auto 0;
         width: 1px;
       }

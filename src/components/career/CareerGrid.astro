@@ -3,6 +3,37 @@ import { Image } from 'astro:assets';
 import careerData from '../../data/career.json';
 ---
 
+<script>
+  const thresholds = [0.1, 0.3, 0.5, 0.7, 0.9];
+
+  const workplaceObserver = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.intersectionRatio >= 0.3) {
+        entry.target
+          .querySelector('.workplace__image-wrapper')
+          .classList.add('visible');
+        setTimeout(() => {
+          entry.target
+            .querySelector('.workplace__info')
+            .classList.add('visible');
+        }, 250);
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(workplaceObserver, {
+    threshold: thresholds,
+  });
+
+  // Select all workplace elements and observe them
+  document.addEventListener('DOMContentLoaded', () => {
+    const workplaces = document.querySelectorAll('.workplace');
+    workplaces.forEach((workplace) => {
+      observer.observe(workplace);
+    });
+  });
+</script>
+
 {
   careerData.map((workplace, index) => (
     <div class="workplace" id={`workplace-${index + 1}`}>
@@ -80,6 +111,12 @@ import careerData from '../../data/career.json';
 
       .workplace__image-wrapper {
         grid-area: 1 / -6 / 1 / 1;
+      }
+
+      @include for-tablet-landscape-up {
+        .workplace__techstack {
+          justify-content: flex-end;
+        }
       }
     }
   }
@@ -187,12 +224,17 @@ import careerData from '../../data/career.json';
       border-radius: 5px;
       display: block;
       height: 100%;
+      opacity: 0.3;
       position: relative;
       width: 100%;
       z-index: 1;
 
+      @include for-tablet-landscape-up {
+        opacity: 1;
+      }
+
       &::before {
-        //   background-color: $color-primary-light;
+        background-color: #1e1c21;
         border-radius: 5px;
         content: '';
         display: block;
@@ -213,23 +255,50 @@ import careerData from '../../data/career.json';
 
       img {
         filter: blur(0);
+        opacity: 1;
       }
     }
 
-    @include for-tablet-landscape-up {
-    }
-
     .workplace__image {
-      //mix-blend-mode: multiply;
+      mix-blend-mode: multiply;
     }
 
     img {
       filter: blur(1px);
+      opacity: 0.3;
+      transition:
+        filter 0.5s,
+        opacity 0.5s;
 
       @include for-tablet-portrait-down {
         object-fit: cover;
         min-height: 420px;
       }
+    }
+  }
+
+  .workplace__info {
+    opacity: 0;
+    transform: translateX(50px);
+    transition:
+      transform 0.5s ease-out,
+      opacity 0.5s ease-out;
+
+    &.visible {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .workplace__image-wrapper {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition:
+      transform 0.5s ease-out,
+      opacity 0.5s ease-out;
+    &.visible {
+      transform: translateX(0);
+      opacity: 1;
     }
   }
 </style>

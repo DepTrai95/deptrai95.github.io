@@ -1,15 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/form/ContactForm.astro';
 ---
 
-<Layout title="Contact | Your Name">
-	<h1>Contact Me</h1>
-	<section>
-		<p>You can reach me at:</p>
-		<ul class="list--unstyled">
-			<li>Email: your.email@example.com</li>
-			<li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile">Your Profile</a></li>
-			<li>GitHub: <a href="https://github.com/yourusername">Your Username</a></li>
-		</ul>
-	</section>
+<Layout title="Portfolio | Contact | Duc Anh Dennis Nguyen">
+	<main>
+		<div class="content-area">
+		  <div class="inner">
+			 <div id="career" class="section-header">
+				<h1 class="sr-only">Contact me via E-Mail or Contact Form</h1>
+				<h2>Contact me</h2>
+			 </div>
+			 <p>
+				Since my interest is not exclusively in web-/front-end development, I
+				would be happy about any message where I am offered the opportunity to
+				develop professionally. Questions, job offers, fulltime and parttime, requests of any kind -
+				feel free to write me!
+			 </p>
+			 <ContactForm />
+		  </div>
+		</div>
+	</main>
 </Layout>

@@ -78,12 +78,8 @@ import Icon from '../icon/Icon.astro';
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 1rem;
     justify-content: center;
-
-    @include for-tablet-landscape-down {
-      margin-block-end: 1.5rem;
-    }
 
     @include for-tablet-landscape-up {
       position: fixed;
@@ -95,7 +91,7 @@ import Icon from '../icon/Icon.astro';
         background-color: $color-white;
         content: '';
         display: block;
-        height: 60px;
+        height: 50px;
         margin: 20px auto 0;
         width: 1px;
       }
@@ -131,8 +127,8 @@ import Icon from '../icon/Icon.astro';
 
     .icon-google {
       .icon {
-        height: 3rem;
-        width: 3rem;
+        height: 2.4rem;
+        width: 2.4rem;
       }
 
       .icon-google-white {
@@ -141,13 +137,13 @@ import Icon from '../icon/Icon.astro';
 
       .icon-google-color {
         display: none;
-        height: 2.6rem;
+        height: 2rem;
         margin: 0 auto;
         opacity: 0;
 
         @include for-tablet-landscape-up {
-          height: 3rem;
-          width: 2.6rem;
+          height: 2.4rem;
+          width: 2rem;
         }
       }
     }
