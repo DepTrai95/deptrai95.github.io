@@ -9,26 +9,29 @@
     <span></span>
   </button>
   <ul class="nav-list">
-    <li><a href="/">Home</a></li>
-    <li><a href="/career">Career</a></li>
-    <li><a href="/projects">Projects</a></li>
-    <li><a href="/contact">Contact</a></li>
+    <li class="nav-list__item"><a href="/">Home</a></li>
+    <li class="nav-list__item"><a href="/career">Career</a></li>
+    <li class="nav-list__item"><a href="/projects">Projects</a></li>
+    <li class="nav-list__item"><a href="/contact">Contact</a></li>
   </ul>
 </nav>
 
 <script>
   const hamburger = document.querySelector('.hamburger');
   const navList = document.querySelector('.nav-list');
+  const backdrop = document.querySelector('.backdrop');
 
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('open');
     navList.classList.toggle('open');
+    backdrop.classList.toggle('backdrop--visible');
   });
 </script>
 
 <style lang="scss">
   @import '../../styles/_base.scss';
   @import '../../styles/_mixins.scss';
+  @import '../../styles/_functions.scss';
 
   .hamburger {
     background: none;
@@ -98,7 +101,6 @@
     padding: 0;
 
     @include for-phone-only {
-      align-items: center;
       background-color: $color-background;
       display: flex;
       flex-direction: column;
@@ -106,7 +108,7 @@
       height: 100vh;
       justify-content: flex-start;
       margin: 0;
-      padding: 5rem 1rem;
+      padding-block-start: 60px; //header-height
       position: fixed;
       right: -100%;
       top: 0;
@@ -122,15 +124,19 @@
     @include for-tablet-portrait-up {
       align-items: center;
       display: flex;
-      gap: 1.5rem;
+      gap: 2.5rem;
       justify-content: flex-end;
     }
 
-    li {
+    .nav-list__item {
       display: inline-flex;
+      @include for-phone-only {
+        padding-inline: 3rem;
+      }
     }
 
     a {
+      @include responsive-font-size(1.8rem, 2rem);
       color: inherit;
       line-height: 1.5;
       overflow: hidden;
@@ -139,6 +145,10 @@
       text-decoration-line: none;
       transition: color 0.2s ease-in;
       width: auto;
+
+      @include for-phone-only {
+        @include responsive-font-size(2rem, 2.4rem);
+      }
 
       &:hover,
       &:focus {

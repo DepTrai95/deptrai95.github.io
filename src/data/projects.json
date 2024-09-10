@@ -1,0 +1,38 @@
+[
+  {
+    "href": "https://www.matjo.de/",
+    "title": "Matjo",
+    "body": "Website of a local business in Dresden specializing in bbq and hotpots.",
+    "image": "/img/projects/anamit-landing.webp"
+  },
+  {
+    "href": "https://www.ramen1974.de/",
+    "title": "Ramen1974",
+    "body": "Website of a local business in Dresden specializing in Ramen.",
+    "image": "/img/projects/anamit-landing.webp"
+  },
+  {
+    "href": "https://www.anamit.de/",
+    "title": "Anamit",
+    "body": "Website of a local business in Dresden specializing in vietnamese cuisine.",
+    "image": "/img/projects/anamit-landing.webp"
+  },
+  {
+    "href": "https://communardo.com/",
+    "title": "Communardo",
+    "body": "Implementation of the complete frontend of the new website of Communardo - currently in the backend development Go-live in April",
+    "image": "/img/projects/communardo-landing.webp"
+  },
+  {
+    "href": "https://communardo.com/",
+    "title": "Communardo",
+    "body": "Implementation of the complete frontend of the new website of Communardo - currently in the backend development Go-live in April",
+    "image": "/img/projects/communardo-landing.webp"
+  },
+  {
+    "href": "https://communardo.com/",
+    "title": "Communardo",
+    "body": "Implementation of the complete frontend of the new website of Communardo - currently in the backend development Go-live in April",
+    "image": "/img/projects/communardo-landing.webp"
+  }
+]
