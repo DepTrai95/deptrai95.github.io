@@ -1,12 +1,18 @@
 ---
+import { Image } from 'astro:assets';
 import Navbar from '../navbar/Navbar.astro';
+import Logo from '../../assets/img/logo.svg';
 ---
 
 <header class="header">
-  <div class="navbar">
-    <div class="inner">
+  <div class="inner">
+    <div class="navbar">
       <div class="logo__container">
-         
+        <div class="logo">
+          <a href="/">
+            <Image src={Logo} alt="Zur Startseite" width={30} height={30} />
+          </a>
+        </div>
       </div>
       <Navbar />
     </div>
@@ -14,7 +20,32 @@ import Navbar from '../navbar/Navbar.astro';
 </header>
 
 <style lang="scss">
+  @import '../../styles/_base.scss';
+  @import '../../styles/_mixins.scss';
   .header {
-    margin-block: 1.5rem;
+
+  }
+
+  .navbar {
+    --navbar-height: 60px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    min-height: var(--navbar-height);
+    position: relative;
+    width: 100%;
+
+    @include for-tablet-portrait-up {
+      --navbar-height: 65px;
+    }
+
+    .logo__container {
+
+      .logo img {
+        height: calc(var(--navbar-height) * 0.5);
+        vertical-align: middle;
+        width: auto;
+      }
+    }
   }
 </style>

@@ -105,13 +105,20 @@ import ButtonLink from '../components/button/ButtonLink.astro';
 
 <style lang="scss">
   @import '../styles/_base.scss';
+  @import '../styles/_mixins.scss';
+
   .portfolio-photo {
     max-width: 300px;
+
+    @include for-phone-only {
+      margin: 0 auto;
+    }
 
     img {
       border-radius: 5px;
     }
   }
+
   .text-gradient {
     background-image: var(--accent-gradient);
     -webkit-background-clip: text;

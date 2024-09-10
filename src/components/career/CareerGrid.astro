@@ -114,7 +114,9 @@ import careerData from '../../data/career.json';
       }
 
       @include for-tablet-landscape-up {
-        .workplace__info {
+        .workplace__name,
+        .workplace__time,
+        .workplace__techstack {
           justify-content: flex-end;
         }
       }
@@ -143,6 +145,7 @@ import careerData from '../../data/career.json';
   .workplace__name {
     @include responsive-font-size(2rem, 2.4rem);
     color: $color-primary;
+    display: flex;
     font-weight: 500;
     letter-spacing: 1px;
     margin: 0;
@@ -169,11 +172,12 @@ import careerData from '../../data/career.json';
   .workplace__time {
     @include responsive-font-size(1.4rem, 1.6rem);
     color: $color-primary;
+    display: flex;
     margin-block: 0.5em;
   }
 
   .workplace__description {
-    @include responsive-font-size(1.5rem, 1.8rem);
+    @include responsive-font-size(1.6rem, 1.7rem);
     line-height: 1.5;
     margin-block-end: 1em;
     transition: box-shadow 0.3s;
