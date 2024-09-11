@@ -4,9 +4,10 @@ interface Props {
   body: string;
   href: string;
   image: string;
+  stack: Array<string>;
 }
 
-const { href, title, body, image } = Astro.props;
+const { href, title, body, image, stack } = Astro.props;
 ---
 
 <script>
@@ -45,7 +46,13 @@ const { href, title, body, image } = Astro.props;
       <p>{body}</p>
     </div>
     <div class="teaser-card__footer">
-      <div class="teaser-card__footer-link">To website of {title}</div>
+      <ul class="teaser-card__stack-list">
+        {
+          stack.map((tech) => (
+            <li class="teaser-card__stack-list-item">{tech}</li>
+          ))
+        }
+      </ul>
     </div>
   </div>
 </div>
@@ -83,7 +90,6 @@ const { href, title, body, image } = Astro.props;
     box-shadow: 0 20px 30px rgba(120, 120, 120, 0.05);
     display: flex;
     flex-direction: column;
-    margin-bottom: var(--content-padding);
     opacity: 0;
     overflow: hidden;
     position: relative;
@@ -123,6 +129,7 @@ const { href, title, body, image } = Astro.props;
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
+    min-height: 200px;
     padding: var(--content-padding-y) var(--content-padding-x);
 
     .tag-list {
@@ -181,6 +188,21 @@ const { href, title, body, image } = Astro.props;
         height: 0.75em;
         width: 0.75em;
       }
+    }
+
+    .teaser-card__stack-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      list-style: none;
+      padding: 0;
+    }
+    
+    .teaser-card__stack-list-item {
+      @include responsive-font-size(1.1rem, 1.2rem);
+      background-color: $color-primary-dark;
+      border-radius: 3px;
+      padding: 0.25rem 0.5rem;
     }
   }
 

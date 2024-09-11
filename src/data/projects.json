@@ -3,36 +3,64 @@
     "href": "https://www.matjo.de/",
     "title": "Matjo",
     "body": "Website of a local business in Dresden specializing in bbq and hotpots.",
-    "image": "/img/projects/anamit-landing.webp"
+    "stack": ["Vite.js","Vue.js", "SendGrid API", "Instagram API", "Netlify"],
+    "image": "/img/projects/matjo-landing.webp",
+    "image_2": "/img/projects/matjo-landing-2.webp"
   },
   {
     "href": "https://www.ramen1974.de/",
     "title": "Ramen1974",
     "body": "Website of a local business in Dresden specializing in Ramen.",
-    "image": "/img/projects/anamit-landing.webp"
+    "stack": ["Vite.js", "Vue.js", "SendGrid API", "Netlify"],
+    "image": "/img/projects/ramen1974-landing.webp",
+    "image_2": "/img/projects/ramen1974-landing-2.webp"
   },
   {
     "href": "https://www.anamit.de/",
     "title": "Anamit",
     "body": "Website of a local business in Dresden specializing in vietnamese cuisine.",
-    "image": "/img/projects/anamit-landing.webp"
+    "stack": ["Vite.js", "Vue.js", "SendGrid API", "Netlify"],
+    "image": "/img/projects/anamit-landing.webp",
+    "image_2": "/img/projects/anamit-landing-2.webp"
+  },
+  {
+    "href": "https://aroi-dresden.com/",
+    "title": "Aroi Thai Cuisine",
+    "body": "Implementation and design of the frontend of a local business in Dresden specializing in thai cuisine.",
+    "stack": ["Vite.js", "Vue.js", "PrimeVue", "SendGrid API", "Netlify"],
+    "image": "/img/projects/aroi-landing.webp",
+    "image_2": "/img/projects/aroi-landing-2.webp"
+  },
+  {
+    "href": "https://nits-restaurant-order-app.netlify.app/",
+    "title": "Restaurant Order [WIP]",
+    "body": "Implementation of a restaurant order application with Vue.js and Firebase. The application is designed and intended to be a PWA. Due to time constraints, the application is not fully functional yet.",
+    "stack": ["Vite.js", "Vue.js", "PrimeVue", "Pinia", "Firebase", "Netlify"],
+    "image": "/img/projects/ordering-landing.webp",
+    "image_2": "/img/projects/ordering-landing-2.webp"
   },
   {
     "href": "https://communardo.com/",
     "title": "Communardo",
-    "body": "Implementation of the complete frontend of the new website of Communardo - currently in the backend development Go-live in April",
-    "image": "/img/projects/communardo-landing.webp"
+    "body": "Implementation of the complete frontend of the new website of Communardo. Design was provided by a very talented colleague.",
+    "stack": ["JavaScript", "ES6+", "SCSS", "TYPO3", "Fluid Template"],
+    "image": "/img/projects/communardo-landing.webp",
+    "image_2": "/img/projects/communardo-landing-2.webp"
   },
   {
-    "href": "https://communardo.com/",
-    "title": "Communardo",
-    "body": "Implementation of the complete frontend of the new website of Communardo - currently in the backend development Go-live in April",
-    "image": "/img/projects/communardo-landing.webp"
+    "href": "https://gesagt-getan.lidl.ch/de/",
+    "title": "Lidl-gesagt-getan",
+    "body": "Complete rebrush of the corporate design of the Lidl Gesagt-Getan website. The website is specialized on Corporate Social Responsibility.",
+    "stack": ["JavaScript", "ES6+", "SCSS", "TYPO3"],
+    "image": "/img/projects/lidl-gesagt-getan-landing.webp",
+    "image_2": "/img/projects/lidl-gesagt-getan-landing-2.webp"
   },
   {
-    "href": "https://communardo.com/",
-    "title": "Communardo",
-    "body": "Implementation of the complete frontend of the new website of Communardo - currently in the backend development Go-live in April",
-    "image": "/img/projects/communardo-landing.webp"
+    "href": "https://readyforgreen.schwarz/",
+    "title": "ready for green",
+    "body": "Complete rebrush of the the website of the Schwarz Group's sustainability initiative. It's about mobility in rural areas.",
+    "stack": ["JavaScript", "ES6+", "SCSS", "TYPO3", "Fluid Template"],
+    "image": "/img/projects/readyforgreen-landing.webp",
+    "image_2": "/img/projects/readyforgreen-landing-2.webp"
   }
 ]
