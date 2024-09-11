@@ -5,39 +5,95 @@ import Card from '../components/card/Card.astro';
 import projects from '../data/projects.json';
 ---
 
-<Layout title="Portfolio | Projects | Duc Anh Dennis Nguyen" metaDescription="This is my portfolio page and here is a sample of projects I have worked on.">
-  <main>
-    <div class="inner">
-      <div class="content-area">
-        <div id="projects" class="section-header">
-          <h1 class="sr-only">This page contains an overview of my projects</h1>
-          <h2>Projects</h2>
-        </div>
-        <p>Here is a small sample of projects I have worked on.</p>
-        <p>
-          Many of these projects were written with Vue.js, but I am also
-          proficient with Web Components/Vanilla JavaScript and I'm also familiar with React and AngularJS.
-        </p>
-        <p>
-          I am already looking forward to grow the list significantly in the
-          near future!
-        </p>
-      </div>
-      <ul role="list" class="teaser-card-list">
-        {
-          projects.map((project) => (
-            <Card
-              href={project.href}
-              title={project.title}
-              body={project.body}
-              image={project.image}
-              stack={project.stack}
-            />
-          ))
+<script>
+  const thresholds = [0.1, 0.3, 0.5, 0.7, 0.9];
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: thresholds,
+  };
+
+  function setupProjectsPage() {
+    const cardItems = document.querySelectorAll('.teaser-card');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 250);
+          observer.unobserve(entry.target);
         }
-      </ul>
+      });
+    }, observerOptions);
+
+    function observeCards() {
+      cardItems.forEach((item) => {
+        if (item) {
+          item.classList.remove('visible');
+          const index = Array.from(cardItems).indexOf(item);
+          setTimeout(() => {
+            observer.observe(item);
+          }, index * 100);
+        }
+      });
+    }
+
+    observeCards();
+
+    // Cleanup function
+    return () => {
+      cardItems.forEach((item) => {
+        observer.unobserve(item);
+      });
+    };
+  }
+
+  // Run setup on initial load and subsequent navigations
+  document.addEventListener('astro:page-load', setupProjectsPage);
+
+  // Cleanup on navigation away
+  document.addEventListener('astro:before-preparation', () => {
+    const cleanup = setupProjectsPage();
+    document.addEventListener('astro:after-preparation', cleanup);
+  });
+</script>
+
+<Layout
+  title="Portfolio | Projects | Duc Anh Dennis Nguyen"
+  metaDescription="This is my portfolio page and here is a sample of projects I have worked on."
+>
+  <div class="inner">
+    <div class="content-area">
+      <div id="projects" class="section-header">
+        <h1 class="sr-only">This page contains an overview of my projects</h1>
+        <h2>Projects</h2>
+      </div>
+      <p>Here is a small sample of projects I have worked on.</p>
+      <p>
+        Many of these projects were written with Vue.js, but I am also
+        proficient with Web Components/Vanilla JavaScript and I'm also familiar
+        with React and AngularJS.
+      </p>
+      <p>
+        I am already looking forward to grow the list significantly in the near
+        future!
+      </p>
     </div>
-  </main>
+    <ul role="list" class="teaser-card-list">
+      {
+        projects.map((project) => (
+          <Card
+            href={project.href}
+            title={project.title}
+            body={project.body}
+            image={project.image}
+            stack={project.stack}
+          />
+        ))
+      }
+    </ul>
+  </div>
 </Layout>
 
 <style lang="scss">

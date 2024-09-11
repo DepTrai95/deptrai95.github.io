@@ -6,22 +6,14 @@ import ButtonLink from '../components/button/ButtonLink.astro';
 ---
 
 <script>
+  const thresholds = [0.1, 0.3, 0.5, 0.7, 0.9];
   const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.1,
+    threshold: thresholds,
   };
 
-  const fadeInObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('fade-in');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  document.addEventListener('DOMContentLoaded', () => {
+  function setupIndexPage() {
     const elements = [
       'h1',
       '.subheading',
@@ -31,76 +23,113 @@ import ButtonLink from '../components/button/ButtonLink.astro';
       '.introduction',
     ];
 
-    elements.forEach((selector) => {
-      const element = document.querySelector(selector);
-      if (element) fadeInObserver.observe(element);
-    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    function observeElements() {
+      elements.forEach((selector, index) => {
+        const element = document.querySelector(selector);
+        if (element) {
+          element.classList.remove('fade-in');
+
+          setTimeout(() => {
+            observer.observe(element);
+          }, index * 100);
+        }
+      });
+    }
+
+    observeElements();
+
+    return () => {
+      elements.forEach((selector) => {
+        const element = document.querySelector(selector);
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+    };
+  }
+
+  document.addEventListener('astro:page-load', setupIndexPage);
+
+  // Cleanup on navigation away
+  document.addEventListener('astro:before-preparation', () => {
+    const cleanup = setupIndexPage();
+    document.addEventListener('astro:after-preparation', cleanup);
   });
 </script>
 
-<Layout title="Portfolio | About me | Duc Anh Dennis Nguyen" metaDescription="This is my portfolio page and a short introduction about me.">
-  <main>
-    <div class="inner">
-      <section class="content-area" id="hero">
-        <div class="grid--default grid-2--tablet-portrait-up">
-          <div class="grid-item">
-            <h1>
-              Hi, I'm <span class="text-gradient">Duc Anh Dennis Nguyen</span>
-            </h1>
-            <p class="subheading">
-              I'm a <span class="underline">Frontend Developer</span>
+<Layout
+  title="Portfolio | About me | Duc Anh Dennis Nguyen"
+  metaDescription="This is my portfolio page and a short introduction about me."
+>
+  <div class="inner">
+    <section class="content-area" id="hero">
+      <div class="grid--default grid-2--tablet-portrait-up">
+        <div class="grid-item">
+          <h1>
+            Hi, I'm <span class="text-gradient">Duc Anh Dennis Nguyen</span>
+          </h1>
+          <p class="subheading">
+            I'm a <span class="underline">Frontend Developer</span>
+          </p>
+          <div class="info">
+            <p>
+              I am building things for the web and I'm specialized in building
+              SEO-friendly, accessible and performant static websites.
             </p>
-            <div class="info">
-              <p>
-                I am building things for the web and I'm specialized in building
-                SEO-friendly, accessible and performant static websites.
-              </p>
-              <ButtonLink link="/fileadmin/cv.pdf" variant="ghost"
-                >Download CV</ButtonLink
-              >
-              <ButtonLink link="/projects" variant="ghost"
-                >See my projects</ButtonLink
-              >
-            </div>
-          </div>
-          <div class="grid-item portfolio-photo">
-            <Image
-              src={profileImage}
-              alt="Foto von Duc Anh Dennis Nguyen"
-              height={400}
-              width={400}
-            />
+            <ButtonLink link="/fileadmin/cv.pdf" variant="ghost"
+              >Download CV</ButtonLink
+            >
+            <ButtonLink link="/projects" variant="ghost"
+              >See my projects</ButtonLink
+            >
           </div>
         </div>
-      </section>
+        <div class="grid-item portfolio-photo">
+          <Image
+            src={profileImage}
+            alt="Foto von Duc Anh Dennis Nguyen"
+            height={400}
+            width={400}
+          />
+        </div>
+      </div>
+    </section>
 
-      <section class="content-area">
-        <article class="introduction">
-          <h2>About Me</h2>
-          <p>
-            This page is a portfolio page and is a short introduction about me.
-          </p>
-          <p>
-            I am specialized in frontend development and have a passion for
-            creating beautiful and functional websites.
-          </p>
-          <p>
-            I am currently working at <a
-              class="link"
-              href="https://www.dgn.de/"
-              target="_blank">Deutsches Gesundheitsnetz</a
-            > in Kaarst and live in Dusseldorf.
-          </p>
-          <p>
-            I am always looking for new challenges and opportunities to learn
-            and grow. So if you have any job offers be it <strong
-              >fulltime or freelance</strong
-            >, please feel free to contact me.
-          </p>
-        </article>
-      </section>
-    </div>
-  </main>
+    <section class="content-area">
+      <article class="introduction">
+        <h2>About Me</h2>
+        <p>
+          This page is a portfolio page and is a short introduction about me.
+        </p>
+        <p>
+          I am specialized in frontend development and have a passion for
+          creating beautiful and functional websites.
+        </p>
+        <p>
+          I am currently working at <a
+            class="link"
+            href="https://www.dgn.de/"
+            target="_blank">Deutsches Gesundheitsnetz</a
+          > in Kaarst and live in Dusseldorf.
+        </p>
+        <p>
+          I am always looking for new challenges and opportunities to learn and
+          grow. So if you have any job offers be it <strong
+            >fulltime or freelance</strong
+          >, please feel free to contact me.
+        </p>
+      </article>
+    </section>
+  </div>
 </Layout>
 
 <style lang="scss">

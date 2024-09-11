@@ -4,33 +4,52 @@ import careerData from '../../data/career.json';
 ---
 
 <script>
-  const thresholds = [0.1, 0.3, 0.5, 0.7, 0.9];
+  function setupCareerGrid() {
+    const thresholds = [0.1, 0.3, 0.5, 0.7, 0.9];
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: thresholds,
+    };
 
-  const workplaceObserver = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.intersectionRatio >= 0.3) {
-        entry.target
-          .querySelector('.workplace__image-wrapper')
-          .classList.add('visible');
-        setTimeout(() => {
+    const workplaceObserver = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio >= 0.3) {
           entry.target
-            .querySelector('.workplace__info')
-            .classList.add('visible');
-        }, 250);
-      }
-    });
-  };
+            .querySelector('.workplace__image-wrapper')
+            ?.classList.add('visible');
+          setTimeout(() => {
+            entry.target
+              .querySelector('.workplace__info')
+              ?.classList.add('visible');
+          }, 250);
+        }
+      });
+    };
 
-  const observer = new IntersectionObserver(workplaceObserver, {
-    threshold: thresholds,
-  });
+    const observer = new IntersectionObserver(workplaceObserver, observerOptions);
 
-  // Select all workplace elements and observe them
-  document.addEventListener('DOMContentLoaded', () => {
+    // Select all workplace elements and observe them
     const workplaces = document.querySelectorAll('.workplace');
     workplaces.forEach((workplace) => {
       observer.observe(workplace);
     });
+
+    // Cleanup function
+    return () => {
+      workplaces.forEach((workplace) => {
+        observer.unobserve(workplace);
+      });
+    };
+  }
+
+  // Run setup on initial load and subsequent navigations
+  document.addEventListener('astro:page-load', setupCareerGrid);
+
+  // Cleanup on navigation away
+  document.addEventListener('astro:before-preparation', () => {
+    const cleanup = setupCareerGrid();
+    document.addEventListener('astro:after-preparation', cleanup);
   });
 </script>
 

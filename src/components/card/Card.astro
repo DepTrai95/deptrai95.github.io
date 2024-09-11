@@ -10,28 +10,6 @@ interface Props {
 const { href, title, body, image, stack } = Astro.props;
 ---
 
-<script>
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, index * 250);
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.3 }
-  );
-
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.teaser-card').forEach((card) => {
-      observer.observe(card);
-    });
-  });
-</script>
-
 <div class="teaser-card">
   <div class="teaser-card__image">
     <img src={image} alt={title} />
@@ -197,7 +175,7 @@ const { href, title, body, image, stack } = Astro.props;
       list-style: none;
       padding: 0;
     }
-    
+
     .teaser-card__stack-list-item {
       @include responsive-font-size(1.1rem, 1.2rem);
       background-color: $color-primary-dark;
