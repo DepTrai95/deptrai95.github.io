@@ -23,7 +23,30 @@ import Logo from '../../assets/img/logo.svg';
   @import '../../styles/_base.scss';
   @import '../../styles/_mixins.scss';
   .header {
+    backdrop-filter: blur(10px);
+    background-color: rgba(10, 10, 10, 0.8); // Adjust the color and opacity as needed
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.05)
+      );
+      z-index: -1;
+    }
   }
 
   .navbar {

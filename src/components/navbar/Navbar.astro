@@ -21,11 +21,33 @@
   const navList = document.querySelector('.nav-list');
   const backdrop = document.querySelector('.backdrop');
 
-  hamburger.addEventListener('click', () => {
+  function toggleMenu() {
     hamburger.classList.toggle('open');
     navList.classList.toggle('open');
     backdrop.classList.toggle('backdrop--visible');
-  });
+  }
+
+  hamburger.addEventListener('click', toggleMenu);
+
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
+  const handleResize = debounce(() => {
+    if (window.innerWidth > 600 && navList.classList.contains('open')) {
+      toggleMenu();
+    }
+  }, 250);
+
+  window.addEventListener('resize', handleResize);
 </script>
 
 <style lang="scss">
@@ -108,10 +130,10 @@
       height: 100vh;
       justify-content: flex-start;
       margin: 0;
-      padding-block-start: 60px; //header-height
+      padding-block-start: 1.5rem; //same like gap
       position: fixed;
       right: -100%;
-      top: 0;
+      top: calc(var(--header-height) + 1px);
       transition: right 0.3s ease;
       width: 75%;
       z-index: 10;

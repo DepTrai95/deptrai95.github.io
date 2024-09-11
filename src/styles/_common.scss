@@ -21,11 +21,6 @@ html {
    font-size: 10px;
 }
 
-main {
-flex-grow: 1;
-   // min-height: 100%;
-}
-
 body {
    background-color: $color-background;
    display: flex;
@@ -33,6 +28,15 @@ body {
    margin: 0;
    min-height: 100vh;
    padding: 0;
+   --header-height: 60px;
+   @include for-tablet-portrait-up {
+      --header-height: 65px;
+   }
+}
+
+main {
+   flex-grow: 1; 
+   margin-top: var(--header-height);
 }
 
 hgroup {
