@@ -22,4 +22,10 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+.vscodesendgrid.env
+
+# Local Netlify folder
+.netlify
+
+# vscode settings
 .vscode

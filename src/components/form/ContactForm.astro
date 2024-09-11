@@ -5,24 +5,101 @@ import InputEmail from './InputEmail.astro';
 import TextArea from './TextArea.astro';
 ---
 
-<form class="form" id="contact-form">
-  <div class="grid--default grid-2--tablet-portrait-up">
-    <div class="grid-item">
-      <InputText id="name" name="name" labelText="Name" required />
+<script>
+  const form = document.getElementById('contact-form');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+    const successMessage = document.getElementById('success-message');
+    const errorMessage = document.getElementById('error-message');
+
+    try {
+      const response = await fetch('/.netlify/functions/sendEmail', {
+        method: 'POST',
+        body: JSON.stringify({
+          to: 'dennidnguyen@gmail.com',
+          name: data.name,
+          email: data.email,
+          subject: data.subject,
+          text: data.message,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        form.classList.add('hidden');
+        successMessage.classList.remove('hidden');
+      } else {
+        throw new Error('Failed to send email');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      form.classList.add('hidden');
+      errorMessage.classList.remove('hidden');
+    }
+  });
+</script>
+
+<div class="form-container">
+  <form class="form" id="contact-form">
+    <div class="grid--default grid-2--tablet-portrait-up">
+      <div class="grid-item">
+        <InputText id="name" name="name" labelText="Name" required />
+      </div>
+      <div class="grid-item">
+        <InputEmail id="email" name="email" labelText="E-Mail" required />
+      </div>
     </div>
-    <div class="grid-item">
-      <InputEmail id="email" name="email" labelText="E-Mail" required />
-    </div>
+    <InputText id="subject" name="subject" labelText="Subject" required />
+    <TextArea id="message" name="message" labelText="Your Message" required />
+    <Button type="submit" form="contact-form" variant="primary"
+      >Send Message</Button
+    >
+  </form>
+  <div id="success-message" class="message success-message hidden">
+    <h2>Thank you for your message!</h2>
+    <p>I've received your message and I will try to get back to you as soon as possible.</p>
   </div>
-  <InputText id="subject" name="subject" labelText="Subject" required />
-  <TextArea id="message" name="message" labelText="Your Message" required />
-  <Button type="submit" form="contact-form" variant="primary">Send Message</Button>
-</form>
+  <div id="error-message" class="message error-message hidden">
+    <h2>Oops! Something went wrong.</h2>
+    <p>Your message couldn't be sent. Please try again later.</p>
+  </div>
+</div>
 
 <style lang="scss">
+  .form-container {
+    margin-block-start: 3rem;
+  }
   .form {
     button {
       margin-top: 1.5rem;
     }
+  }
+
+  .message {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 5px;
+  }
+
+  .success-message {
+    background-color: #d4edda;
+    color: #155724;
+  }
+
+  .error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+
+  .message h2 {
+    margin-bottom: 1rem;
+  }
+
+  .hidden {
+    display: none;
   }
 </style>
