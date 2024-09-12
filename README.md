@@ -1,19 +1,6 @@
-<<<<<<< HEAD
-# portfolio_astro
-=======
-# Astro Starter Kit: Basics
+# Portfolio Website
 
-```sh
-npm create astro@latest -- --template basics
-```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+This is a Portfolio Website created using Astro.js with plain old good SCSS/CSS 
 
 ## 🚀 Project Structure
 
@@ -39,6 +26,13 @@ There's nothing special about `src/components/`, but that's where we like to put
 
 Any static assets, like images, can be placed in the `public/` directory.
 
+## Prerequisites
+To build/run this project locally, nvm, npm and Node v18+ are required.
+
+- If not already installed, install nvm on your machine from [here](https://github.com/nvm-sh/nvm). You can check whether nvm is installed in your terminal with `nvm -v`.
+- If it is not already the standard-version - install Node v18 with `nvm install 18`. You can check whether the right Node version is selected with `node -v`. If a different Node version is selected, use `nvm use 18`.
+- Navigate to the project folder in your terminal and install project dependencies with `npm install`.
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
@@ -52,7 +46,18 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+  
+## Hosting
+This project is currently hosted on [Netlify](https://www.netlify.com/), which is ideal to use [Netlify Serverless Functions](https://www.netlify.com/platform/core/functions/) to send E-Mails via Sendgrid.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
->>>>>>> da777bf (Initial commit from Astro)
+## 💻 Technologies
+
+### Tech-Stack
+
+- [Astro.js](https://astro.build/)
+  
+
+### Dependencies
+
+- [Sendgrid/Mail](https://sendgrid.com/en-us)
+- [SCSS/SASS](https://sass-lang.com/)
