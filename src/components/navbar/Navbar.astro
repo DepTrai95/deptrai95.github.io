@@ -1,5 +1,12 @@
 ---
+const currentPath = Astro.url.pathname;
 
+const navItems = [
+  { href: '/', text: 'Home' },
+  { href: '/career', text: 'Career' },
+  { href: '/projects', text: 'Projects' },
+  { href: '/contact', text: 'Contact' },
+];
 ---
 
 <nav class="nav-main">
@@ -9,45 +16,71 @@
     <span></span>
   </button>
   <ul class="nav-list">
-    <li class="nav-list__item"><a href="/">Home</a></li>
-    <li class="nav-list__item"><a href="/career">Career</a></li>
-    <li class="nav-list__item"><a href="/projects">Projects</a></li>
-    <li class="nav-list__item"><a href="/contact">Contact</a></li>
+    {
+      navItems.map((item) => (
+        <li class="nav-list__item">
+          <a
+            href={item.href}
+            class={currentPath === item.href ? 'active' : ''}
+            aria-current={currentPath === item.href ? 'page' : undefined}
+          >
+            {item.text}
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </nav>
 
 <script>
-  const hamburger = document.querySelector('.hamburger');
-  const navList = document.querySelector('.nav-list');
-  const backdrop = document.querySelector('.backdrop');
+  function setupNavbar() {
+    const hamburger = document.querySelector('.hamburger');
+    const navList = document.querySelector('.nav-list');
+    const backdrop = document.querySelector('.backdrop');
 
-  function toggleMenu() {
-    hamburger.classList.toggle('open');
-    navList.classList.toggle('open');
-    backdrop.classList.toggle('backdrop--visible');
-  }
+    function toggleMenu() {
+      hamburger.classList.toggle('open');
+      navList.classList.toggle('open');
+      backdrop.classList.toggle('backdrop--visible');
+    }
 
-  hamburger.addEventListener('click', toggleMenu);
+    hamburger.addEventListener('click', toggleMenu);
 
-  function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-      const later = () => {
+    function debounce(func, wait) {
+      let timeout;
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+        };
         clearTimeout(timeout);
-        func(...args);
+        timeout = setTimeout(later, wait);
       };
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
+    }
+
+    const handleResize = debounce(() => {
+      if (window.innerWidth > 600 && navList.classList.contains('open')) {
+        toggleMenu();
+      }
+    }, 250);
+
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup function
+    return () => {
+      hamburger.removeEventListener('click', toggleMenu);
+      window.removeEventListener('resize', handleResize);
     };
   }
 
-  const handleResize = debounce(() => {
-    if (window.innerWidth > 600 && navList.classList.contains('open')) {
-      toggleMenu();
-    }
-  }, 250);
+  // Run setup on initial load and subsequent navigations
+  document.addEventListener('astro:page-load', setupNavbar);
 
-  window.addEventListener('resize', handleResize);
+  // Cleanup on navigation away
+  document.addEventListener('astro:before-preparation', () => {
+    const cleanup = setupNavbar();
+    document.addEventListener('astro:after-preparation', cleanup);
+  });
 </script>
 
 <style lang="scss">
@@ -193,6 +226,22 @@
       &:focus::before {
         transform: scale3d(1, 1, 1);
         width: 100%;
+      }
+
+      &.active {
+        color: $color-primary;
+
+        &::before {
+          border: 1px solid currentColor;
+          bottom: 0;
+          content: '';
+          left: 0;
+          position: absolute;
+          transform-origin: center left;
+          transform: scale3d(1, 1, 1);
+          transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+          width: 100%;
+        }
       }
     }
   }
