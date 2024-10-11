@@ -1,9 +1,25 @@
 [
   {
+    "href": "#",
+    "title": "Restaurant Order [WIP]",
+    "body": "New implementation of the restaurant order application. Currently under development (as of 10.10.2024). It will have 1 NestJS Backend and 3 Vue-Frontends.",
+    "stack": ["Vue.js", "Pinia", "NestJS", "Amazon S3", "VPS"],
+    "image": "/img/projects/ordering-landing.webp",
+    "image_2": "/img/projects/ordering-landing-2.webp"
+  },
+  {
+    "href": "#",
+    "title": "Loem - LADR",
+    "body": "Implementation of Frontend/UI of an Labor Order Entry Module. Doctors and Medical Practices can manage laboratory orders digitally",
+    "stack": ["Web Components", "Lit-HTML", "Redux-TK", "Vaadin"],
+    "image": "https://placehold.co/800x500",
+    "image_2": "https://placehold.co/800x500"
+  },
+  {
     "href": "https://www.matjo.de/",
-    "title": "Matjo",
+    "title": "Matjo Restaurant",
     "body": "Website of a local business in Dresden specializing in bbq and hotpots.",
-    "stack": ["Vite.js","Vue.js", "SendGrid API", "Instagram API", "Netlify"],
+    "stack": ["Vue.js", "SendGrid API", "Instagram API", "Netlify"],
     "image": "/img/projects/matjo-landing.webp",
     "image_2": "/img/projects/matjo-landing-2.webp"
   },
@@ -33,10 +49,10 @@
   },
   {
     "href": "https://nits-restaurant-order-app.netlify.app/",
-    "title": "Restaurant Order [WIP]",
+    "title": "Restaurant Order Old",
     "body": "Implementation of a restaurant order application with Vue.js and Firebase. The application is designed and intended to be a PWA. Due to time constraints, the application is not fully functional yet.",
     "stack": ["Vite.js", "Vue.js", "PrimeVue", "Pinia", "Firebase", "Netlify"],
-    "image": "/img/projects/ordering-landing.webp",
+    "image": "/img/projects/ordering-landing-2.webp",
     "image_2": "/img/projects/ordering-landing-2.webp"
   },
   {

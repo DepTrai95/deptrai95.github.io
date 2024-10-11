@@ -1,22 +1,47 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ContactForm from '../components/form/ContactForm.astro';
+
+let isOnGithub = false;
+// Check if the current URL contains 'github'
+if (typeof window !== 'undefined' && window.location.href.includes('github')) {
+  isOnGithub = true;
+}
 ---
 
-<Layout title="Portfolio | Contact | Duc Anh Dennis Nguyen" metaDescription="This is my portfolio page and you can contact me via E-Mail or Contact Form.">
-	<div class="content-area">
-		<div class="inner">
-			<div id="career" class="section-header">
-			<h1 class="sr-only">Contact me via E-Mail or Contact Form</h1>
-			<h2>Contact me</h2>
-			</div>
-			<p>
-			Since my interest is not exclusively in web-/front-end development, I
-			would be happy about any message where I am offered the opportunity to
-			develop professionally. Questions, job offers, fulltime and parttime, requests of any kind -
-			feel free to write me!
-			</p>
-			<ContactForm />
-		</div>
-	</div>
+<Layout
+  title="Portfolio | Contact | Duc Anh Dennis Nguyen"
+  metaDescription="This is my portfolio page and you can contact me via E-Mail or Contact Form."
+>
+  <div class="content-area">
+    <div class="inner">
+      <div id="career" class="section-header">
+        <h1 class="sr-only">Contact me via E-Mail or Contact Form</h1>
+        <h2>Contact me</h2>
+      </div>
+      <p>
+        Since my interest is not exclusively in web-/front-end development, I
+        would be happy about any message where I am offered the opportunity to
+        develop professionally. Questions, job offers, fulltime and parttime,
+        requests of any kind - feel free to write me!
+      </p>
+      {!isOnGithub && <ContactForm />}
+
+      {isOnGithub && 
+        <p>
+          You can reach me directly via E-Mail on <a
+            class="link"
+            href="mailto:dennidnguyen@gmail.com">dennidnguyen@gmail.com</a
+          >
+          or on the Contact Form on my 
+          <a
+            class="link"
+            href="http://deptrai.de/contact"
+            rel="noopener"
+            rel="noreferrer">Website.
+          </a>
+        </p>
+      }
+    </div>
+  </div>
 </Layout>

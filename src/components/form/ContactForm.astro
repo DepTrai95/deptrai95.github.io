@@ -6,41 +6,43 @@ import TextArea from './TextArea.astro';
 ---
 
 <script>
-  const form = document.getElementById('contact-form');
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
-    const successMessage = document.getElementById('success-message');
-    const errorMessage = document.getElementById('error-message');
-
-    try {
-      const response = await fetch('/.netlify/functions/sendEmail', {
-        method: 'POST',
-        body: JSON.stringify({
-          to: 'dennidnguyen@gmail.com',
-          name: data.name,
-          email: data.email,
-          subject: data.subject,
-          text: data.message,
-        }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-
-      if (response.ok) {
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+      const successMessage = document.getElementById('success-message');
+      const errorMessage = document.getElementById('error-message');
+  
+      try {
+        const response = await fetch('/.netlify/functions/sendEmail', {
+          method: 'POST',
+          body: JSON.stringify({
+            to: 'dennidnguyen@gmail.com',
+            name: data.name,
+            email: data.email,
+            subject: data.subject,
+            text: data.message,
+          }),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+  
+        if (response.ok) {
+          form.classList.add('hidden');
+          successMessage.classList.remove('hidden');
+        } else {
+          throw new Error('Failed to send email');
+        }
+      } catch (error) {
+        console.error('Error:', error);
         form.classList.add('hidden');
-        successMessage.classList.remove('hidden');
-      } else {
-        throw new Error('Failed to send email');
+        errorMessage.classList.remove('hidden');
       }
-    } catch (error) {
-      console.error('Error:', error);
-      form.classList.add('hidden');
-      errorMessage.classList.remove('hidden');
-    }
-  });
+    });
+  }
 </script>
 
 <div class="form-container">
@@ -55,13 +57,14 @@ import TextArea from './TextArea.astro';
     </div>
     <InputText id="subject" name="subject" labelText="Subject" required />
     <TextArea id="message" name="message" labelText="Your Message" required />
-    <Button type="submit" form="contact-form" variant="primary"
-      >Send Message</Button
-    >
+    <Button type="submit" variant="primary">Send Message</Button>
   </form>
   <div id="success-message" class="message success-message hidden">
     <h2>Thank you for your message!</h2>
-    <p>I've received your message and I will try to get back to you as soon as possible.</p>
+    <p>
+      I've received your message and I will try to get back to you as soon as
+      possible.
+    </p>
   </div>
   <div id="error-message" class="message error-message hidden">
     <h2>Oops! Something went wrong.</h2>

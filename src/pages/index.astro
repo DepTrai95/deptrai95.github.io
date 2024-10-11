@@ -86,7 +86,10 @@ import ButtonLink from '../components/button/ButtonLink.astro';
               SEO-friendly, accessible and performant static websites.
             </p>
             <ButtonLink link="/fileadmin/cv.pdf" variant="ghost"
-              >Download CV</ButtonLink
+              >CV (EN)</ButtonLink
+            >
+            <ButtonLink link="/fileadmin/lebenslauf.pdf" variant="ghost"
+              >CV (DE)</ButtonLink
             >
             <ButtonLink link="/projects" variant="ghost"
               >See my projects</ButtonLink
@@ -108,14 +111,15 @@ import ButtonLink from '../components/button/ButtonLink.astro';
       <article class="introduction">
         <h2>About Me</h2>
         <p>
-          This page is a portfolio page and is a short introduction about me.
+          This page is a portfolio page and is a short introduction about me.<br
+          />
+          I am specialized in frontend development and have a passion for creating
+          beautiful and functional websites.<br>
+          Right now I'm learning and improving my Backend-Skills and -Understanding. 
+          With that I aspire to become a proficient Fullstack Developer and got interested in NestJS in particular.
         </p>
         <p>
-          I am specialized in frontend development and have a passion for
-          creating beautiful and functional websites.
-        </p>
-        <p>
-          I am currently working at <a
+          Currently I am working at <a
             class="link"
             href="https://www.dgn.de/"
             target="_blank">Deutsches Gesundheitsnetz</a
@@ -125,7 +129,7 @@ import ButtonLink from '../components/button/ButtonLink.astro';
           I am always looking for new challenges and opportunities to learn and
           grow. So if you have any job offers be it <strong
             >fulltime or freelance</strong
-          >, please feel free to contact me.
+          >, please feel free to <a class="link" href="/contact">contact me</a>.
         </p>
       </article>
     </section>
