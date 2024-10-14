@@ -2,11 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import ContactForm from '../components/form/ContactForm.astro';
 
-let isOnGithub = false;
-// Check if the current URL contains 'github'
-if (typeof window !== 'undefined' && window.location.href.includes('github')) {
-  isOnGithub = true;
-}
+const isOnGithub = Astro.url.origin.includes('github');
 ---
 
 <Layout
@@ -25,23 +21,27 @@ if (typeof window !== 'undefined' && window.location.href.includes('github')) {
         develop professionally. Questions, job offers, fulltime and parttime,
         requests of any kind - feel free to write me!
       </p>
-      {!isOnGithub ? (
-        <p>
-          You can reach me directly via E-Mail on <a
-            class="link"
-            href="mailto:dennidnguyen@gmail.com">dennidnguyen@gmail.com</a
-          >
-          or on the Contact Form on my 
-          <a
-            class="link"
-            href="http://deptrai.de/contact"
-            rel="noopener"
-            rel="noreferrer">Website.
-          </a>
-        </p>
-      ) : (
-        <ContactForm />
-      )}
+      {
+        !isOnGithub ? (
+          <p>
+            You can reach me directly via E-Mail on{' '}
+            <a class="link" href="mailto:dennidnguyen@gmail.com">
+              dennidnguyen@gmail.com
+            </a>
+            or on the Contact Form on my
+            <a
+              class="link"
+              href="http://deptrai.de/contact"
+              rel="noopener"
+              rel="noreferrer"
+            >
+              Website.
+            </a>
+          </p>
+        ) : (
+          <ContactForm />
+        )
+      }
     </div>
   </div>
 </Layout>
