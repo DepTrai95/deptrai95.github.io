@@ -2,7 +2,7 @@
   {
     "href": "#",
     "title": "Restaurant Order [WIP]",
-    "body": "New implementation of the restaurant order application. Currently under development (as of 10.10.2024). It will have 1 NestJS Backend and 3 Vue-Frontends.",
+    "body": "New implementation of the restaurant order application. Currently under development (as of 25.10.2024). It will have 1 NestJS Backend and 3 Vue-Frontends.",
     "stack": ["Vue.js", "Pinia", "NestJS", "Amazon S3", "VPS"],
     "image": "/img/projects/ordering-landing.webp",
     "image_2": "/img/projects/ordering-landing-2.webp"
@@ -12,13 +12,21 @@
     "title": "Loem - LADR",
     "body": "Implementation of Frontend/UI of an Labor Order Entry Module. Doctors and Medical Practices can manage laboratory orders digitally",
     "stack": ["Web Components", "Lit-HTML", "Redux-TK", "Vaadin"],
-    "image": "https://placehold.co/800x500",
-    "image_2": "https://placehold.co/800x500"
+    "image": "/img/projects/loem-landing.webp",
+    "image_2": "/img/projects/loem-landing-2.webp"
+  },
+  {
+    "href": "#",
+    "title": "gusStudio/gusClient",
+    "body": "Developed an application which can: Send, receive, sign, and manage KIM, KVC, and email messages, e-doctor letters, and SMS. Creating various invoices. ",
+    "stack": ["Web Components", "Lit-HTML", "Redux-TK", "Vaadin"],
+    "image": "/img/projects/gusStudio-landing.webp",
+    "image_2": "/img/projects/gusStudio-landing-2.webp"
   },
   {
     "href": "https://www.matjo.de/",
     "title": "Matjo Restaurant",
-    "body": "Website of a local business in Dresden specializing in bbq and hotpots.",
+    "body": "Website of a new local business in Dresden specializing in bbq and hotpots.",
     "stack": ["Vue.js", "SendGrid API", "Instagram API", "Netlify"],
     "image": "/img/projects/matjo-landing.webp",
     "image_2": "/img/projects/matjo-landing-2.webp"
@@ -50,7 +58,7 @@
   {
     "href": "https://nits-restaurant-order-app.netlify.app/",
     "title": "Restaurant Order Old",
-    "body": "Implementation of a restaurant order application with Vue.js and Firebase. The application is designed and intended to be a PWA. Due to time constraints, the application is not fully functional yet.",
+    "body": "Implementation of a restaurant order application with Vue.js and Firebase. Due to time constraints, the application is not fully functional and will be replaced with another Tech-Stack.",
     "stack": ["Vite.js", "Vue.js", "PrimeVue", "Pinia", "Firebase", "Netlify"],
     "image": "/img/projects/ordering-landing-2.webp",
     "image_2": "/img/projects/ordering-landing-2.webp"
@@ -58,7 +66,7 @@
   {
     "href": "https://communardo.com/",
     "title": "Communardo",
-    "body": "Implementation of the complete frontend of the new website of Communardo. Design was provided by a very talented colleague.",
+    "body": "Implementation of the complete frontend of the new website of Communardo. Design was provided by a very talented team-colleague.",
     "stack": ["JavaScript", "ES6+", "SCSS", "TYPO3", "Fluid Template"],
     "image": "/img/projects/communardo-landing.webp",
     "image_2": "/img/projects/communardo-landing-2.webp"
