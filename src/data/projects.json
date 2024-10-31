@@ -8,9 +8,9 @@
     "image_2": "/img/projects/ordering-landing-2.webp"
   },
   {
-    "href": "#",
-    "title": "Loem - LADR",
-    "body": "Implementation of Frontend/UI of an Labor Order Entry Module. Doctors and Medical Practices can manage laboratory orders digitally",
+    "href": "https://www.loem.de/",
+    "title": "LOEM - LADR",
+    "body": "Implementation of Frontend with modern UI of an Labor Order Entry Module. Doctors and Medical Practices can manage laboratory orders digitally.",
     "stack": ["Web Components", "Lit-HTML", "Redux-TK", "Vaadin"],
     "image": "/img/projects/loem-landing.webp",
     "image_2": "/img/projects/loem-landing-2.webp"
@@ -48,7 +48,7 @@
     "image_2": "/img/projects/anamit-landing-2.webp"
   },
   {
-    "href": "https://aroi-dresden.com/",
+    "href": "https://aroi-thaicuisine.de/",
     "title": "Aroi Thai Cuisine",
     "body": "Implementation and design of the frontend of a local business in Dresden specializing in thai cuisine.",
     "stack": ["Vite.js", "Vue.js", "PrimeVue", "SendGrid API", "Netlify"],
