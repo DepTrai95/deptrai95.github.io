@@ -16,6 +16,8 @@ import TextArea from './TextArea.astro';
       const errorMessage = document.getElementById('error-message');
   
       try {
+        // test cloudflare service worker locally 
+        // const response = await fetch('http://localhost:8787', {
         const response = await fetch('https://portfolio-sendgrid-worker.dennidnguyen.workers.dev', {
           method: 'POST',
           body: JSON.stringify({

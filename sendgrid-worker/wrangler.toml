@@ -4,6 +4,10 @@ main = "src/index.js"
 compatibility_date = "2024-11-06"
 compatibility_flags = ["nodejs_compat"]
 
+#add local api key to test
+[vars]
+SENDGRID_API_KEY = "your-sendgrid-api-key"
+
 # Workers Logs
 # Docs: https://developers.cloudflare.com/workers/observability/logs/workers-logs/
 # Configuration: https://developers.cloudflare.com/workers/observability/logs/workers-logs/#enable-workers-logs
