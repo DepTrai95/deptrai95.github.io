@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import ContactForm from '../components/form/ContactForm.astro';
 
-const isNotOnGithub = Astro.url.origin.includes('github');
+const isOnGithub = Astro.url.origin.includes('github');
 ---
 
 <Layout
@@ -22,8 +22,8 @@ const isNotOnGithub = Astro.url.origin.includes('github');
         requests of any kind - feel free to write me!
       </p>
       {
-        !isNotOnGithub ? (
-          <p ?hidden={isNotOnGithub}>
+        isOnGithub ? (
+          <p>
             You can reach me directly via E-Mail on{' '}
             <a class="link" href="mailto:dennidnguyen@gmail.com">
               dennidnguyen@gmail.com
@@ -38,7 +38,7 @@ const isNotOnGithub = Astro.url.origin.includes('github');
               Website.
             </a>
           </p>
-          ) : (
+        ) : (
           <ContactForm />
         )
       }

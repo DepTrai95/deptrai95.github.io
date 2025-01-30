@@ -20,7 +20,7 @@ const navItems = [
     <span></span>
     <span></span>
   </button>
-  <ul class="nav-list" id="nav-main-list" aria-hidden="true">
+  <ul class="nav-list" id="nav-main-list" aria-hidden="false">
     {
       navItems.map((item) => (
         <li class="nav-list__item">
@@ -47,7 +47,7 @@ const navItems = [
       const isExpanded = button.getAttribute('aria-expanded') === 'true';
       button.setAttribute('aria-expanded', (!isExpanded).toString());
       button.classList.toggle('open');
-      navList.setAttribute('aria-hidden', (isExpanded).toString());
+      navList.setAttribute('aria-hidden', isExpanded.toString());
       navList.classList.toggle('open');
       backdrop.classList.toggle('backdrop--visible');
     }
@@ -69,6 +69,12 @@ const navItems = [
     const handleResize = debounce(() => {
       if (window.innerWidth > 600 && navList.classList.contains('open')) {
         toggleMenu();
+      }
+      if (window.innerWidth > 600) {
+        navList.removeAttribute('aria-hidden');
+      }
+      if (window.innerWidth <= 600) {
+        navList.setAttribute('aria-hidden', 'true');
       }
     }, 250);
 
