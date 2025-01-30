@@ -21,27 +21,46 @@ const isOnGithub = Astro.url.origin.includes('github');
         develop professionally. Questions, job offers, fulltime and parttime,
         requests of any kind - feel free to write me!
       </p>
-      {
-        !isOnGithub ? (
-          <p>
-            You can reach me directly via E-Mail on{' '}
-            <a class="link" href="mailto:dennidnguyen@gmail.com">
-              dennidnguyen@gmail.com
-            </a>
-            or on the Contact Form on my
-            <a
-              class="link"
-              href="http://deptrai.de/contact"
-              rel="noopener"
-              rel="noreferrer"
-            >
-              Website.
-            </a>
-          </p>
-        ) : (
-          <ContactForm />
-        )
-      }
+
+      <p class="email-content">
+        You can reach me directly via E-Mail on{' '}
+        <a class="link" href="mailto:dennidnguyen@gmail.com">
+          dennidnguyen@gmail.com
+        </a>
+        or on the Contact Form on my
+        <a
+          class="link"
+          href="http://deptrai.de/contact"
+          rel="noopener"
+          rel="noreferrer"
+        >
+          Website.
+        </a>
+      </p>
+      <ContactForm />
     </div>
   </div>
 </Layout>
+
+<script>
+  function checkGithubPages() {
+    const isGithub =
+      window.location.hostname.includes('github.io') ||
+      window.location.host.includes('github.io');
+
+    const emailContent = document.querySelector('.email-content');
+    const formContent = document.querySelector('.form-container');
+
+    if (isGithub) {
+      formContent.classList.add('hidden');
+      formContent.setAttribute('hidden', '');
+      formContent.setAttribute('aria-hidden', 'true');
+    } else {
+      emailContent.classList.add('hidden');
+      emailContent.setAttribute('hidden', '');
+      emailContent.setAttribute('aria-hidden', 'true');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', checkGithubPages);
+</script>

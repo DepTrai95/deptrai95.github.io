@@ -10,12 +10,17 @@ const navItems = [
 ---
 
 <nav class="nav-main">
-  <button class="hamburger" aria-label="Toggle navbar">
+  <button
+    class="hamburger"
+    aria-label="Toggle navbar"
+    aria-expanded="false"
+    aria-controls="nav-main-list"
+  >
     <span></span>
     <span></span>
     <span></span>
   </button>
-  <ul class="nav-list">
+  <ul class="nav-list" id="nav-main-list" aria-hidden="true">
     {
       navItems.map((item) => (
         <li class="nav-list__item">
@@ -34,17 +39,20 @@ const navItems = [
 
 <script>
   function setupNavbar() {
-    const hamburger = document.querySelector('.hamburger');
+    const button = document.querySelector('.hamburger');
     const navList = document.querySelector('.nav-list');
     const backdrop = document.querySelector('.backdrop');
 
     function toggleMenu() {
-      hamburger.classList.toggle('open');
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', (!isExpanded).toString());
+      button.classList.toggle('open');
+      navList.setAttribute('aria-hidden', (isExpanded).toString());
       navList.classList.toggle('open');
       backdrop.classList.toggle('backdrop--visible');
     }
 
-    hamburger.addEventListener('click', toggleMenu);
+    button.addEventListener('click', toggleMenu);
 
     function debounce(func, wait) {
       let timeout;
@@ -68,7 +76,7 @@ const navItems = [
 
     // Cleanup function
     return () => {
-      hamburger.removeEventListener('click', toggleMenu);
+      button.removeEventListener('click', toggleMenu);
       window.removeEventListener('resize', handleResize);
     };
   }
