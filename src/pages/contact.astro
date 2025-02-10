@@ -1,8 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ContactForm from '../components/form/ContactForm.astro';
-
-const isOnGithub = Astro.url.origin.includes('github');
 ---
 
 <Layout
@@ -21,27 +19,22 @@ const isOnGithub = Astro.url.origin.includes('github');
         develop professionally. Questions, job offers, fulltime and parttime,
         requests of any kind - feel free to write me!
       </p>
-      {
-        !isOnGithub ? (
-          <p>
-            You can reach me directly via E-Mail on{' '}
-            <a class="link" href="mailto:dennidnguyen@gmail.com">
-              dennidnguyen@gmail.com
-            </a>
-            or on the Contact Form on my
-            <a
-              class="link"
-              href="http://deptrai.de/contact"
-              rel="noopener"
-              rel="noreferrer"
-            >
-              Website.
-            </a>
-          </p>
-        ) : (
-          <ContactForm />
-        )
-      }
+
+      <p>
+        If you're on my GitHub-Page you can only reach me directly via E-Mail on
+        <a class="link" href="mailto:dennidnguyen@gmail.com">dennidnguyen@gmail.com</a>, 
+        as the Contact Form below will not work on GitHub-Pages and will only work on my 
+        <a
+          class="link"
+          href="http://deptrai.de/contact"
+          rel="noopener"
+          rel="noreferrer"
+        >
+          Website.
+        </a>
+      </p>
+      <ContactForm />
+
     </div>
   </div>
 </Layout>
