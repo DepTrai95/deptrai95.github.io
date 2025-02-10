@@ -3,7 +3,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://deptrai95.github.io',
+  site: 'https://ducanhnguyen.de',
   base: '/',
   integrations: [sitemap()],
 });
