@@ -2,261 +2,261 @@
 const currentPath = Astro.url.pathname;
 
 const navItems = [
-  { href: '/', text: 'Home' },
-  { href: '/career', text: 'Career' },
-  { href: '/projects', text: 'Projects' },
-  { href: '/contact', text: 'Contact' },
+   { href: '/', text: 'Home' },
+   { href: '/career/', text: 'Career' },
+   { href: '/projects/', text: 'Projects' },
+   { href: '/contact/', text: 'Contact' },
 ];
 ---
 
 <nav class="nav-main">
-  <button
-    class="hamburger"
-    aria-label="Toggle navbar"
-    aria-expanded="false"
-    aria-controls="nav-main-list"
-  >
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-  <ul class="nav-list" id="nav-main-list" aria-hidden="false">
-    {
-      navItems.map((item) => (
-        <li class="nav-list__item">
-          <a
-            href={item.href}
-            class={currentPath === item.href ? 'active' : ''}
-            aria-current={currentPath === item.href ? 'page' : undefined}
-          >
-            {item.text}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+   <button
+      class="hamburger"
+      aria-label="Toggle navbar"
+      aria-expanded="false"
+      aria-controls="nav-main-list"
+   >
+      <span></span>
+      <span></span>
+      <span></span>
+   </button>
+   <ul class="nav-list" id="nav-main-list" aria-hidden="false">
+      {
+         navItems.map((item) => (
+         <li class="nav-list__item">
+            <a
+               href={item.href}
+               class={currentPath === item.href ? 'active' : ''}
+               aria-current={currentPath === item.href ? 'page' : undefined}
+            >
+               {item.text}
+            </a>
+         </li>
+         ))
+      }
+   </ul>
 </nav>
 
 <script>
-  function setupNavbar() {
-    const button = document.querySelector('.hamburger');
-    const navList = document.querySelector('.nav-list');
-    const backdrop = document.querySelector('.backdrop');
+   function setupNavbar() {
+      const button = document.querySelector('.hamburger');
+      const navList = document.querySelector('.nav-list');
+      const backdrop = document.querySelector('.backdrop');
 
-    function toggleMenu() {
-      const isExpanded = button.getAttribute('aria-expanded') === 'true';
-      button.setAttribute('aria-expanded', (!isExpanded).toString());
-      button.classList.toggle('open');
-      navList.setAttribute('aria-hidden', isExpanded.toString());
-      navList.classList.toggle('open');
-      backdrop.classList.toggle('backdrop--visible');
-    }
+      function toggleMenu() {
+         const isExpanded = button.getAttribute('aria-expanded') === 'true';
+         button.setAttribute('aria-expanded', (!isExpanded).toString());
+         button.classList.toggle('open');
+         navList.setAttribute('aria-hidden', isExpanded.toString());
+         navList.classList.toggle('open');
+         backdrop.classList.toggle('backdrop--visible');
+      }
 
-    button.addEventListener('click', toggleMenu);
+      button.addEventListener('click', toggleMenu);
 
-    function debounce(func, wait) {
-      let timeout;
-      return function executedFunction(...args) {
-        const later = () => {
-          clearTimeout(timeout);
-          func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
+      function debounce(func, wait) {
+         let timeout;
+         return function executedFunction(...args) {
+         const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+         };
+         clearTimeout(timeout);
+         timeout = setTimeout(later, wait);
+         };
+      }
+
+      const handleResize = debounce(() => {
+         if (window.innerWidth > 600 && navList.classList.contains('open')) {
+         toggleMenu();
+         }
+         if (window.innerWidth > 600) {
+         navList.removeAttribute('aria-hidden');
+         }
+         if (window.innerWidth <= 600) {
+         navList.setAttribute('aria-hidden', 'true');
+         }
+      }, 250);
+
+      window.addEventListener('resize', handleResize);
+
+      // Cleanup function
+      return () => {
+         button.removeEventListener('click', toggleMenu);
+         window.removeEventListener('resize', handleResize);
       };
-    }
+   }
 
-    const handleResize = debounce(() => {
-      if (window.innerWidth > 600 && navList.classList.contains('open')) {
-        toggleMenu();
-      }
-      if (window.innerWidth > 600) {
-        navList.removeAttribute('aria-hidden');
-      }
-      if (window.innerWidth <= 600) {
-        navList.setAttribute('aria-hidden', 'true');
-      }
-    }, 250);
+   // Run setup on initial load and subsequent navigations
+   document.addEventListener('astro:page-load', setupNavbar);
 
-    window.addEventListener('resize', handleResize);
-
-    // Cleanup function
-    return () => {
-      button.removeEventListener('click', toggleMenu);
-      window.removeEventListener('resize', handleResize);
-    };
-  }
-
-  // Run setup on initial load and subsequent navigations
-  document.addEventListener('astro:page-load', setupNavbar);
-
-  // Cleanup on navigation away
-  document.addEventListener('astro:before-preparation', () => {
-    const cleanup = setupNavbar();
-    document.addEventListener('astro:after-preparation', cleanup);
-  });
+   // Cleanup on navigation away
+   document.addEventListener('astro:before-preparation', () => {
+      const cleanup = setupNavbar();
+      document.addEventListener('astro:after-preparation', cleanup);
+   });
 </script>
 
 <style lang="scss">
-  @import '../../styles/_base.scss';
-  @import '../../styles/_mixins.scss';
-  @import '../../styles/_functions.scss';
+@import '../../styles/_base.scss';
+@import '../../styles/_mixins.scss';
+@import '../../styles/_functions.scss';
 
-  .hamburger {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: block;
-    height: 24px;
-    padding: 0.5rem;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: transform 0.3s ease;
-    width: 28px;
-    z-index: 1000;
+.hamburger {
+   background: none;
+   border: none;
+   cursor: pointer;
+   display: block;
+   height: 24px;
+   padding: 0.5rem;
+   position: absolute;
+   right: 0;
+   top: 50%;
+   transform: translateY(-50%);
+   transition: transform 0.3s ease;
+   width: 28px;
+   z-index: 1000;
 
-    @include for-tablet-portrait-up {
-      display: none;
-      position: relative;
-    }
+   @include for-tablet-portrait-up {
+   display: none;
+   position: relative;
+   }
 
-    span {
-      background: $color-white;
-      border-radius: 3px;
-      display: block;
-      height: 3px;
+   span {
+   background: $color-white;
+   border-radius: 3px;
+   display: block;
+   height: 3px;
+   left: 0;
+   opacity: 1;
+   position: absolute;
+   transform: rotate(0deg);
+   transition: 0.25s ease-in-out;
+   width: 100%;
+
+   &:nth-child(1) {
+      top: 0px;
+   }
+
+   &:nth-child(2) {
+      top: 10px;
+   }
+
+   &:nth-child(3) {
+      top: 20px;
+   }
+   }
+
+   &.open {
+   span:nth-child(1) {
+      top: 10px;
+      transform: rotate(135deg);
+   }
+
+   span:nth-child(2) {
+      opacity: 0;
+      left: -60px;
+   }
+
+   span:nth-child(3) {
+      top: 10px;
+      transform: rotate(-135deg);
+   }
+   }
+}
+
+.nav-list {
+   margin: 0;
+   padding: 0;
+
+   @include for-phone-only {
+   background-color: $color-background;
+   display: flex;
+   flex-direction: column;
+   gap: 1.5rem;
+   height: 100vh;
+   justify-content: flex-start;
+   margin: 0;
+   padding-block-start: 1.5rem; //same like gap
+   position: fixed;
+   right: -100%;
+   top: calc(var(--header-height) + 1px);
+   transition: right 0.3s ease;
+   width: 75%;
+   z-index: 10;
+
+   &.open {
+      right: 0;
+   }
+   }
+
+   @include for-tablet-portrait-up {
+   align-items: center;
+   display: flex;
+   gap: 2.5rem;
+   justify-content: flex-end;
+   }
+
+   .nav-list__item {
+   display: inline-flex;
+   @include for-phone-only {
+      padding-inline: 3rem;
+   }
+   }
+
+   a {
+   @include responsive-font-size(1.6rem, 1.8rem);
+   color: inherit;
+   line-height: 1.5;
+   overflow: hidden;
+   padding-block: 0.75rem;
+   position: relative;
+   text-decoration-line: none;
+   transition: color 0.2s ease-in;
+   width: auto;
+
+   @include for-phone-only {
+      @include responsive-font-size(2rem, 2.4rem);
+   }
+
+   &:hover,
+   &:focus {
+      color: $color-primary;
+   }
+
+   &::before {
+      border: 1px solid currentColor;
+      bottom: 0;
+      content: '';
       left: 0;
-      opacity: 1;
       position: absolute;
-      transform: rotate(0deg);
-      transition: 0.25s ease-in-out;
+      transform-origin: center left;
+      transform: scale3d(0, 1, 1);
+      transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+      width: 0;
+   }
+
+   &:hover::before,
+   &:focus::before {
+      transform: scale3d(1, 1, 1);
       width: 100%;
+   }
 
-      &:nth-child(1) {
-        top: 0px;
-      }
-
-      &:nth-child(2) {
-        top: 10px;
-      }
-
-      &:nth-child(3) {
-        top: 20px;
-      }
-    }
-
-    &.open {
-      span:nth-child(1) {
-        top: 10px;
-        transform: rotate(135deg);
-      }
-
-      span:nth-child(2) {
-        opacity: 0;
-        left: -60px;
-      }
-
-      span:nth-child(3) {
-        top: 10px;
-        transform: rotate(-135deg);
-      }
-    }
-  }
-
-  .nav-list {
-    margin: 0;
-    padding: 0;
-
-    @include for-phone-only {
-      background-color: $color-background;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      height: 100vh;
-      justify-content: flex-start;
-      margin: 0;
-      padding-block-start: 1.5rem; //same like gap
-      position: fixed;
-      right: -100%;
-      top: calc(var(--header-height) + 1px);
-      transition: right 0.3s ease;
-      width: 75%;
-      z-index: 10;
-
-      &.open {
-        right: 0;
-      }
-    }
-
-    @include for-tablet-portrait-up {
-      align-items: center;
-      display: flex;
-      gap: 2.5rem;
-      justify-content: flex-end;
-    }
-
-    .nav-list__item {
-      display: inline-flex;
-      @include for-phone-only {
-        padding-inline: 3rem;
-      }
-    }
-
-    a {
-      @include responsive-font-size(1.6rem, 1.8rem);
-      color: inherit;
-      line-height: 1.5;
-      overflow: hidden;
-      padding-block: 0.75rem;
-      position: relative;
-      text-decoration-line: none;
-      transition: color 0.2s ease-in;
-      width: auto;
-
-      @include for-phone-only {
-        @include responsive-font-size(2rem, 2.4rem);
-      }
-
-      &:hover,
-      &:focus {
-        color: $color-primary;
-      }
+   &.active {
+      color: $color-primary;
 
       &::before {
-        border: 1px solid currentColor;
-        bottom: 0;
-        content: '';
-        left: 0;
-        position: absolute;
-        transform-origin: center left;
-        transform: scale3d(0, 1, 1);
-        transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
-        width: 0;
+         border: 1px solid currentColor;
+         bottom: 0;
+         content: '';
+         left: 0;
+         position: absolute;
+         transform-origin: center left;
+         transform: scale3d(1, 1, 1);
+         transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+         width: 100%;
       }
-
-      &:hover::before,
-      &:focus::before {
-        transform: scale3d(1, 1, 1);
-        width: 100%;
-      }
-
-      &.active {
-        color: $color-primary;
-
-        &::before {
-          border: 1px solid currentColor;
-          bottom: 0;
-          content: '';
-          left: 0;
-          position: absolute;
-          transform-origin: center left;
-          transform: scale3d(1, 1, 1);
-          transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
-          width: 100%;
-        }
-      }
-    }
-  }
+   }
+   }
+}
 </style>
