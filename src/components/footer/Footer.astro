@@ -3,47 +3,47 @@ import SocialMediaList from './SocialMediaList.astro';
 ---
 
 <footer class="footer">
-  <div class="inner inner--wide">
-    <div class="footer__content">
+<div class="inner inner--wide">
+   <div class="footer__content">
       <SocialMediaList />
       <div class="footer-email">
-        <a href="mailto:dennidnguyen@gmail.com">dennidnguyen@gmail.com</a>
+      <a href="mailto:dennidnguyen@gmail.com">dennidnguyen@gmail.com</a>
       </div>
       <div class="text-center footer-copyright">
-        <a href="https://github.com/DepTrai95/deptrai95.github.io">
-          Designed and built by Duc Anh Dennis Nguyen ©
-        </a>
+      <a href="https://github.com/DepTrai95/deptrai95.github.io">
+         Designed and built by Duc Anh Dennis Nguyen ©
+      </a>
       </div>
-    </div>
-  </div>
+   </div>
+</div>
 </footer>
 
 <div class="backdrop"></div>
 
 <script>
-  const hamburger = document.querySelector('.hamburger');
-  const navList = document.querySelector('.nav-list');
-  const backdrop = document.querySelector('.backdrop');
+const hamburger = document.querySelector('.hamburger');
+const navList = document.querySelector('.nav-list');
+const backdrop = document.querySelector('.backdrop');
 
-  function closeMenu() {
-    hamburger.classList.remove('open');
-    navList.classList.remove('open');
-    backdrop.classList.remove('backdrop--visible');
-  }
+function closeMenu() {
+   hamburger.classList.remove('open');
+   navList.classList.remove('open');
+   backdrop.classList.remove('backdrop--visible');
+}
 
-  backdrop.addEventListener('click', closeMenu);
+backdrop.addEventListener('click', closeMenu);
 </script>
 
 <style lang="scss">
-  @import '../../styles/styles.scss';
-  .footer {
-    color: $color-white;
-  }
+@import '../../styles/styles.scss';
+.footer {
+   color: $color-white;
+}
 
-  .footer-email {
-    display: none;
+.footer-email {
+   display: none;
 
-    @include for-tablet-landscape-up {
+   @include for-tablet-landscape-up {
       bottom: 0;
       display: flex;
       flex-direction: column;
@@ -51,65 +51,65 @@ import SocialMediaList from './SocialMediaList.astro';
       position: fixed;
 
       a {
-        @include responsive-font-size(1.5rem, 1.6rem);
-        color: $color-white;
-        font-weight: 500;
-        letter-spacing: 0.1em;
-        text-decoration: none;
-        transition:
-          transform 0.2s,
-          color 0.2s;
-        writing-mode: vertical-rl;
+         @include responsive-font-size(1.5rem, 1.6rem);
+         color: $color-white;
+         font-weight: 500;
+         letter-spacing: 0.1em;
+         text-decoration: none;
+         transition:
+            transform 0.2s,
+            color 0.2s;
+         writing-mode: vertical-rl;
 
-        &:hover {
-          color: $color-primary;
-          transform: translateY(-10px);
-        }
+         &:hover {
+            color: $color-primary;
+            transform: translateY(-10px);
+         }
       }
 
       &::after {
-        background-color: $color-white;
-        content: '';
-        display: block;
-        height: 50px;
-        margin: 20px auto 0;
-        width: 1px;
+         background-color: $color-white;
+         content: '';
+         display: block;
+         height: 50px;
+         margin: 20px auto 0;
+         width: 1px;
       }
-    }
-  }
+   }
+}
 
-  .footer-copyright {
-    margin-block: 1.5rem;
+.footer-copyright {
+   margin-block: 1.5rem;
 
-    @include for-tablet-landscape-up {
+   @include for-tablet-landscape-up {
       font-weight: 500;
       margin-block: 3rem;
-    }
+   }
 
-    a {
+   a {
       color: $color-primary-light;
       text-decoration: none;
-    }
-  }
+   }
+}
 
-  .backdrop {
-    backdrop-filter: blur(1px);
-    background-color: rgba(0, 0, 0, 0.32);
-    height: 100%;
-    left: 0;
-    opacity: 0;
-    position: fixed;
-    top: 0;
-    transition:
+.backdrop {
+   backdrop-filter: blur(1px);
+   background-color: rgba(0, 0, 0, 0.32);
+   height: 100%;
+   left: 0;
+   opacity: 0;
+   position: fixed;
+   top: 0;
+   transition:
       opacity 0.3s,
       visibility 0.3s;
-    visibility: hidden;
-    width: 100%;
-    z-index: 9;
+   visibility: hidden;
+   width: 100%;
+   z-index: 9;
 
-    &.backdrop--visible {
+   &.backdrop--visible {
       opacity: 1;
       visibility: visible;
-    }
-  }
+   }
+}
 </style>

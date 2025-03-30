@@ -3,345 +3,458 @@ import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import profileImage from '../assets/img/portfolio-portrait.jpg';
 import ButtonLink from '../components/button/ButtonLink.astro';
+import TechStack from '../components/stack/TechStack.astro';
 ---
 
 <script>
-  const thresholds = [0.1, 0.3, 0.5, 0.7, 0.9];
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: thresholds,
-  };
+   const thresholds = [0.1, 0.3, 0.5, 0.7, 0.9];
+   const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: thresholds,
+   };
 
-  function setupIndexPage() {
-    const elements = [
-      'h1',
-      '.subheading',
-      '.info',
-      '.underline',
-      '.portfolio-photo',
-      '.introduction',
-    ];
+   function setupIndexPage() {
+      const elements = [
+         'h1',
+         '.subheading',
+         '.info',
+         '.underline',
+         '.portfolio-photo',
+         '.introduction',
+      ];
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
+      const observer = new IntersectionObserver((entries) => {
+         entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+               entry.target.classList.add('fade-in');
+               observer.unobserve(entry.target);
+            }
+         });
+      }, observerOptions);
 
-    function observeElements() {
-      elements.forEach((selector, index) => {
-        const element = document.querySelector(selector);
-        if (element) {
-          element.classList.remove('fade-in');
+      function observeElements() {
+         elements.forEach((selector, index) => {
+            const element = document.querySelector(selector);
+            if (element) {
+               element.classList.remove('fade-in');
 
-          setTimeout(() => {
-            observer.observe(element);
-          }, index * 100);
-        }
-      });
-    }
+               setTimeout(() => {
+                  observer.observe(element);
+               }, index * 100);
+            }
+         });
+      }
 
-    observeElements();
+      observeElements();
 
-    return () => {
-      elements.forEach((selector) => {
-        const element = document.querySelector(selector);
-        if (element) {
-          observer.unobserve(element);
-        }
-      });
-    };
-  }
+      return () => {
+         elements.forEach((selector) => {
+            const element = document.querySelector(selector);
+            if (element) {
+               observer.unobserve(element);
+            }
+         });
+      };
+   }
 
-  document.addEventListener('astro:page-load', setupIndexPage);
+   document.addEventListener('astro:page-load', setupIndexPage);
 
-  // Cleanup on navigation away
-  document.addEventListener('astro:before-preparation', () => {
-    const cleanup = setupIndexPage();
-    document.addEventListener('astro:after-preparation', cleanup);
-  });
+   // Cleanup on navigation away
+   document.addEventListener('astro:before-preparation', () => {
+      const cleanup = setupIndexPage();
+      document.addEventListener('astro:after-preparation', cleanup);
+   });
 </script>
 
 <Layout
-  title="Portfolio | About me | Duc Anh Dennis Nguyen | DepTrai | DepTrai Nguyen"
-  metaDescription="Explore the portfolio of Duc Anh Dennis Nguyen, a frontend developer specializing in web design and development with a focus on user experience."
+   title="Portfolio | About me | Duc Anh Dennis Nguyen | DepTrai | DepTrai Nguyen"
+   metaDescription="Explore the portfolio of Duc Anh Dennis Nguyen, a frontend developer specializing in web design and development with a focus on user experience."
 >
-  <div class="inner">
-    <section class="content-area" id="hero">
-      <div class="grid--default grid-2--tablet-portrait-up">
-        <div class="grid-item">
-          <h1>
-            Hi, I'm <span class="text-gradient">Duc Anh Dennis Nguyen</span>
-          </h1>
-          <p class="subheading">
-            I'm a <span class="underline">Frontend Developer</span>
-          </p>
-          <div class="info">
-            <p>
-              I am building things for the web and I'm specialized in building
-              SEO-friendly, accessible and performant static websites.
-            </p>
-            <ButtonLink link="/fileadmin/cv.pdf" variant="ghost"
-              >CV (EN)</ButtonLink
-            >
-            <ButtonLink link="/fileadmin/lebenslauf.pdf" variant="ghost"
-              >CV (DE)</ButtonLink
-            >
-            <ButtonLink link="/projects" variant="ghost"
-              >See my projects</ButtonLink
-            >
-          </div>
-        </div>
-        <div class="grid-item portfolio-photo">
-          <div class="reflection-container">
-            <!-- Generate 100 grid cells -->
-            <div class="reflection-grid-cell reflection-grid-cell-1"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-2"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-3"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-4"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-5"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-6"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-7"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-8"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-9"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-10"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-11"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-12"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-13"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-14"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-15"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-16"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-17"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-18"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-19"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-20"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-21"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-22"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-23"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-24"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-25"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-26"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-27"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-28"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-29"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-30"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-31"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-32"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-33"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-34"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-35"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-36"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-37"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-38"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-39"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-40"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-41"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-42"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-43"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-44"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-45"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-46"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-47"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-48"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-49"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-50"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-51"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-52"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-53"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-54"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-55"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-56"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-57"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-58"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-59"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-60"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-61"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-62"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-63"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-64"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-65"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-66"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-67"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-68"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-69"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-70"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-71"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-72"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-73"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-74"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-75"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-76"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-77"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-78"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-79"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-80"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-81"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-82"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-83"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-84"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-85"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-86"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-87"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-88"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-89"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-90"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-91"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-92"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-93"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-94"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-95"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-96"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-97"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-98"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-99"></div>
-            <div class="reflection-grid-cell reflection-grid-cell-100"></div>
-            <div class="reflection-content"></div>
-          </div>
-          <!-- <Image
+   <div class="inner">
+      <section class="content-area" id="hero">
+         <div class="grid--default grid-2--tablet-portrait-up">
+            <div class="grid-item">
+               <h1>
+                  Hi, I'm <span class="text-gradient"
+                     >Duc Anh Dennis Nguyen</span
+                  >
+               </h1>
+               <p class="subheading">
+                  I'm a <span class="underline">Frontend Developer</span>
+               </p>
+               <div class="info">
+                  <p>
+                     I am building things for the web and I'm specialized in
+                     building SEO-friendly, accessible and performant static
+                     websites.
+                  </p>
+                  <ButtonLink link="/fileadmin/cv.pdf" variant="ghost"
+                     >CV (EN)</ButtonLink
+                  >
+                  <ButtonLink link="/fileadmin/lebenslauf.pdf" variant="ghost"
+                     >CV (DE)</ButtonLink
+                  >
+                  <ButtonLink link="/projects" variant="ghost"
+                     >See my projects</ButtonLink
+                  >
+               </div>
+            </div>
+            <div class="grid-item portfolio-photo">
+               <div class="reflection-container">
+                  <!-- Generate 100 grid cells -->
+                  <div class="reflection-grid-cell reflection-grid-cell-1">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-2">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-3">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-4">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-5">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-6">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-7">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-8">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-9">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-10">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-11">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-12">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-13">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-14">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-15">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-16">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-17">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-18">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-19">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-20">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-21">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-22">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-23">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-24">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-25">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-26">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-27">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-28">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-29">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-30">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-31">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-32">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-33">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-34">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-35">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-36">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-37">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-38">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-39">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-40">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-41">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-42">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-43">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-44">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-45">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-46">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-47">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-48">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-49">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-50">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-51">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-52">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-53">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-54">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-55">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-56">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-57">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-58">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-59">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-60">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-61">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-62">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-63">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-64">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-65">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-66">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-67">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-68">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-69">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-70">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-71">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-72">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-73">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-74">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-75">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-76">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-77">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-78">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-79">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-80">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-81">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-82">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-83">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-84">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-85">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-86">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-87">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-88">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-89">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-90">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-91">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-92">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-93">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-94">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-95">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-96">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-97">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-98">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-99">
+                  </div>
+                  <div class="reflection-grid-cell reflection-grid-cell-100">
+                  </div>
+                  <div class="reflection-content"></div>
+               </div>
+               <!-- <Image
             src={profileImage}
             alt="Foto von Duc Anh Dennis Nguyen"
             height={400}
             width={400}
           /> -->
-        </div>
-      </div>
-    </section>
+            </div>
+         </div>
+      </section>
 
-    <section class="content-area">
-      <article class="introduction">
-        <h2>About Me</h2>
-        <p>
-          This is a small portfolio and a short introduction about my person.<br
-          />
-          I am specialized in frontend development and have a passion for creating
-          beautiful and functional websites.<br />
-          Right now I'm learning and improving my Backend-Skills and -Understanding.
-          With that I aspire to become a proficient Fullstack Developer and got interested
-          in NestJS in particular.
-        </p>
-        <p>
-          Currently I am working at <a
-            class="link"
-            href="https://www.dgn.de/"
-            target="_blank">Deutsches Gesundheitsnetz</a
-          > in Kaarst and live in Dusseldorf.
-        </p>
-        <p>
-          I am always open for new challenges and opportunities to learn and
-          grow. So if you have any job offers be it <strong
-            >fulltime or freelance</strong
-          >, please feel free to <a class="link" href="/contact">contact me</a>.
-        </p>
-      </article>
-    </section>
-  </div>
+      <section class="content-area">
+         <article class="introduction">
+            <h2>About Me</h2>
+            <p>
+               This is a small portfolio and a short introduction about my
+               person.<br />
+               I am specialized in frontend development and have a passion for creating
+               beautiful and functional websites.<br />
+               Right now I'm learning and improving my Backend-Skills and -Understanding.
+               With that I aspire to become a proficient Fullstack Developer and
+               got interested in NestJS in particular.
+            </p>
+            <p>
+               Currently I am working at <a
+                  class="link"
+                  href="https://www.dgn.de/"
+                  target="_blank">Deutsches Gesundheitsnetz</a
+               > in Kaarst and live in Dusseldorf.
+            </p>
+            <p>
+               I am always open for new challenges and opportunities to learn
+               and grow. So if you have any job offers be it <strong
+                  >fulltime or freelance</strong
+               >, please feel free to <a class="link" href="/contact"
+                  >contact me</a
+               >.
+            </p>
+         </article>
+      </section>
+
+      <section class="content-area">
+         <article>
+            <h2>My Techstack</h2>
+            <TechStack></TechStack>
+         </article>
+      </section>
+   </div>
 </Layout>
 
 <style lang="scss">
-  @import '../styles/_base.scss';
-  @import '../styles/_mixins.scss';
-  @import '../styles/_animation.scss';
+   @import '../styles/_base.scss';
+   @import '../styles/_mixins.scss';
+   @import '../styles/_animation.scss';
 
-  .portfolio-photo {
-    max-width: 300px;
+   .portfolio-photo {
+      max-width: 300px;
 
-    @include for-phone-only {
-      margin: 0 auto;
-    }
+      @include for-phone-only {
+         margin: 0 auto;
+      }
 
-    img {
-      border-radius: 5px;
-    }
-  }
+      img {
+         border-radius: 5px;
+      }
+   }
 
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-  .introduction {
-    margin-bottom: 2rem;
-    border: 1px solid rgba(var(--accent-light), 25%);
-    background: linear-gradient(
-      rgba(var(--accent-dark), 66%),
-      rgba(var(--accent-dark), 33%)
-    );
-    padding: 2.5rem;
-    border-radius: 8px;
-  }
-  .introduction code {
-    font-size: 0.8em;
-    font-weight: bold;
-    background: rgba(var(--accent-light), 12%);
-    color: rgb(var(--accent-light));
-    border-radius: 4px;
-    padding: 0.3em 0.4em;
-  }
-  .introduction strong {
-    color: rgb(var(--accent-light));
-  }
+   .text-gradient {
+      background-image: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 400%;
+      background-position: 0%;
+   }
+   .introduction {
+      margin-bottom: 2rem;
+      border: 1px solid rgba(var(--accent-light), 25%);
+      background: linear-gradient(
+         rgba(var(--accent-dark), 66%),
+         rgba(var(--accent-dark), 33%)
+      );
+      padding: 2.5rem;
+      border-radius: 8px;
+   }
+   .introduction code {
+      font-size: 0.8em;
+      font-weight: bold;
+      background: rgba(var(--accent-light), 12%);
+      color: rgb(var(--accent-light));
+      border-radius: 4px;
+      padding: 0.3em 0.4em;
+   }
+   .introduction strong {
+      color: rgb(var(--accent-light));
+   }
 
-  .underline {
-    display: inline-block;
-    position: relative;
+   .underline {
+      display: inline-block;
+      position: relative;
 
-    &::after {
-      background-color: $color-primary-light;
-      bottom: -3px;
-      content: '';
-      height: 2px;
-      left: 0;
-      position: absolute;
-      transform: scaleX(0);
-      transition: transform 0.3s ease-out;
-      width: 100%;
-    }
-  }
+      &::after {
+         background-color: $color-primary-light;
+         bottom: -3px;
+         content: '';
+         height: 2px;
+         left: 0;
+         position: absolute;
+         transform: scaleX(0);
+         transition: transform 0.3s ease-out;
+         width: 100%;
+      }
+   }
 
-  h1,
-  .subheading,
-  .info,
-  .portfolio-photo,
-  .introduction {
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity 0.5s ease-out,
-      transform 0.5s ease-out;
-  }
+   h1,
+   .subheading,
+   .info,
+   .portfolio-photo,
+   .introduction {
+      opacity: 0;
+      transform: translateY(20px);
+      transition:
+         opacity 0.5s ease-out,
+         transform 0.5s ease-out;
+   }
 
-  .fade-in {
-    opacity: 1;
-    transform: translateY(0);
-  }
+   .fade-in {
+      opacity: 1;
+      transform: translateY(0);
+   }
 
-  /* Add staggered delays */
-  h1.fade-in {
-    transition-delay: 0s;
-  }
-  .subheading.fade-in {
-    transition-delay: 0.25s;
-  }
-  .underline.fade-in {
-    transition-delay: 0.5s;
-    &::after {
-      transform: scaleX(1);
-      transition: transform 0.3s ease-out 0.4s;
-    }
-  }
-  .info.fade-in {
-    transition-delay: 0.5s;
-  }
-  .portfolio-photo.fade-in {
-    transition-delay: 0.5s;
-  }
-  .introduction.fade-in {
-    transition-delay: 0.5s;
-  }
+   /* Add staggered delays */
+   h1.fade-in {
+      transition-delay: 0s;
+   }
+   .subheading.fade-in {
+      transition-delay: 0.25s;
+   }
+   .underline.fade-in {
+      transition-delay: 0.5s;
+      &::after {
+         transform: scaleX(1);
+         transition: transform 0.3s ease-out 0.4s;
+      }
+   }
+   .info.fade-in {
+      transition-delay: 0.5s;
+   }
+   .portfolio-photo.fade-in {
+      transition-delay: 0.5s;
+   }
+   .introduction.fade-in {
+      transition-delay: 0.5s;
+   }
 </style>

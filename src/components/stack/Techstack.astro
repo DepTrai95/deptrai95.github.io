@@ -1,0 +1,175 @@
+---
+const icons: Record<string, string> = import.meta.glob(
+   '/src/assets/icons/technologies/*.svg',
+   {
+      eager: true,
+      query: '?url',
+      import: 'default',
+   }
+);
+const iconEntries: [string, string][] = Object.entries(icons);
+
+// Define sorting orders
+const technologies_first_row = [
+   'html-icon.svg',
+   'css-icon.svg',
+   'sass-icon.svg',
+   'js-icon.svg',
+   'vue-icon.svg',
+   'vite-icon.svg',
+   'astro-icon.svg',
+   'lit-icon.svg',
+];
+
+const technologies_second_row = [
+   'postgresql-icon.svg',
+   'nestjs-icon.svg',
+   'cloudflare-icon.svg',
+   'netlify-icon.svg',
+   'firebase-icon.svg',
+   'redux-icon.svg',
+   'pinia-icon.svg',
+   'vaadin-icon.svg',
+];
+
+// Helper function to sort by predefined order
+const sortIcons = (entries: [string, string][], order: string[]) => {
+   return entries
+      .filter(([path]) => order.includes(path.split('/').pop())) // Keep only relevant icons
+      .sort(([pathA], [pathB]) => {
+         const filenameA = pathA.split('/').pop();
+         const filenameB = pathB.split('/').pop();
+         return order.indexOf(filenameA) - order.indexOf(filenameB);
+      });
+};
+
+// Sort icons for each row
+const sortedIconsFirstRow = sortIcons(iconEntries, technologies_first_row);
+const sortedIconsSecondRow = sortIcons(iconEntries, technologies_second_row);
+---
+
+<div>
+   <div class="slider">
+      <ul class="list--unstyled techstack-list slide-track">
+         {
+            sortedIconsFirstRow
+               .concat(sortedIconsFirstRow) // Duplicate to ensure seamless scroll
+               .map(([path, url], index) => (
+                  <li class="techstack-list__item" key={index}>
+                     <img
+                        src={url}
+                        alt={path.split('/').pop().split('.')[0]}
+                        width="50"
+                        height="50"
+                     />
+                  </li>
+               ))
+         }
+      </ul>
+   </div>
+
+   <div class="slider slider--reverse">
+      <ul class="list--unstyled techstack-list slide-track">
+         {
+            sortedIconsSecondRow
+               .concat(sortedIconsSecondRow) // Duplicate to ensure seamless scroll
+               .map(([path, url], index) => (
+                  <li class="techstack-list__item" key={index}>
+                     <img
+                        src={url}
+                        alt={path.split('/').pop().split('.')[0]}
+                        width="50"
+                        height="50"
+                     />
+                  </li>
+               ))
+         }
+      </ul>
+   </div>
+</div>
+
+<style lang="scss">
+   @import '../../styles/_base.scss';
+   @import '../../styles/_mixins.scss';
+
+   .techstack-list {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 1rem; /* Adjust gap if needed */
+   }
+
+   .techstack-list__item {
+      flex: 0 0 auto;
+      width: 75px; /* Adjust size of the icons */
+
+      @include for-tablet-portrait-up {
+         width: 125px;
+      }
+
+      @include for-desktop-up {
+         width: 150px;
+      }
+   }
+
+   .techstack-list__item img {
+      height: 50px;
+
+      @include for-tablet-portrait-up {
+         height: 80px;
+      }
+
+      @include for-desktop-up {
+         height: 100px;
+      }
+   }
+
+   /* Infinite Scroll Animation */
+   @keyframes scroll {
+      0% {
+         transform: translateX(0);
+      }
+      100% {
+         transform: translateX(-100%);
+      }
+   }
+
+   /* Infinite Scroll Animation (Reversed Direction) */
+   @keyframes reverse-scroll {
+      0% {
+         transform: translateX(0);
+      }
+      100% {
+         transform: translateX(100%);
+      }
+   }
+
+   /* Container Styling */
+   .slider {
+      margin: 3rem auto;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+
+      &:hover .slide-track {
+         animation-play-state: paused;
+      }
+   }
+
+   /* Scrolling Track */
+   .slide-track {
+      animation: scroll 100s linear infinite;
+      width: 100%; /* Ensures the entire track is twice as wide */
+      will-change: transform;
+   }
+
+   /* Reversed Scrolling Track */
+   .slider--reverse .slide-track {
+      animation: reverse-scroll 100s linear infinite;
+      flex-direction: row-reverse;
+   }
+
+   /* Duplicate icons for seamless scrolling */
+   .slide-track > * {
+      flex: 0 0 auto;
+   }
+</style>
