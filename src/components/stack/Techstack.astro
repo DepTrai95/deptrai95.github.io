@@ -1,5 +1,5 @@
 ---
-const icons: Record<string, string> = import.meta.glob(
+const icons = import.meta.glob(
    '/src/assets/icons/technologies/*.svg',
    {
       eager: true,
@@ -7,7 +7,7 @@ const icons: Record<string, string> = import.meta.glob(
       import: 'default',
    }
 );
-const iconEntries: [string, string][] = Object.entries(icons);
+const iconEntries = Object.entries(icons);
 
 // Define sorting orders
 const technologies_first_row = [
@@ -33,7 +33,7 @@ const technologies_second_row = [
 ];
 
 // Helper function to sort by predefined order
-const sortIcons = (entries: [string, string][], order: string[]) => {
+const sortIcons = (entries, order) => {
    return entries
       .filter(([path]) => order.includes(path.split('/').pop())) // Keep only relevant icons
       .sort(([pathA], [pathB]) => {
