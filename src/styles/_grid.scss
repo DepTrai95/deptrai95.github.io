@@ -10,9 +10,9 @@
       --content-padding: 20px;
    }
 
-   @include for-desktop-up {
-      --content-padding: 30px;
-   }
+   // @include for-desktop-up {
+   //    --content-padding: 30px;
+   // }
 }
 
 .grid-2 {

@@ -1,175 +1,192 @@
 ---
-const icons = import.meta.glob(
-   '/src/assets/icons/technologies/*.svg',
-   {
-      eager: true,
-      query: '?url',
-      import: 'default',
-   }
-);
+const icons = import.meta.glob('/src/assets/icons/technologies/*.svg', {
+   eager: true,
+   query: '?url',
+   import: 'default',
+});
 const iconEntries = Object.entries(icons);
 
 // Define sorting orders
-const technologies_first_row = [
-   'html-icon.svg',
-   'css-icon.svg',
-   'sass-icon.svg',
-   'js-icon.svg',
-   'vue-icon.svg',
-   'vite-icon.svg',
-   'astro-icon.svg',
-   'lit-icon.svg',
-];
-
-const technologies_second_row = [
-   'postgresql-icon.svg',
-   'nestjs-icon.svg',
-   'cloudflare-icon.svg',
-   'netlify-icon.svg',
-   'firebase-icon.svg',
-   'redux-icon.svg',
-   'pinia-icon.svg',
-   'vaadin-icon.svg',
+const technologies = [
+   {
+      icon: 'js-icon.svg',
+      heading: 'JavaScript',
+      description: 'Versatile scripting language.',
+   },
+   {
+      icon: 'vue-icon.svg',
+      heading: 'Vue.js',
+      description: 'Progressive JavaScript Framework.',
+   },
+   {
+      icon: 'vite-icon.svg',
+      heading: 'Vite',
+      description: 'Fast Modern Frontend Tooling.',
+   },
+   {
+      icon: 'astro-icon.svg',
+      heading: 'Astro',
+      description: 'SSG focused on performance.',
+   },
+   {
+      icon: 'lit-icon.svg',
+      heading: 'Lit',
+      description: 'Library for Web Components.',
+   },
+   {
+      icon: 'vaadin-icon.svg',
+      heading: 'Vaadin-Router',
+      description: 'Routing for Web Component Apps.',
+   },
+   {
+      icon: 'redux-icon.svg',
+      heading: 'Redux',
+      description: 'State Management library.',
+   },
+   {
+      icon: 'pinia-icon.svg',
+      heading: 'Pinia',
+      description: 'State Management Library for Vue.js.',
+   },
+   {
+      icon: 'sass-icon.svg',
+      heading: 'Sass',
+      description: 'CSS preprocessor',
+   },
+   {
+      icon: 'nodejs-icon.svg',
+      heading: 'NodeJS',
+      description: 'Server-side JavaScript runtime.',
+   },
+   {
+      icon: 'nestjs-icon.svg',
+      heading: 'NestJS',
+      description: 'Progressive Node.js Backend-Framework.',
+   },
+   {
+      icon: 'postgresql-icon.svg',
+      heading: 'PostgreSQL',
+      description: 'Advanced relational database.',
+   },
+   {
+      icon: 'cloudflare-icon.svg',
+      heading: 'Cloudflare',
+      description: 'Hosting and Deployment.',
+   },
+   {
+      icon: 'netlify-icon.svg',
+      heading: 'Netlify',
+      description: 'Cloud Platform for Deployment.',
+   },
+   {
+      icon: 'firebase-icon.svg',
+      heading: 'Firebase',
+      description: 'Backend-as-a-Service Platform.',
+   },
 ];
 
 // Helper function to sort by predefined order
 const sortIcons = (entries, order) => {
+   const orderIcons = order.map((item) => item.icon); // Extrahiere nur die Icon-Namen
    return entries
-      .filter(([path]) => order.includes(path.split('/').pop())) // Keep only relevant icons
+      .filter(([path]) => orderIcons.includes(path.split('/').pop())) // Nur relevante Icons behalten
       .sort(([pathA], [pathB]) => {
          const filenameA = pathA.split('/').pop();
          const filenameB = pathB.split('/').pop();
-         return order.indexOf(filenameA) - order.indexOf(filenameB);
+         return orderIcons.indexOf(filenameA) - orderIcons.indexOf(filenameB);
+      })
+      .map(([path, url]) => {
+         // Füge heading und description zum Icon hinzu
+         const tech = order.find((item) => item.icon === path.split('/').pop());
+         return {
+            icon: url,
+            heading: tech.heading,
+            description: tech.description,
+         };
       });
 };
 
 // Sort icons for each row
-const sortedIconsFirstRow = sortIcons(iconEntries, technologies_first_row);
-const sortedIconsSecondRow = sortIcons(iconEntries, technologies_second_row);
+const sortedIcons = sortIcons(iconEntries, technologies);
 ---
 
 <div>
-   <div class="slider">
-      <ul class="list--unstyled techstack-list slide-track">
-         {
-            sortedIconsFirstRow
-               .concat(sortedIconsFirstRow) // Duplicate to ensure seamless scroll
-               .map(([path, url], index) => (
-                  <li class="techstack-list__item" key={index}>
-                     <img
-                        src={url}
-                        alt={path.split('/').pop().split('.')[0]}
-                        width="50"
-                        height="50"
-                     />
-                  </li>
-               ))
-         }
-      </ul>
-   </div>
-
-   <div class="slider slider--reverse">
-      <ul class="list--unstyled techstack-list slide-track">
-         {
-            sortedIconsSecondRow
-               .concat(sortedIconsSecondRow) // Duplicate to ensure seamless scroll
-               .map(([path, url], index) => (
-                  <li class="techstack-list__item" key={index}>
-                     <img
-                        src={url}
-                        alt={path.split('/').pop().split('.')[0]}
-                        width="50"
-                        height="50"
-                     />
-                  </li>
-               ))
-         }
-      </ul>
-   </div>
+   <ul
+      class="list--unstyled grid--default
+      grid-2--tablet-portrait-up
+      grid-3--tablet-landscape-up
+      grid-4--desktop-up"
+   >
+      {
+         sortedIcons.map((item) => (
+            <li class="grid-item">
+               <div class="techstack-item">
+                  <img
+                     class="techstack-item__icon"
+                     src={item.icon}
+                     alt={item.heading}
+                     width="50"
+                     height="50"
+                  />
+                  <div class="techstack-item__container">
+                     <h3 class="techstack-item__header">{item.heading}</h3>
+                     <p class="techstack-item__description">
+                        {item.description}
+                     </p>
+                  </div>
+               </div>
+            </li>
+         ))
+      }
+   </ul>
 </div>
+
+<style scoped>
+   .grid-item {
+      display: flex;
+
+      @media (max-width: 599px) {
+         margin-block-end: 1rem;
+      }
+   }
+</style>
 
 <style lang="scss">
    @import '../../styles/_base.scss';
+   @import '../../styles/_functions.scss';
    @import '../../styles/_mixins.scss';
 
-   .techstack-list {
+   .techstack-item {
+      align-items: center;
+      border: 1px solid $color-primary;
+      background-color: #95344f42;
+      border-radius: 5px;
       display: flex;
-      flex-wrap: nowrap;
-      gap: 1rem; /* Adjust gap if needed */
-   }
-
-   .techstack-list__item {
-      flex: 0 0 auto;
-      width: 75px; /* Adjust size of the icons */
-
-      @include for-tablet-portrait-up {
-         width: 125px;
-      }
-
-      @include for-desktop-up {
-         width: 150px;
-      }
-   }
-
-   .techstack-list__item img {
-      height: 50px;
-
-      @include for-tablet-portrait-up {
-         height: 80px;
-      }
-
-      @include for-desktop-up {
-         height: 100px;
-      }
-   }
-
-   /* Infinite Scroll Animation */
-   @keyframes scroll {
-      0% {
-         transform: translateX(0);
-      }
-      100% {
-         transform: translateX(-100%);
-      }
-   }
-
-   /* Infinite Scroll Animation (Reversed Direction) */
-   @keyframes reverse-scroll {
-      0% {
-         transform: translateX(0);
-      }
-      100% {
-         transform: translateX(100%);
-      }
-   }
-
-   /* Container Styling */
-   .slider {
-      margin: 3rem auto;
-      overflow: hidden;
-      position: relative;
+      gap: 1.5rem;
+      min-height: 90px;
+      padding: 1rem;
       width: 100%;
 
-      &:hover .slide-track {
-         animation-play-state: paused;
+      .techstack-item__icon {
+         height: 50px;
+         width: 50px;
       }
-   }
 
-   /* Scrolling Track */
-   .slide-track {
-      animation: scroll 100s linear infinite;
-      width: 100%; /* Ensures the entire track is twice as wide */
-      will-change: transform;
-   }
+      .techstack-item__container {
+         display: flex;
+         flex-direction: column;
+      }
 
-   /* Reversed Scrolling Track */
-   .slider--reverse .slide-track {
-      animation: reverse-scroll 100s linear infinite;
-      flex-direction: row-reverse;
-   }
+      .techstack-item__header {
+         @include responsive-font-size(1.7rem, 1.8rem);
+         letter-spacing: 1px;
+         margin: 0;
+      }
 
-   /* Duplicate icons for seamless scrolling */
-   .slide-track > * {
-      flex: 0 0 auto;
+      .techstack-item__description {
+         @include responsive-font-size(1.3rem, 1.4rem);
+         color: #f1f5f9cc;
+         margin: 0;
+      }
    }
 </style>
