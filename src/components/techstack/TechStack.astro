@@ -165,7 +165,12 @@ const sortedIcons = sortIcons(iconEntries, technologies);
       gap: 1.5rem;
       min-height: 90px;
       padding: 1rem;
+      transition: background-color 0.3s ease-in-out;
       width: 100%;
+
+      &:hover {
+         background-color: #e8165059;
+      }
 
       .techstack-item__icon {
          height: 50px;

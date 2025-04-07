@@ -1,195 +1,196 @@
 ---
 interface Props {
-  title: string;
-  body: string;
-  href: string;
-  image: string;
-  stack: Array<string>;
+   title: string;
+   body: string;
+   href: string;
+   image: string;
+   stack: Array<string>;
 }
 
+import { Image } from 'astro:assets';
 const { href, title, body, image, stack } = Astro.props;
 ---
 
 <li class="teaser-card" role="listitem">
-  <div class="teaser-card__image">
-    <img src={image} alt={title} />
-  </div>
-  <div class="teaser-card__content">
-    <div class="teaser-card__header">
-      <h3>
-        <a href={href}>{title}</a>
-      </h3>
-    </div>
-    <div class="teaser-card__body">
-      <p>{body}</p>
-    </div>
-    <div class="teaser-card__footer">
-      <ul class="teaser-card__stack-list">
-        {
-          stack.map((tech) => (
-            <li class="teaser-card__stack-list-item">{tech}</li>
-          ))
-        }
-      </ul>
-    </div>
-  </div>
+   <div class="teaser-card__image">
+      <Image src={image} alt={title} />
+   </div>
+   <div class="teaser-card__content">
+      <div class="teaser-card__header">
+         <h3>
+            <a href={href}>{title}</a>
+         </h3>
+      </div>
+      <div class="teaser-card__body">
+         <p>{body}</p>
+      </div>
+      <div class="teaser-card__footer">
+         <ul class="teaser-card__stack-list">
+            {
+               stack.map((tech) => (
+                  <li class="teaser-card__stack-list-item">{tech}</li>
+               ))
+            }
+         </ul>
+      </div>
+   </div>
 </li>
 
 <style lang="scss">
-  @import '../../styles/_base.scss';
-  @import '../../styles/_mixins.scss';
-  @import '../../styles/_functions.scss';
+   @import '../../styles/_base.scss';
+   @import '../../styles/_mixins.scss';
+   @import '../../styles/_functions.scss';
 
-  .teaser-card {
-    background-color: #23262d;
-    background-image: none;
-    background-position: 100%;
-    background-size: 400%;
-    border-radius: 7px;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-    display: flex;
-    list-style: none;
-    padding: 1px;
-    transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  .teaser-list {
-    flex-wrap: wrap;
-
-    .grid-item {
+   .teaser-card {
+      background-color: #23262d;
+      background-image: none;
+      background-position: 100%;
+      background-size: 400%;
+      border-radius: 7px;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
       display: flex;
-    }
-  }
-
-  .teaser-card {
-    --content-padding-x: 20px;
-    --content-padding-y: 20px;
-
-    border-radius: 8px;
-    box-shadow: 0 20px 30px rgba(120, 120, 120, 0.05);
-    display: flex;
-    flex-direction: column;
-    opacity: 0;
-    overflow: hidden;
-    position: relative;
-    transform: translateY(20px);
-    transition:
-      background-color $transition-timing,
-      box-shadow $transition-timing,
-      color $transition-timing,
-      opacity $transition-timing,
-      transform $transition-timing;
-
-    &.visible {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-
-    &:hover,
-    &:focus,
-    &:focus-within {
-      box-shadow: 0 20px 30px rgba(82, 82, 82, 0.15);
-      transform: translateY(-15px);
-    }
-  }
-
-  .teaser-card__image {
-    border: 1px solid #000;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-
-    img {
-      border-radius: 0;
-      vertical-align: bottom;
-    }
-  }
-
-  .teaser-card__content {
-    border: 1px solid transparent;
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 auto;
-    min-height: 200px;
-    padding: var(--content-padding-y) var(--content-padding-x);
-
-    .tag-list {
-      margin-bottom: var(--content-padding-x);
-
-      @include for-phone-only {
-        margin-top: -1rem;
-      }
-    }
-  }
-
-  .teaser-card__header {
-    .teaser-card--with-logo & {
-      padding-inline-end: calc(5px + var(--icon-wrapper-width));
-    }
-
-    h3 {
-      @include responsive-font-size(1.7rem, 1.8rem);
-      font-weight: 500;
-      line-height: 1.3em;
-      margin: 0;
-    }
-
-    a {
-      color: $color-white;
-      text-decoration: none;
-
-      &::after {
-        bottom: 0;
-        content: '';
-        left: 0;
-        position: absolute; // teaser-card__content
-        right: 0;
-        top: 0;
-        z-index: 1;
-      }
-    }
-  }
-
-  .teaser-card__body {
-    @include responsive-font-size(1.5rem, 1.6rem);
-    flex: 1 1 auto;
-    line-height: 1.45;
-
-    p {
-      margin: 1.3em 0;
-    }
-  }
-
-  .teaser-card__footer {
-    @include responsive-font-size(1.4rem, 1.5rem);
-    margin-block-end: 0.5em;
-
-    .link {
-      .icon {
-        height: 0.75em;
-        width: 0.75em;
-      }
-    }
-
-    .teaser-card__stack-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
       list-style: none;
-      padding: 0;
-    }
+      padding: 1px;
+      transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+   }
+   .teaser-list {
+      flex-wrap: wrap;
 
-    .teaser-card__stack-list-item {
-      @include responsive-font-size(1rem, 1.1rem);
-      background-color: $color-primary-dark;
-      border-radius: 3px;
-      padding: 0.25rem 0.5rem;
-    }
-  }
+      .grid-item {
+         display: flex;
+      }
+   }
 
-  .js-load-more {
-    .icon {
-      height: 0.7em;
-      margin-inline-start: 10px;
-      vertical-align: initial;
-      width: 0.7em;
-    }
-  }
+   .teaser-card {
+      --content-padding-x: 20px;
+      --content-padding-y: 20px;
+
+      border-radius: 8px;
+      box-shadow: 0 20px 30px rgba(120, 120, 120, 0.05);
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      overflow: hidden;
+      position: relative;
+      transform: translateY(20px);
+      transition:
+         background-color $transition-timing,
+         box-shadow $transition-timing,
+         color $transition-timing,
+         opacity $transition-timing,
+         transform $transition-timing;
+
+      &.visible {
+         opacity: 1;
+         transform: translateY(0px);
+      }
+
+      &:hover,
+      &:focus,
+      &:focus-within {
+         box-shadow: 0 20px 30px rgba(82, 82, 82, 0.15);
+         transform: translateY(-15px);
+      }
+   }
+
+   .teaser-card__image {
+      border: 1px solid #000;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+
+      img {
+         border-radius: 0;
+         vertical-align: bottom;
+      }
+   }
+
+   .teaser-card__content {
+      border: 1px solid transparent;
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      min-height: 200px;
+      padding: var(--content-padding-y) var(--content-padding-x);
+
+      .tag-list {
+         margin-bottom: var(--content-padding-x);
+
+         @include for-phone-only {
+            margin-top: -1rem;
+         }
+      }
+   }
+
+   .teaser-card__header {
+      .teaser-card--with-logo & {
+         padding-inline-end: calc(5px + var(--icon-wrapper-width));
+      }
+
+      h3 {
+         @include responsive-font-size(1.7rem, 1.8rem);
+         font-weight: 500;
+         line-height: 1.3em;
+         margin: 0;
+      }
+
+      a {
+         color: $color-white;
+         text-decoration: none;
+
+         &::after {
+            bottom: 0;
+            content: '';
+            left: 0;
+            position: absolute; // teaser-card__content
+            right: 0;
+            top: 0;
+            z-index: 1;
+         }
+      }
+   }
+
+   .teaser-card__body {
+      @include responsive-font-size(1.5rem, 1.6rem);
+      flex: 1 1 auto;
+      line-height: 1.45;
+
+      p {
+         margin: 1.3em 0;
+      }
+   }
+
+   .teaser-card__footer {
+      @include responsive-font-size(1.4rem, 1.5rem);
+      margin-block-end: 0.5em;
+
+      .link {
+         .icon {
+            height: 0.75em;
+            width: 0.75em;
+         }
+      }
+
+      .teaser-card__stack-list {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 0.5rem;
+         list-style: none;
+         padding: 0;
+      }
+
+      .teaser-card__stack-list-item {
+         @include responsive-font-size(1rem, 1.1rem);
+         background-color: $color-primary-dark;
+         border-radius: 3px;
+         padding: 0.25rem 0.5rem;
+      }
+   }
+
+   .js-load-more {
+      .icon {
+         height: 0.7em;
+         margin-inline-start: 10px;
+         vertical-align: initial;
+         width: 0.7em;
+      }
+   }
 </style>
