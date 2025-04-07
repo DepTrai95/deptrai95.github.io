@@ -1,8 +1,16 @@
 ---
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
-import careerData from '../../data/career.json';
+
 const career = await getCollection('career');
+const order = [
+   'dgn',
+   'webit',
+   'portrino',
+   'joynext',
+];
+
+const orderedCareer = order.map((slug) => career.find((career) => career.slug === slug)).filter(Boolean);
 ---
 
 <script>
@@ -59,7 +67,7 @@ const career = await getCollection('career');
 </script>
 
 {
-   career.map((workplace, index) => (
+   orderedCareer.map((workplace, index) => (
       <div class="workplace" id={`workplace-${index + 1}`}>
          <div class="workplace__info">
             <h3 class="workplace__name">
