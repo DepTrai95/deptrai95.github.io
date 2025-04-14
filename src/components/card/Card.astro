@@ -49,6 +49,12 @@ const { href, title, body, image, stack } = Astro.props;
    @import '../../styles/_mixins.scss';
    @import '../../styles/_functions.scss';
 
+   article {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+   }
+
    .teaser-card {
       background-color: #23262d;
       background-image: none;
@@ -167,8 +173,10 @@ const { href, title, body, image, stack } = Astro.props;
    }
 
    .teaser-card__footer {
+      margin-top: auto;
+      padding-top: var(--content-padding-y);
+
       @include responsive-font-size(1.4rem, 1.5rem);
-      margin-block-end: 0.5em;
 
       .link {
          .icon {

@@ -1,12 +1,160 @@
 ---
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/icon/Icon.astro';
+import ButtonLink from '../../components/button/ButtonLink.astro';
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 
 export const getStaticPaths = async () => {
    const projects = await getCollection('projects');
    return projects.map((project) => ({
       params: { slug: project.slug },
+      props: { project },
    }));
 };
+
+const { project } = Astro.props;
+const { data, body } = project;
 ---
 
-<h1>Test</h1>
+<script>
+   document.addEventListener('astro:page-load', () => {
+      const project = document.querySelector('.project');
+      if (project) {
+         project.classList.add('visible');
+      }
+   });
+</script>
+
+<Layout
+   title={`Project | ${data.title} | Duc Anh Dennis Nguyen | DepTrai95`}
+   metaDescription={data.description}
+>
+   <div class="inner">
+      <div class="content-area">
+         <article class="project">
+            <div class="project__header">
+               <h1>{data.title}</h1>
+               <div class="project__subheader">
+                  {data.description}
+               </div>
+            </div>
+            <Icon name="arrow-down" class="icon--project" />
+
+            <div class="project__content">
+               <div class="project__content__image">
+                  <Image src={data.image} alt="" />
+               </div>
+               <div class="project__footer">
+                  <div class="grid--default grid-2 grid-2--portrait-up">
+                     <div class="grid-item">
+                        <h2>Project Overview</h2>
+                        <ul class="project__content__stack">
+                           {
+                              data.stack.map((item) => (
+                                 <li class="project__content__stack__item">
+                                    {item}
+                                 </li>
+                              ))
+                           }
+                        </ul>
+                        <div class="button-container">
+                           {data.url !== '' && (
+                              <ButtonLink link={data.url} variant="ghost">
+                                 View Website
+                              </ButtonLink>
+                           )}
+                        </div>
+                     </div>
+                     <div class="grid-item">
+                        <p class="project__content__body">
+                           {body}
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </article>
+      </div>
+   </div>
+</Layout>
+
+<style lang="scss">
+   @import '../../styles/_base.scss';
+   @import '../../styles/_mixins.scss';
+   @import '../../styles/_functions.scss';
+
+   .project {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition:
+         opacity 0.5s ease-in-out,
+         transform 0.5s ease-in-out;
+
+      &.visible {
+         opacity: 1;
+         transform: translateY(0px);
+      }
+   }
+
+   h1 {
+      @include responsive-font-size(4rem, 4.5rem);
+      background-image: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 400%;
+      background-position: 0%;
+   }
+
+   .project__header {
+      text-align: center;
+   }
+
+   .project__subheader {
+      @include responsive-font-size(2.4rem, 2.6rem);
+   }
+
+   .icon--project {
+      fill: $color-white;
+      height: 5rem;
+      margin-block: 5rem;
+      width: 5rem;
+      width: 100%;
+   }
+
+   .project__content__image {
+      box-shadow: 0px 5px 20px 3px rgb(194 85 85 / 30%);
+      margin-block-end: 5rem;
+   }
+
+   .project__content__stack {
+      @include list--unstyled;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+   }
+
+   .project__content__stack__item {
+      @include responsive-font-size(1.2rem, 1.4rem);
+      background-color: #95344f42;
+      border: 1px solid $color-primary;
+      border-radius: 3px;
+      padding: 0.75rem 1.5rem;
+      transition: background-color 0.3s ease-in-out;
+      &:hover {
+         background-color: #e8165059;
+      }
+   }
+
+   .button-container {
+      margin-block-start: 2rem;
+   }
+
+   .project__content__body {
+      @include responsive-font-size(1.8rem, 1.9rem);
+      line-height: 1.6;
+   }
+</style>
