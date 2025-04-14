@@ -12,28 +12,36 @@ const { href, title, body, image, stack } = Astro.props;
 ---
 
 <li class="teaser-card" role="listitem">
-   <div class="teaser-card__image">
-      <Image src={image} alt={title} />
-   </div>
-   <div class="teaser-card__content">
-      <div class="teaser-card__header">
-         <h3>
-            <a href={href}>{title}</a>
-         </h3>
+   <article
+      class="teaser-card__container"
+      aria-labelledby={`teaser-title-${title.replace(/\s+/g, '-')}`}
+   >
+      <div class="teaser-card__image">
+         <Image src={image} alt={title} />
       </div>
-      <div class="teaser-card__body">
-         <p>{body}</p>
+
+      <div class="teaser-card__content">
+         <header class="teaser-card__header">
+            <h3 id={`teaser-title-${title.replace(/\s+/g, '-')}`}>
+               <a href={href} class="teaser-card__link">{title}</a>
+            </h3>
+         </header>
+
+         <section class="teaser-card__body">
+            <p>{body}</p>
+         </section>
+
+         <footer class="teaser-card__footer">
+            <ul class="teaser-card__stack-list">
+               {
+                  stack.map((tech) => (
+                     <li class="teaser-card__stack-list-item">{tech}</li>
+                  ))
+               }
+            </ul>
+         </footer>
       </div>
-      <div class="teaser-card__footer">
-         <ul class="teaser-card__stack-list">
-            {
-               stack.map((tech) => (
-                  <li class="teaser-card__stack-list-item">{tech}</li>
-               ))
-            }
-         </ul>
-      </div>
-   </div>
+   </article>
 </li>
 
 <style lang="scss">
