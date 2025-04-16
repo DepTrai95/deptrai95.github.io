@@ -1,5 +1,5 @@
 ---
-image: ./images/lidl-gesagt-getan-landing.webp
+image: ./images/lidl-gesagt-getan.png
 title: Lidl-gesagt-getan
 description: Complete rebrush of the corporate design of the LIDL Gesagt-Getan website.
 href: /projects/lidl-gesagt-getan

@@ -1,5 +1,5 @@
 ---
-image: ./images/communardo-landing.webp
+image: ./images/communardo.png
 title: Communardo
 description: Implementation of the complete frontend of the new website of Communardo.
 href: "/projects/communardo"

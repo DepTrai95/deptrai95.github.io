@@ -1,5 +1,5 @@
 ---
-image: ./images/aroi-landing.webp
+image: ./images/aroi.png
 title: Aroi - Thai Cuisine
 description: Website of a local business in Dresden specializing in thai cuisine
 href: /projects/aroi

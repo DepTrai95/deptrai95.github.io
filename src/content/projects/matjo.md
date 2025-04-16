@@ -1,5 +1,5 @@
 ---
-image: ./images/matjo-landing.webp
+image: ./images/matjo.png
 title: MATJO - BBQ & Hotpot
 description: Website of a local business in Dresden specializing in BBQ and Hotpots
 href: /projects/matjo

@@ -1,5 +1,5 @@
 ---
-image: ./images/readyforgreen-landing.webp
+image: ./images/readyforgreen.png
 title: ready for green
 description: Complete rebrush of the the website of the Schwarz Group's sustainability initiative.
 href: /projects/ready-for-green

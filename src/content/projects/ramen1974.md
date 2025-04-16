@@ -1,5 +1,5 @@
 ---
-image: ./images/ramen1974-landing.webp
+image: ./images/ramen1974.png
 title: Ramen1974
 description: Website of a local business in Dresden specializing in japanese cuisine
 href: "/projects/ramen1974"

@@ -1,5 +1,5 @@
 ---
-image: ./images/loem-landing.webp
+image: ./images/loem.png
 title: LOEM - LADR
 description: Implementation of a Frontend with modern UI of a Labor Order Entry Module - built with Web Components
 href: /projects/loem
