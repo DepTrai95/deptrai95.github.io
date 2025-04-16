@@ -22,6 +22,7 @@ import TechStack from '../components/techstack/TechStack.astro';
          '.underline',
          '.portfolio-photo',
          '.introduction',
+         '.techstack',
       ];
 
       const observer = new IntersectionObserver((entries) => {
@@ -346,7 +347,7 @@ import TechStack from '../components/techstack/TechStack.astro';
       </section>
 
       <section class="content-area content-area--default">
-         <article>
+         <article class="techstack">
             <h2>Skills & Tools</h2>
             <p>
                I harness these technologies to build engaging, visually
@@ -428,7 +429,8 @@ import TechStack from '../components/techstack/TechStack.astro';
    .subheading,
    .info,
    .portfolio-photo,
-   .introduction {
+   .introduction,
+   .techstack {
       opacity: 0;
       transform: translateY(20px);
       transition:
@@ -463,5 +465,9 @@ import TechStack from '../components/techstack/TechStack.astro';
    }
    .introduction.fade-in {
       transition-delay: 0.5s;
+   }
+
+   .techstack.fade-in {
+      transition-delay: 0.6s;
    }
 </style>
