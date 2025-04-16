@@ -1,5 +1,5 @@
 ---
-image: ./images/ordering-landing.webp
+image: ./images/restaurant-order.png
 title: Restaurant Order [WIP]
 description: New implementation of the restaurant order application (Currently under development).
 href: /projects/restaurant-ordering

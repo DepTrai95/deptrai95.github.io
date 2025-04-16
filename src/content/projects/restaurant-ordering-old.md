@@ -1,5 +1,5 @@
 ---
-image: ./images/ordering-landing-2.webp
+image: ./images/restaurant-order-old.png
 title: Restaurant Order Old
 description: Unfinished Implementation of a restaurant order application. Will be rebuild
 href: /projects/restaurant-ordering-old

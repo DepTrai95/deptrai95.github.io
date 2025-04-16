@@ -1,5 +1,5 @@
 ---
-image: ./images/anamit-landing.webp
+image: ./images/anamit.png
 title: Anamit - Vietnamese Authentic
 description: Website of a local business in Dresden specializing in vietnamese cuisine
 href: /projects/anamit
