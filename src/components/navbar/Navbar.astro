@@ -68,13 +68,13 @@ const navItems = [
 
       const handleResize = debounce(() => {
          if (window.innerWidth > 600 && navList.classList.contains('open')) {
-         toggleMenu();
+            toggleMenu();
          }
          if (window.innerWidth > 600) {
-         navList.removeAttribute('aria-hidden');
+            navList.removeAttribute('aria-hidden');
          }
          if (window.innerWidth <= 600) {
-         navList.setAttribute('aria-hidden', 'true');
+            navList.setAttribute('aria-hidden', 'true');
          }
       }, 250);
 
@@ -118,50 +118,50 @@ const navItems = [
    z-index: 1000;
 
    @include for-tablet-portrait-up {
-   display: none;
-   position: relative;
+      display: none;
+      position: relative;
    }
 
    span {
-   background: $color-white;
-   border-radius: 3px;
-   display: block;
-   height: 3px;
-   left: 0;
-   opacity: 1;
-   position: absolute;
-   transform: rotate(0deg);
-   transition: 0.25s ease-in-out;
-   width: 100%;
+      background: $color-white;
+      border-radius: 3px;
+      display: block;
+      height: 3px;
+      left: 0;
+      opacity: 1;
+      position: absolute;
+      transform: rotate(0deg);
+      transition: 0.25s ease-in-out;
+      width: 100%;
 
-   &:nth-child(1) {
-      top: 0px;
-   }
+      &:nth-child(1) {
+         top: 0px;
+      }
 
-   &:nth-child(2) {
-      top: 10px;
-   }
+      &:nth-child(2) {
+         top: 10px;
+      }
 
-   &:nth-child(3) {
-      top: 20px;
-   }
+      &:nth-child(3) {
+         top: 20px;
+      }
    }
 
    &.open {
-   span:nth-child(1) {
-      top: 10px;
-      transform: rotate(135deg);
-   }
+      span:nth-child(1) {
+         top: 10px;
+         transform: rotate(135deg);
+      }
 
-   span:nth-child(2) {
-      opacity: 0;
-      left: -60px;
-   }
+      span:nth-child(2) {
+         opacity: 0;
+         left: -60px;
+      }
 
-   span:nth-child(3) {
-      top: 10px;
-      transform: rotate(-135deg);
-   }
+      span:nth-child(3) {
+         top: 10px;
+         transform: rotate(-135deg);
+      }
    }
 }
 
@@ -170,80 +170,59 @@ const navItems = [
    padding: 0;
 
    @include for-phone-only {
-   background-color: $color-background;
-   display: flex;
-   flex-direction: column;
-   gap: 1.5rem;
-   height: 100vh;
-   justify-content: flex-start;
-   margin: 0;
-   padding-block-start: 1.5rem; //same like gap
-   position: fixed;
-   right: -100%;
-   top: calc(var(--header-height) + 1px);
-   transition: right 0.3s ease;
-   width: 75%;
-   z-index: 10;
+      background-color: $color-background;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      height: 100vh;
+      justify-content: flex-start;
+      margin: 0;
+      padding-block-start: 1.5rem; //same like gap
+      position: fixed;
+      right: -100%;
+      top: calc(var(--header-height) + 1px);
+      transition: right 0.3s ease;
+      width: 75%;
+      z-index: 10;
 
-   &.open {
-      right: 0;
-   }
+      &.open {
+         right: 0;
+      }
    }
 
    @include for-tablet-portrait-up {
-   align-items: center;
-   display: flex;
-   gap: 2.5rem;
-   justify-content: flex-end;
+      align-items: center;
+      display: flex;
+      gap: 2.5rem;
+      justify-content: flex-end;
    }
 
    .nav-list__item {
-   display: inline-flex;
-   @include for-phone-only {
-      padding-inline: 3rem;
-   }
+      display: inline-flex;
+      @include for-phone-only {
+         padding-inline: 3rem;
+      }
    }
 
    a {
-   @include responsive-font-size(1.6rem, 1.8rem);
-   color: inherit;
-   line-height: 1.5;
-   overflow: hidden;
-   padding-block: 0.75rem;
-   position: relative;
-   text-decoration-line: none;
-   transition: color 0.2s ease-in;
-   width: auto;
+      @include responsive-font-size(1.6rem, 1.8rem);
+      color: inherit;
+      line-height: 1.5;
+      overflow: hidden;
+      padding-block: 0.75rem;
+      position: relative;
+      text-decoration-line: none;
+      transition: color 0.2s ease-in;
+      width: auto;
 
-   @include for-phone-only {
-      @include responsive-font-size(2rem, 2.4rem);
-   }
+      @include for-phone-only {
+         @include responsive-font-size(2rem, 2.4rem);
+      }
 
-   &:hover,
-   &:focus {
-      color: $color-primary;
-   }
-
-   &::before {
-      border: 1px solid currentColor;
-      bottom: 0;
-      content: '';
-      left: 0;
-      position: absolute;
-      transform-origin: center left;
-      transform: scale3d(0, 1, 1);
-      transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
-      width: 0;
-   }
-
-   &:hover::before,
-   &:focus::before {
-      transform: scale3d(1, 1, 1);
-      width: 100%;
-   }
-
-   &.active {
-      color: $color-primary;
+      &:hover,
+      &:focus {
+         color: $color-primary;
+      }
 
       &::before {
          border: 1px solid currentColor;
@@ -252,11 +231,32 @@ const navItems = [
          left: 0;
          position: absolute;
          transform-origin: center left;
-         transform: scale3d(1, 1, 1);
+         transform: scale3d(0, 1, 1);
          transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+         width: 0;
+      }
+
+      &:hover::before,
+      &:focus::before {
+         transform: scale3d(1, 1, 1);
          width: 100%;
       }
-   }
+
+      &.active {
+         color: $color-primary;
+
+         &::before {
+            border: 1px solid currentColor;
+            bottom: 0;
+            content: '';
+            left: 0;
+            position: absolute;
+            transform-origin: center left;
+            transform: scale3d(1, 1, 1);
+            transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+            width: 100%;
+         }
+      }
    }
 }
 </style>
