@@ -14,7 +14,8 @@ export const getStaticPaths = async () => {
 };
 
 const { project } = Astro.props;
-const { data, body } = project;
+const { data } = project;
+const { Content } = await project.render();
 ---
 
 <script>
@@ -67,8 +68,8 @@ const { data, body } = project;
                         </div>
                      </div>
                      <div class="grid-item">
-                        <p class="project__content__body">
-                           {body}
+                        <p class="project__content-inner">
+                           <Content />
                         </p>
                      </div>
                   </div>
@@ -153,7 +154,7 @@ const { data, body } = project;
       margin-block-start: 2rem;
    }
 
-   .project__content__body {
+   .project__content-inner {
       @include responsive-font-size(1.8rem, 1.9rem);
       line-height: 1.6;
    }
