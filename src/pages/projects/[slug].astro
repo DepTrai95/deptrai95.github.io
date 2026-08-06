@@ -3,19 +3,19 @@ import Layout from '../../layouts/Layout.astro';
 import Icon from '../../components/icon/Icon.astro';
 import ButtonLink from '../../components/button/ButtonLink.astro';
 import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 
 export const getStaticPaths = async () => {
    const projects = await getCollection('projects');
    return projects.map((project) => ({
-      params: { slug: project.slug },
+      params: { slug: project.id },
       props: { project },
    }));
 };
 
 const { project } = Astro.props;
 const { data } = project;
-const { Content } = await project.render();
+const { Content } = await render(project);
 ---
 
 <script>

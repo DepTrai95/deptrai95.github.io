@@ -10,7 +10,7 @@ const order = [
    'joynext',
 ];
 
-const orderedCareer = order.map((slug) => career.find((career) => career.slug === slug)).filter(Boolean);
+const orderedCareer = order.map((slug) => career.find((entry) => entry.id === slug)).filter(Boolean);
 ---
 
 <script>
