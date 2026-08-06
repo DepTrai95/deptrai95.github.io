@@ -5,13 +5,14 @@ interface Props {
    href: string;
    image: string;
    stack: Array<string>;
+   isHidden?: boolean;
 }
 
 import { Image } from 'astro:assets';
-const { href, title, body, image, stack } = Astro.props;
+const { href, title, body, image, stack, isHidden = false } = Astro.props;
 ---
 
-<li class="teaser-card" role="listitem">
+<li class="teaser-card" role="listitem" hidden={isHidden || undefined}>
    <article
       class="teaser-card__container"
       aria-labelledby={`teaser-title-${title.replace(/\s+/g, '-')}`}
