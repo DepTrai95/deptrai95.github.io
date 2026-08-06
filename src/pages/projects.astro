@@ -31,157 +31,157 @@ const hasMoreProjects = remainingProjects.length > 0;
 ---
 
 <script>
-   const LOAD_MORE_SIZE = 3;
-   const thresholds = [0.1, 0.3, 0.5, 0.7, 0.9];
-   const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: thresholds,
-   };
+    const LOAD_MORE_SIZE = 3;
+    const thresholds = [0.1, 0.3, 0.5, 0.7, 0.9];
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: thresholds,
+    };
 
-   function setupProjectsPage() {
-      const cardList = document.querySelector('.teaser-card-list');
-      const moreTemplate = document.querySelector('#projects-more');
-      const loadMoreContainer = document.querySelector('.js-load-more');
-      const loadMoreButton = loadMoreContainer?.querySelector('button');
+    function setupProjectsPage() {
+        const cardList = document.querySelector('.teaser-card-list');
+        const moreTemplate = document.querySelector('#projects-more');
+        const loadMoreContainer = document.querySelector('.js-load-more');
+        const loadMoreButton = loadMoreContainer?.querySelector('button');
 
-      if (!cardList) return;
+        if (!cardList) return;
 
-      const observer = new IntersectionObserver((entries) => {
-         entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-               setTimeout(() => {
-                  entry.target.classList.add('visible');
-               }, index * 250);
-               observer.unobserve(entry.target);
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 250);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        function getListedCards() {
+            return Array.from(cardList.querySelectorAll('.teaser-card'));
+        }
+
+        function observeCards(cards) {
+            cards.forEach((item, index) => {
+                item.classList.remove('visible');
+                setTimeout(() => {
+                observer.observe(item);
+                }, index * 100);
+            });
+        }
+
+        observeCards(getListedCards());
+
+        function revealNextBatch() {
+            if (!moreTemplate) return;
+
+            const remainingCards = Array.from(
+                moreTemplate.content.querySelectorAll('.teaser-card')
+            );
+            const nextBatch = remainingCards.slice(0, LOAD_MORE_SIZE);
+
+            nextBatch.forEach((card) => {
+                cardList.appendChild(card);
+            });
+
+            observeCards(nextBatch);
+
+            if (
+                moreTemplate.content.querySelectorAll('.teaser-card').length === 0 &&
+                loadMoreContainer
+            ) {
+                loadMoreContainer.remove();
             }
-         });
-      }, observerOptions);
+        }
 
-      function getListedCards() {
-         return Array.from(cardList.querySelectorAll('.teaser-card'));
-      }
+        function onLoadMoreClick(event) {
+            event.preventDefault();
+            revealNextBatch();
+        }
 
-      function observeCards(cards) {
-         cards.forEach((item, index) => {
-            item.classList.remove('visible');
-            setTimeout(() => {
-               observer.observe(item);
-            }, index * 100);
-         });
-      }
+        loadMoreButton?.addEventListener('click', onLoadMoreClick);
 
-      observeCards(getListedCards());
+        return () => {
+            getListedCards().forEach((item) => {
+                observer.unobserve(item);
+            });
+            loadMoreButton?.removeEventListener('click', onLoadMoreClick);
+        };
+    }
 
-      function revealNextBatch() {
-         if (!moreTemplate) return;
+    let cleanup;
 
-         const remainingCards = Array.from(
-            moreTemplate.content.querySelectorAll('.teaser-card')
-         );
-         const nextBatch = remainingCards.slice(0, LOAD_MORE_SIZE);
+    document.addEventListener('astro:page-load', () => {
+        cleanup?.();
+        cleanup = setupProjectsPage();
+    });
 
-         nextBatch.forEach((card) => {
-            cardList.appendChild(card);
-         });
-
-         observeCards(nextBatch);
-
-         if (
-            moreTemplate.content.querySelectorAll('.teaser-card').length === 0 &&
-            loadMoreContainer
-         ) {
-            loadMoreContainer.remove();
-         }
-      }
-
-      function onLoadMoreClick(event) {
-         event.preventDefault();
-         revealNextBatch();
-      }
-
-      loadMoreButton?.addEventListener('click', onLoadMoreClick);
-
-      return () => {
-         getListedCards().forEach((item) => {
-            observer.unobserve(item);
-         });
-         loadMoreButton?.removeEventListener('click', onLoadMoreClick);
-      };
-   }
-
-   let cleanup;
-
-   document.addEventListener('astro:page-load', () => {
-      cleanup?.();
-      cleanup = setupProjectsPage();
-   });
-
-   document.addEventListener('astro:before-preparation', () => {
-      cleanup?.();
-      cleanup = undefined;
-   });
+    document.addEventListener('astro:before-preparation', () => {
+        cleanup?.();
+        cleanup = undefined;
+    });
 </script>
 
 <Layout
-   title="Portfolio | Projects | Duc Anh Dennis Nguyen | DepTrai"
-   metaDescription="This is my portfolio page and here is a sample of projects I have worked on."
+    title="Portfolio | Projects | Duc Anh Dennis Nguyen | DepTrai"
+    metaDescription="This is my portfolio page and here is a sample of projects I have worked on."
 >
-   <div class="inner">
-      <div class="content-area">
-         <div id="projects" class="section-header">
-            <h1 class="sr-only">
-               This page contains an overview of my projects
-            </h1>
-            <h2>Projects</h2>
-         </div>
-         <p>Here is a small sample of projects I have worked on.</p>
-         <p>
-            Many of these projects were written with Vue.js, but I am also
-            proficient with Web Components/Vanilla JavaScript and I'm also
-            familiar with React and AngularJS.
-         </p>
-         <p>
-            I am already looking forward to grow the list significantly in the
-            near future!
-         </p>
-      </div>
-      <ul role="list" class="teaser-card-list">
-         {
-            initialProjects.map((project) => (
-               <Card
-                  href={project.data.href}
-                  title={project.data.title}
-                  body={project.data.description}
-                  image={project.data.image}
-                  stack={project.data.stack}
-               />
-            ))
-         }
-      </ul>
-      {
-         hasMoreProjects && (
-            <>
-               <template id="projects-more">
-                  {
-                     remainingProjects.map((project) => (
-                        <Card
-                           href={project.data.href}
-                           title={project.data.title}
-                           body={project.data.description}
-                           image={project.data.image}
-                           stack={project.data.stack}
-                        />
-                     ))
-                  }
-               </template>
-               <div class="js-load-more load-more">
-                  <Button type="button" variant="ghost">Load more</Button>
-               </div>
-            </>
-         )
-      }
-   </div>
+    <div class="inner">
+        <div class="content-area">
+            <div id="projects" class="section-header">
+                <h1 class="sr-only">
+                    This page contains an overview of my projects
+                </h1>
+                <h2>Projects</h2>
+            </div>
+            <p>Here is a small sample of projects I have worked on.</p>
+            <p>
+                Many of these projects were written with Vue.js, but I am also
+                proficient with Web Components/Vanilla JavaScript and I'm also
+                familiar with React and AngularJS.
+            </p>
+            <p>
+                I am already looking forward to grow the list significantly in the
+                near future!
+            </p>
+        </div>
+        <ul role="list" class="teaser-card-list">
+            {
+                initialProjects.map((project) => (
+                    <Card
+                        href={project.data.href}
+                        title={project.data.title}
+                        body={project.data.description}
+                        image={project.data.image}
+                        stack={project.data.stack}
+                    />
+                ))
+            }
+        </ul>
+        {
+            hasMoreProjects && (
+                <>
+                    <template id="projects-more">
+                        {
+                            remainingProjects.map((project) => (
+                                <Card
+                                href={project.data.href}
+                                title={project.data.title}
+                                body={project.data.description}
+                                image={project.data.image}
+                                stack={project.data.stack}
+                                />
+                            ))
+                        }
+                    </template>
+                    <div class="js-load-more load-more">
+                        <Button type="button" variant="ghost">Load more</Button>
+                    </div>
+                </>
+            )
+        }
+    </div>
 </Layout>
 
 <style lang="scss">
