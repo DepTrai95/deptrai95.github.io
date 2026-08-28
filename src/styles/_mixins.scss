@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 
 // ==========================================================================
 // = Mixins Viewports
@@ -116,7 +116,8 @@
 // ==========================================================================
 
 @mixin responsive-font-size($min, $max, $viewport: $content-max-width) {
-   font-size: clamp(#{$min}, #{rem-to-vw($max, $viewport)}vw, #{$max});
+   // Emit CSS clamp(); avoid Sass evaluating clamp() as a math function.
+   font-size: #{"clamp(#{$min}, #{rem-to-vw($max, $viewport)}vw, #{$max})"};
 }
 
 @mixin grid($items-per-line, $wrap: wrap, $spacing: var(--content-padding), $justify: center, $grid-item: '.grid-item') {

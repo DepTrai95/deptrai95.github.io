@@ -1,6 +1,6 @@
 import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'astro/config';
-import sitemap from "@astrojs/sitemap";
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,7 +9,17 @@ export default defineConfig({
     integrations: [sitemap()],
     resolve: {
         alias: {
-            '@': fileURLToPath(new URL('./src', import.meta.url))
+            '@': fileURLToPath(new URL('./src', import.meta.url)),
+        },
+    },
+    vite: {
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    // Keep legacy Sass APIs until a full @use/@forward migration.
+                    silenceDeprecations: ['import', 'global-builtin'],
+                },
+            },
         },
     },
 });

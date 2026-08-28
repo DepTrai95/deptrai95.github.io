@@ -2,7 +2,7 @@
 // = FUNCTIONS
 // ==========================================================================
 
-@use "sass:math";
+@use 'sass:math';
 
 @function strip-unit($number) {
    @if type-of($number)=='number' and not unitless($number) {

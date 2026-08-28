@@ -81,9 +81,10 @@ const { Content } = await render(project);
 </Layout>
 
 <style lang="scss">
-   @import '../../styles/_base.scss';
-   @import '../../styles/_mixins.scss';
-   @import '../../styles/_functions.scss';
+    @use 'sass:math';
+    @import '../../styles/_base.scss';
+    @import '../../styles/_mixins.scss';
+    @import '../../styles/_functions.scss';
 
    .project {
       display: flex;
