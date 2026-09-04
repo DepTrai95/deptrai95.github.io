@@ -103,20 +103,30 @@ const { Content } = await render(project);
    }
 
    h1 {
-      @include responsive-font-size(4rem, 4.5rem);
+      @include responsive-font-size(2.6rem, 4.5rem);
       background-image: var(--accent-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-size: 400%;
       background-position: 0%;
+      background-size: 400%;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+
+      @include for-phone-only {
+         letter-spacing: 0.04em;
+      }
    }
 
    .project__header {
+      max-width: 100%;
       text-align: center;
    }
 
    .project__subheader {
-      @include responsive-font-size(2.4rem, 2.6rem);
+      @include responsive-font-size(1.8rem, 2.6rem);
+      max-width: 100%;
+      overflow-wrap: anywhere;
    }
 
    .icon--project {
